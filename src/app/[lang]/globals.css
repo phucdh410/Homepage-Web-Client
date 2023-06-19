@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*:not(.html-parse-content *) {
+    /* Add ":not(.html-parse-content *)" for avoiding reset CSS in HTML parser
+    HTML parser must contain class name "html-parse-content" */
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-montserrat);
+    background-color: #f5f5f5;
+}
