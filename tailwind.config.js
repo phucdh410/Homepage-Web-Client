@@ -41,6 +41,10 @@ module.exports = {
         ["news-video"]: "633/330",
         ["news-sub"]: "633/330",
         ["admissions"]: "1366/512",
+        ["training-sub"]: "408/285",
+      },
+      fontSize: {
+        clamp1: "clamp(1.25rem, 0.9375rem + 1.5625vw, 2.1875rem)",
       },
     },
   },

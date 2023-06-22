@@ -1,9 +1,9 @@
 import "./styles.scss";
 
-export const CCommonData = () => {
+export const MCommonData = () => {
   return (
-    <div className="flex flex-wrap bg-white -mt-24 relative z-[1] homepage-common-data m-auto items-baseline justify-between p-5 rounded-[20px] max-w-[850px]">
-      <div className="shadow-[15px_15px_60px_rgba(19,70,131,0.1),15px_15px_60px_rgba(19,70,131,0.1)] inset-0"></div>
+    <div className="flex flex-wrap bg-white -mt-24 relative z-[1] homepage-common-data m-auto items-baseline justify-between p-5 rounded-20px max-w-[850px]">
+      <div className="shadow-[15px_15px_60px_rgba(19,70,131,0.1),15px_15px_60px_rgba(19,70,131,0.1)] absolute rounded-inherit inset-0"></div>
       <div className="w-[118px] text-center">
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
           1976
