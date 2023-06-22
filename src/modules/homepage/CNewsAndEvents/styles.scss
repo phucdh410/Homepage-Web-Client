@@ -1,0 +1,13 @@
+.play-btn {
+  border-radius: 100%;
+  animation: pulse 1s linear alternate infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: 0 0 1px 20px rgba(255, 255, 255, 0.4);
+  }
+}
