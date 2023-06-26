@@ -1,3 +1,5 @@
+import { CAnimatedNumber } from "@/common/components/others";
+
 import "./styles.scss";
 
 export const MCommonData = () => {
@@ -6,7 +8,7 @@ export const MCommonData = () => {
       <div className="shadow-[15px_15px_60px_rgba(19,70,131,0.1),15px_15px_60px_rgba(19,70,131,0.1)] absolute rounded-inherit inset-0"></div>
       <div className="w-[118px] text-center">
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
-          1976
+          <CAnimatedNumber to={1976} />
         </h3>
         <p className="text-[16px] leading-[20px] text-sub font-montserrat">
           Thành lập
@@ -14,7 +16,7 @@ export const MCommonData = () => {
       </div>
       <div className="w-[118px] text-center">
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
-          3
+          <CAnimatedNumber to={3} />
         </h3>
         <p className="text-[16px] leading-[20px] text-sub font-montserrat">
           Trường thành viên
@@ -22,7 +24,7 @@ export const MCommonData = () => {
       </div>
       <div className="w-[118px] text-center">
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
-          15
+          <CAnimatedNumber to={15} />
         </h3>
         <p className="text-[16px] leading-[20px] text-sub font-montserrat">
           Phòng
@@ -30,7 +32,7 @@ export const MCommonData = () => {
       </div>
       <div className="w-[118px] text-center">
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
-          1
+          <CAnimatedNumber to={1} />
         </h3>
         <p className="text-[16px] leading-[20px] text-sub font-montserrat">
           Phân hiệu
@@ -38,7 +40,7 @@ export const MCommonData = () => {
       </div>
       <div className="w-[118px] text-center">
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
-          16
+          <CAnimatedNumber to={16} />
         </h3>
         <p className="text-[16px] leading-[20px] text-sub font-montserrat">
           Khoa
@@ -46,7 +48,7 @@ export const MCommonData = () => {
       </div>
       <div className="w-[118px] text-center">
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
-          30747
+          <CAnimatedNumber to={30747} />
         </h3>
         <p className="text-[16px] leading-[20px] text-sub font-montserrat">
           Sinh viên

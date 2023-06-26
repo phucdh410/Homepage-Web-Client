@@ -1,4 +1,10 @@
+"use client";
+
 import Link from "next/link";
+
+import { motion, Variants } from "framer-motion";
+
+import { CAnimatedNumber } from "@/common/components/others";
 
 const MOCK = [
   {
@@ -27,6 +33,30 @@ const MOCK = [
   },
 ];
 
+const container: Variants = {
+  initial: {
+    y: 200,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { staggerChildren: 0.3, duration: 0.8 },
+  },
+};
+
+const sub: Variants = {
+  initial: {
+    y: 200,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 1 },
+  },
+};
+
 export const MTraining = () => {
   return (
     <section className="mt-16">
@@ -45,7 +75,7 @@ export const MTraining = () => {
           <div className="shadow-[15px_15px_60px_rgba(19,70,131,0.1)] absolute rounded-inherit inset-0"></div>
           <div className="w-[130px] text-center">
             <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
-              25
+              <CAnimatedNumber to={25} />
             </h3>
             <p className="text-[16px] leading-[20px] text-sub font-montserrat">
               Giáo sư
@@ -53,7 +83,7 @@ export const MTraining = () => {
           </div>
           <div className="w-[130px] text-center">
             <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
-              25
+              <CAnimatedNumber to={25} />
             </h3>
             <p className="text-[16px] leading-[20px] text-sub font-montserrat">
               Phó giáo sư
@@ -61,7 +91,7 @@ export const MTraining = () => {
           </div>
           <div className="w-[130px] text-center">
             <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
-              175
+              <CAnimatedNumber to={175} />
             </h3>
             <p className="text-[16px] leading-[20px] text-sub font-montserrat">
               Tiến sĩ
@@ -69,7 +99,7 @@ export const MTraining = () => {
           </div>
           <div className="w-[130px] text-center">
             <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
-              335
+              <CAnimatedNumber to={335} />
             </h3>
             <p className="text-[16px] leading-[20px] text-sub font-montserrat">
               Thạc sĩ
@@ -77,7 +107,7 @@ export const MTraining = () => {
           </div>
           <div className="w-[130px] text-center">
             <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
-              150
+              <CAnimatedNumber to={150} />
             </h3>
             <p className="text-[16px] leading-[20px] text-sub font-montserrat">
               Chuyên gia quốc tế
@@ -85,10 +115,17 @@ export const MTraining = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-10">
+        <motion.div
+          variants={container}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          className="grid grid-cols-3 gap-10"
+        >
           {MOCK.map((e, i) =>
             i === 0 ? (
-              <div
+              <motion.div
+                variants={sub}
                 key={e.id}
                 className="col-span-3 rounded-10px grid grid-cols-2"
               >
@@ -120,9 +157,13 @@ export const MTraining = () => {
                   src="/images/training1.png"
                   alt=""
                 />
-              </div>
+              </motion.div>
             ) : (
-              <div key={e.id} className="bg-white rounded-10px">
+              <motion.div
+                variants={sub}
+                key={e.id}
+                className="bg-white rounded-10px"
+              >
                 <div className="p-5">
                   <p className="uppercase text-sm text-sub2 mb-[10px]">
                     Đại học chính quy
@@ -139,10 +180,10 @@ export const MTraining = () => {
                   alt=""
                   className="w-full aspect-training-sub object-cover rounded-b-inherit"
                 />
-              </div>
+              </motion.div>
             )
           )}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

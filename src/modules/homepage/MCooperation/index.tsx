@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 import { CELearningIcon, CSmartLibraryIcon } from "@/common/components/icons";
 
 export const MCooperation = () => {
@@ -15,7 +19,13 @@ export const MCooperation = () => {
         </div>
 
         <div className="flex items-center justify-center gap-10 mb-28">
-          <div className="basis-1/2 rounded-20px relative shadow-custom">
+          <motion.div
+            initial={{ x: -200, y: 100, opacity: 0 }}
+            whileInView={{ x: 0, y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, type: "spring" }}
+            className="basis-1/2 rounded-20px relative shadow-custom"
+          >
             <img
               src="/images/coop.png"
               alt=""
@@ -26,8 +36,14 @@ export const MCooperation = () => {
                 hợp tác trong nước
               </h5>
             </div>
-          </div>
-          <div className="basis-1/2 rounded-20px relative shadow-custom">
+          </motion.div>
+          <motion.div
+            initial={{ x: 200, y: 100, opacity: 0 }}
+            whileInView={{ x: 0, y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, type: "spring" }}
+            className="basis-1/2 rounded-20px relative shadow-custom"
+          >
             <img
               src="/images/coop.png"
               alt=""
@@ -38,7 +54,7 @@ export const MCooperation = () => {
                 hợp tác quốc tế
               </h5>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -54,7 +70,13 @@ export const MCooperation = () => {
         </div>
 
         <div className="flex items-center justify-center gap-10 max-w-[892px] m-auto">
-          <div className="basis-1/2 rounded-20px flex flex-col items-center justify-between gap-5 py-5 px-4 shadow-custom bg-white">
+          <motion.div
+            initial={{ x: -200, y: 100, opacity: 0 }}
+            whileInView={{ x: 0, y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, type: "spring" }}
+            className="basis-1/2 rounded-20px flex flex-col items-center justify-between gap-5 py-5 px-4 shadow-custom bg-white"
+          >
             <h5 className="text-primary text-3xl font-serif4 font-bold text-center leading-10">
               Kiểm định cấp
               <br />
@@ -67,8 +89,14 @@ export const MCooperation = () => {
             <button className="text-white bg-primary rounded-[15px] px-5 py-3">
               Xem thêm
             </button>
-          </div>
-          <div className="basis-1/2 rounded-20px flex flex-col items-center justify-between gap-5 py-5 px-4 shadow-custom bg-white">
+          </motion.div>
+          <motion.div
+            initial={{ x: 200, y: 100, opacity: 0 }}
+            whileInView={{ x: 0, y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, type: "spring" }}
+            className="basis-1/2 rounded-20px flex flex-col items-center justify-between gap-5 py-5 px-4 shadow-custom bg-white"
+          >
             <h5 className="text-primary text-3xl font-serif4 font-bold text-center leading-10">
               Kiểm định cấp
               <br />
@@ -81,12 +109,18 @@ export const MCooperation = () => {
             <button className="text-white bg-primary rounded-[15px] px-5 py-3">
               Xem thêm
             </button>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       <div className="flex items-center justify-center gap-10 max-w-[892px] m-auto min-h-[321px]">
-        <div className="basis-1/2 min-h-[inherit] rounded-20px flex flex-col items-center justify-center gap-5 py-5 px-4 shadow-custom bg-white">
+        <motion.div
+          initial={{ x: -200, y: 100, opacity: 0 }}
+          whileInView={{ x: 0, y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, type: "spring" }}
+          className="basis-1/2 min-h-[inherit] rounded-20px flex flex-col items-center justify-center gap-5 py-5 px-4 shadow-custom bg-white"
+        >
           <CSmartLibraryIcon />
           <h5 className="font-serif4 font-bold text-primary text-3xl text-center">
             Smart Library
@@ -95,8 +129,14 @@ export const MCooperation = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor
           </p>
-        </div>
-        <div className="basis-1/2 min-h-[inherit] rounded-20px flex flex-col items-center justify-center gap-5 py-5 px-4 shadow-custom bg-white">
+        </motion.div>
+        <motion.div
+          initial={{ x: 200, y: 100, opacity: 0 }}
+          whileInView={{ x: 0, y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, type: "spring" }}
+          className="basis-1/2 min-h-[inherit] rounded-20px flex flex-col items-center justify-center gap-5 py-5 px-4 shadow-custom bg-white"
+        >
           <CELearningIcon />
           <h5 className="font-serif4 font-bold text-primary-red text-3xl text-center">
             E-Learning
@@ -105,7 +145,7 @@ export const MCooperation = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
