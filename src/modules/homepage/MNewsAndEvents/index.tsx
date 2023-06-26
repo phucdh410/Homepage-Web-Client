@@ -2,7 +2,7 @@ import { CPlayIcon } from "@/common/components/icons";
 
 import "./styles.scss";
 
-export const CNewsAndEvents = () => {
+export const MNewsAndEvents = () => {
   return (
     <section className="mt-16">
       <div className="container">
