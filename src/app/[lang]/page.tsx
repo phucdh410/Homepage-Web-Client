@@ -1,6 +1,7 @@
 // import { getDictionary } from "@/dictionaries";
 import {
   MCommonData,
+  MCooperation,
   MNewsAndEvents,
   MResearch,
   MTraining,
@@ -27,6 +28,8 @@ export default async function Home({ params }: IHomePageProps) {
       <MTraining />
 
       <MResearch />
+
+      <MCooperation />
     </>
   );
 }

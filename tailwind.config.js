@@ -26,10 +26,14 @@ module.exports = {
       height: {
         header: "104px",
       },
+      backgroundColor: {
+        primary: "#124874",
+      },
       colors: {
         primary: "#124874",
         sub: "#191919",
         sub2: "#3D3D3D",
+        "primary-red": "#CF373D",
       },
       borderRadius: {
         "10px": "10px",
@@ -43,9 +47,13 @@ module.exports = {
         admissions: "1366/512",
         "training-sub": "408/285",
         research: "406/285",
+        coop: "633/350",
       },
       fontSize: {
         clamp1: "clamp(1.25rem, 0.9375rem + 1.5625vw, 2.1875rem)",
+      },
+      boxShadow: {
+        custom: "15px 15px 60px 0px rgba(19, 70, 131, 0.10)",
       },
     },
   },
