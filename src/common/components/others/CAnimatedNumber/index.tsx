@@ -13,7 +13,7 @@ import {
 import { ICAnimatedNumberProps } from "./types";
 
 export const CAnimatedNumber: React.FC<ICAnimatedNumberProps> = ({
-  from,
+  from = 0,
   to,
 }) => {
   //#region Ref
@@ -37,8 +37,4 @@ export const CAnimatedNumber: React.FC<ICAnimatedNumberProps> = ({
   //#region Render
   return <motion.span ref={nodeRef}>{rounded}</motion.span>;
   //#endregion
-};
-
-CAnimatedNumber.defaultProps = {
-  from: 0,
 };

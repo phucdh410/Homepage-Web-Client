@@ -1,3 +1,4 @@
+import { CScrollTopButton } from "@/common/components/controls";
 import { CMainLayout } from "@/common/components/layouts";
 import { IPageProps } from "@/types/page";
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children, params }: IRootLayoutProps) {
     >
       <body>
         <CMainLayout>{children}</CMainLayout>
+        <CScrollTopButton />
       </body>
     </html>
   );
