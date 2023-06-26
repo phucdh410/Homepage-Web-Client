@@ -15,7 +15,7 @@ module.exports = {
         md: "768px",
         lg: "1024px",
         xl: "1280px",
-        ["2xl"]: "1366px",
+        "2xl": "1366px",
       },
     },
     extend: {
@@ -24,23 +24,41 @@ module.exports = {
         montserrat: ["var(--font-montserrat)"],
       },
       height: {
-        ["header"]: "104px",
+        header: "104px",
       },
       colors: {
         primary: "#124874",
         sub: "#191919",
         sub2: "#3D3D3D",
+        bg: "#FAFAFA",
+        red: "#CF373D",
       },
       borderRadius: {
-        ["10px"]: "10px",
-        ["20px"]: "20px",
-        ["inherit"]: "inherit",
+        "10px": "10px",
+        "20px": "20px",
+        inherit: "inherit",
       },
       aspectRatio: {
-        ["news-main"]: "633/700",
-        ["news-video"]: "633/330",
-        ["news-sub"]: "633/330",
-        ["admissions"]: "1366/512",
+        "news-main": "633/700",
+        "news-video": "633/330",
+        "news-sub": "633/330",
+        " admissions": "1366/512",
+      },
+      maxWidth: {
+        container: "1366px",
+      },
+      padding: {
+        "30px": "30px",
+        "50px": "50px",
+        "60px": "60px",
+      },
+      fontSize: {
+        "25px": ["25px", "34px"],
+        "40px": ["40px", "55px"],
+        "16px": ["16px", "19.5px"],
+      },
+      margin: {
+        "30px": "30px",
       },
     },
   },
