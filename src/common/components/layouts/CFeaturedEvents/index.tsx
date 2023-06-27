@@ -1,8 +1,16 @@
-export const CFeaturedEvents = () => {
+import { ICFeaturedEvents } from "./types";
+
+import "./styles.scss";
+
+export const CFeaturedEvents: React.FC<ICFeaturedEvents> = ({ background }) => {
   return (
     <div className="pt-[130px]">
-      <div className="pl-30px">
-        <div className="pl-30px pt-12 font-serif4 text-40px font-bold text-sub border-l-4 border-[#D9D9D9]">
+      <div className="pl-30px ">
+        <div
+          className={`pl-30px pt-12 font-serif4 text-40px font-bold text-sub border-l-4 border-[#D9D9D9] items-end flex ${
+            background ? "background-event" : ""
+          }`}
+        >
           Sự kiện nổi bật
         </div>
       </div>

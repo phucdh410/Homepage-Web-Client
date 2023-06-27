@@ -37,6 +37,7 @@ module.exports = {
         "10px": "10px",
         "20px": "20px",
         inherit: "inherit",
+        "15px": "15px",
       },
       aspectRatio: {
         "news-main": "633/700",
@@ -56,15 +57,14 @@ module.exports = {
         "25px": ["25px", "34px"],
         "40px": ["40px", "55px"],
         "16px": ["16px", "19.5px"],
+        clamp1: "clamp(1.25rem, 0.9375rem + 1.5625vw, 2.1875rem)",
       },
       margin: {
         "30px": "30px",
         admissions: "1366/512",
         "training-sub": "408/285",
         research: "406/285",
-      },
-      fontSize: {
-        clamp1: "clamp(1.25rem, 0.9375rem + 1.5625vw, 2.1875rem)",
+        "60px": "60px",
       },
     },
   },

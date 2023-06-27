@@ -34,7 +34,7 @@ const VisonAndMission = () => {
           content={mission.content}
           img={mission.img}
         />
-        <CFeaturedEvents />
+        <CFeaturedEvents background={false} />
       </div>
     </div>
   );
