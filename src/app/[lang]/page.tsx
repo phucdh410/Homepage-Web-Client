@@ -1,4 +1,5 @@
 // import { getDictionary } from "@/dictionaries";
+import { CVideoPlayer } from "@/common/components/controls";
 import {
   MCommonData,
   MCooperation,
@@ -6,6 +7,7 @@ import {
   MResearch,
   MTraining,
 } from "@/modules/homepage";
+import { MOther } from "@/modules/other";
 import { IPageProps } from "@/types/page";
 
 interface IHomePageProps extends IPageProps {}
@@ -22,6 +24,8 @@ export default async function Home({ params }: IHomePageProps) {
       />
 
       <MCommonData />
+
+      <CVideoPlayer src="/videos/mobile.mp4" />
 
       <MNewsAndEvents />
 
