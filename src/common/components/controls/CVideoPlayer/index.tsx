@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 
-import { motion, Variants } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 
 import { CVideoProgress, IVideoProgressRef } from "./CVideoProgress";
 import { ICVideoPlayerProps } from "./types";
@@ -72,52 +72,51 @@ export const CVideoPlayer: React.FC<ICVideoPlayerProps> = ({ src }) => {
       <video ref={videoRef} preload="metadata" onTimeUpdate={onTimeUpdate}>
         <source src={`${src}#t=1`} />
       </video>
-      <motion.div
-        variants={variants}
-        initial="initial"
-        whileHover="animate"
-        exit="exit"
-        className="control-wrapper absolute inset-0 mx-[16px] my-[12px] overflow-hidden"
-      >
         <motion.div
-          variants={childrenVariants}
-          className="control-area absolute bottom-0 w-full p-[10px] rounded-10px hover:bg-neutral-400 hover:bg-opacity-30"
+          variants={variants}
+          initial="initial"
+          whileHover="animate"
+          className="control-wrapper absolute inset-0 mx-[16px] my-[12px] overflow-hidden"
         >
-          <CVideoProgress
-            ref={progressRef}
-            onDrag={onDrag}
-            duration={videoRef.current?.duration || 0}
-          />
-          <div className="flex items-center justify-between gap-10 w-full">
-            <div className="basis-1/3"></div>
+          <motion.div
+            variants={childrenVariants}
+            className="control-area absolute bottom-0 w-full p-[10px] rounded-10px hover:bg-neutral-400 hover:bg-opacity-30"
+          >
+            <CVideoProgress
+              ref={progressRef}
+              onDrag={onDrag}
+              duration={videoRef.current?.duration || 0}
+            />
+            <div className="flex items-center justify-between gap-10 w-full">
+              <div className="basis-1/3"></div>
 
-            <div className="basis-1/3 flex items-center justify-center gap-3">
-              <button onClick={onBackward} className="scale-75">
-                <img src="/icons/backward.png" alt="" />
-              </button>
-              <button onClick={togglePlayOrPause}>
-                {isPlaying ? (
-                  <img src="/icons/pause.png" alt="" />
-                ) : (
-                  <img src="/icons/play.png" alt="" />
-                )}
-              </button>
-              <button onClick={onForward} className="scale-75">
-                <img src="/icons/forward.png" alt="" />
-              </button>
-            </div>
+              <div className="basis-1/3 flex items-center justify-center gap-3">
+                <button onClick={onBackward} className="scale-75">
+                  <img src="/icons/backward.png" alt="" />
+                </button>
+                <button onClick={togglePlayOrPause}>
+                  {isPlaying ? (
+                    <img src="/icons/pause.png" alt="" />
+                  ) : (
+                    <img src="/icons/play.png" alt="" />
+                  )}
+                </button>
+                <button onClick={onForward} className="scale-75">
+                  <img src="/icons/forward.png" alt="" />
+                </button>
+              </div>
 
-            <div className="basis-1/3 flex items-center justify-end gap-3">
-              <button onClick={onPictureInPicture} className="scale-75">
-                <img src="/icons/minimize.png" alt="" />
-              </button>
-              <button onClick={onGoFullscreen} className="scale-75">
-                <img src="/icons/fullscreen.png" alt="" />
-              </button>
+              <div className="basis-1/3 flex items-center justify-end gap-3">
+                <button onClick={onPictureInPicture} className="scale-75">
+                  <img src="/icons/minimize.png" alt="" />
+                </button>
+                <button onClick={onGoFullscreen} className="scale-75">
+                  <img src="/icons/fullscreen.png" alt="" />
+                </button>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
     </div>
   );
   //#endregion
