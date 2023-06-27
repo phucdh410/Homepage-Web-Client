@@ -26,12 +26,16 @@ module.exports = {
       height: {
         header: "104px",
       },
+      backgroundColor: {
+        primary: "#124874",
+      },
       colors: {
         primary: "#124874",
         sub: "#191919",
         sub2: "#3D3D3D",
         bg: "#FAFAFA",
         red: "#CF373D",
+        "primary-red": "#CF373D",
       },
       borderRadius: {
         "10px": "10px",
@@ -53,18 +57,23 @@ module.exports = {
         "50px": "50px",
         "60px": "60px",
       },
-      fontSize: {
-        "25px": ["25px", "34px"],
-        "40px": ["40px", "55px"],
-        "16px": ["16px", "19.5px"],
-        clamp1: "clamp(1.25rem, 0.9375rem + 1.5625vw, 2.1875rem)",
-      },
+
       margin: {
         "30px": "30px",
         admissions: "1366/512",
         "training-sub": "408/285",
         research: "406/285",
         "60px": "60px",
+        coop: "633/350",
+      },
+      fontSize: {
+        "25px": ["25px", "34px"],
+        "40px": ["40px", "55px"],
+        "16px": ["16px", "19.5px"],
+        clamp1: "clamp(1.25rem, 0.9375rem + 1.5625vw, 2.1875rem)",
+      },
+      boxShadow: {
+        custom: "15px 15px 60px 0px rgba(19, 70, 131, 0.10)",
       },
     },
   },

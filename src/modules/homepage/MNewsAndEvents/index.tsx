@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 import { CPlayIcon } from "@/common/components/icons";
 
 import "./styles.scss";
@@ -17,7 +21,13 @@ export const MNewsAndEvents = () => {
         </div>
 
         <div className="grid grid-cols-2 gap-10 max-w-[94%] m-auto">
-          <div className="row-span-2 rounded-10px relative">
+          <motion.div
+            initial={{ y: 200, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, type: "spring" }}
+            viewport={{ once: true }}
+            className="row-span-2 rounded-10px relative"
+          >
             <img
               src="/images/news1.png"
               alt=""
@@ -40,8 +50,14 @@ export const MNewsAndEvents = () => {
                 truyền kỷ niệm 75 năm
               </p>
             </div>
-          </div>
-          <div className="rounded-10px relative">
+          </motion.div>
+          <motion.div
+            initial={{ x: 200, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, type: "spring" }}
+            viewport={{ once: true }}
+            className="rounded-10px relative"
+          >
             <img
               src="/images/news2.png"
               alt=""
@@ -52,8 +68,14 @@ export const MNewsAndEvents = () => {
                 <CPlayIcon />
               </button>
             </div>
-          </div>
-          <div className="rounded-10px relative">
+          </motion.div>
+          <motion.div
+            initial={{ x: 200, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, type: "spring" }}
+            viewport={{ once: true }}
+            className="rounded-10px relative"
+          >
             <img
               src="/images/news3.png"
               alt=""
@@ -72,10 +94,16 @@ export const MNewsAndEvents = () => {
                 - liệt sĩ 27/7/1947 - 27/7/2022 lorem ipsum is a dummy text for
               </h4>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="relative">
+        <motion.div
+          initial={{ opacity: 0, y: 200 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, type: "spring" }}
+          className="relative"
+        >
           <img
             src="/images/tuyensinh.png"
             alt=""
@@ -86,7 +114,7 @@ export const MNewsAndEvents = () => {
               Cổng thông tin tuyển sinh
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
