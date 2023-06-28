@@ -25,8 +25,6 @@ export default async function Home({ params }: IHomePageProps) {
 
       <MCommonData />
 
-      <CVideoPlayer src="/videos/mobile.mp4" />
-
       <MNewsAndEvents />
 
       <MTraining />
