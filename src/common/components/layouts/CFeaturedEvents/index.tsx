@@ -47,7 +47,7 @@ export const CFeaturedEvents: React.FC<ICFeaturedEvents> = ({ background }) => {
               className="object-cover mb-30px  m-auto"
             />
 
-            <div className="  min-h-[120px] ">
+            <div className="  lg:min-h-[120px] line-clamp-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </div>
           </div>
@@ -58,7 +58,7 @@ export const CFeaturedEvents: React.FC<ICFeaturedEvents> = ({ background }) => {
               className="object-cover mb-30px  m-auto"
             />
 
-            <div className=" min-h-[120px] ">
+            <div className=" lg:min-h-[120px] line-clamp-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </div>
           </div>

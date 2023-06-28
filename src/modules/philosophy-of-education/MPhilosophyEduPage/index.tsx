@@ -18,28 +18,28 @@ export const MPhilosophyEduPage = () => {
                 className="mx-5 w-6 h-6"
               />
             </div>
-            <div className="flex gap-10">
+            <div className="flex gap-10 w-auto overflow-auto">
               <span>Lịch sử hình thành</span>
               <span className="text-primary font-bold">Triết lý giáo dục</span>
               <span>Tầm nhìn và sứ mạng</span>
               <span>Cơ cấu tồ chức</span>
               <span>Hội đồng trường</span>
               <span>Ban giám hiệu</span>
-              <img
-                alt=""
-                src="/icons/arrow_drop_down.svg"
-                className="ml-[-8px] w-6 h-6"
-              />
             </div>
+            <img
+              alt=""
+              src="/icons/arrow_drop_down.svg"
+              className="ml-8 w-6 h-6"
+            />
           </div>
 
           {/* Introduction */}
-          <div className="flex gap-10 mt-14">
-            <div className="w-1/2 h-auto flex flex-col justify-end">
+          <div className="flex gap-10 mt-14 flex-wrap">
+            <div className="md:w-1/2 h-auto flex flex-col justify-end">
               <div className="font-serif4 text-[300px] text-primary">
                 <img src="/icons/Text.png" alt="" className="object-contain" />
               </div>
-              <div className="font-serif4 text-primary font-bold text-40px mb-5">
+              <div className="font-serif4 text-primary font-bold text-40px mb-5 line-clamp-2">
                 Đào tạo người học đạt chuẩn
               </div>
               <div className="font-montserrat text-sub text-16px">
@@ -49,7 +49,7 @@ export const MPhilosophyEduPage = () => {
                 cộng đồng và thích ứng cao.
               </div>
             </div>
-            <div className="w-1/2">
+            <div className="md:w-1/2">
               <img
                 src="/images/intro.png"
                 alt=""
@@ -59,8 +59,8 @@ export const MPhilosophyEduPage = () => {
           </div>
 
           <div className="flex rounded-15px justify-end mt-60px mb-10 system">
-            <div className="w-1/2 text-white">
-              <div className="font-serif4 font-bold text-40px mb-5">
+            <div className="lg:w-1/2 w-full text-white">
+              <div className="font-serif4 font-bold text-40px mb-5 line-clamp-4">
                 Hệ thống, linh hoạt, đảm bảo gắn đào tạo với thực hành - ứng
                 dụng
               </div>
@@ -76,11 +76,11 @@ export const MPhilosophyEduPage = () => {
             </div>
           </div>
 
-          <div className="flex gap-10">
-            <div className="text-primary font-serif4 font-bold text-40px w-1/2">
+          <div className="flex flex-wrap gap-10">
+            <div className="text-primary font-serif4 font-bold text-40px md:w-1/2 lg:line-clamp-2">
               Tôn trọng sụ khác biệt, khuyến khích phát triển nội lục
             </div>
-            <div className="w-1/2 text-sub font-montserrat text-16px">
+            <div className="md:w-1/2 text-sub font-montserrat text-16px">
               Trường tôn trọng và xem văn hóa chất lượng trong giáo dục là tôn
               chỉ hoạt động. Trường sử dụng đa dạng các phương thức giáo dục,
               phương pháp đào tạo tôn trọng sự khác biệt, khuyến khích phát
