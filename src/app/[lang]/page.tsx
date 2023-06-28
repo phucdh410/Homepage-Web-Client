@@ -1,5 +1,4 @@
 // import { getDictionary } from "@/dictionaries";
-import { CVideoPlayer } from "@/common/components/controls";
 import {
   MCommonData,
   MCooperation,
@@ -7,7 +6,6 @@ import {
   MResearch,
   MTraining,
 } from "@/modules/homepage";
-import { MOther } from "@/modules/other";
 import { IPageProps } from "@/types/page";
 
 interface IHomePageProps extends IPageProps {}
