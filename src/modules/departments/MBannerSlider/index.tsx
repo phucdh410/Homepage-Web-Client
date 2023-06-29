@@ -1,5 +1,8 @@
 "use client";
 
+import { useState } from "react";
+
+import type { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -188,10 +191,24 @@ const TAGS = [
 ];
 
 export const MBannerSlider = () => {
+  //#region Data
+  const [activeData, setActiveData] = useState(MOCK[0]);
+  //#endregion
+
+  //#region Event
+  const onSlideActiveChange = (slide: SwiperType) => {
+    setActiveData(MOCK[slide.realIndex]);
+  };
+  //#endregion
+
+  //#region Render
   return (
     <div
-      className="pt-[140px] banner-slider"
-      style={{ backgroundImage: "url('/images/khoa/bg1.png')" }}
+      className="pt-[140px] bg-center bg-no-repeat bg-cover banner-slider"
+      style={{
+        backgroundImage: `url('${activeData.banner}')`,
+        transition: "background 1s linear",
+      }}
     >
       <div className="container px-[2rem]">
         <div className="w-max">
@@ -205,42 +222,39 @@ export const MBannerSlider = () => {
           <div className="custom-divider mt-[10px] h-[1px] bg-[linear-gradient(90deg,_#FFF_0%,_rgba(255,255,255,0.00)_100%)]"></div>
         </div>
         <h2 className="uppercase mt-[50px] mb-[10px] font-bold text-[40px] font-serif4">
-          khoa toán - tin học
+          khoa {activeData.name}
         </h2>
-        <p className="mb-[50px]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-          viverra, risus non lobortis feugiat, eros nisi gravida libero, a
-          laoreet velit enim a diam. Vestibulum fermentum
-        </p>
+        <p className="mb-[50px]">{activeData.description}</p>
         <button className="rounded-10px mb-[50px] font-serif4 px-12 py-2 backdrop-filter-[blur(7.5px)] bg-[rgba(255,255,255,0.40)]">
           Xem chi tiết
         </button>
-
-        <div className=" bg-[linear-gradient(90deg,_#000_0%,_rgba(0,_0,_0,_0.00)_20.05%,_rgba(0,_0,_0,_0.00)_80.99%,_#000_100%)]">
-          <Swiper
-            slidesPerView={8}
-            loop={MOCK.length >= 8 * 2 ? true : false}
-            spaceBetween={20}
-            grabCursor
-            centeredSlides
-          >
-            {MOCK.map((e) => (
-              <SwiperSlide
-                key={e.id}
-                className="text-center w-max department-slide-active"
-              >
-                <img
-                  src={e.logo}
-                  alt=""
-                  className="m-auto mb-[10px] aspect-square h-[125px] w-[125px]"
-                />
-                <p className="font-serif4">Khoa</p>
-                <p className="font-serif4 pb-5">{e.name}</p>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+      </div>
+      <div className=" bg-[linear-gradient(90deg,_#000_0%,_rgba(0,_0,_0,_0.00)_20.05%,_rgba(0,_0,_0,_0.00)_80.99%,_#000_100%)]">
+        <Swiper
+          slidesPerView={8}
+          loop={MOCK.length >= 8 * 2 ? true : false}
+          spaceBetween={20}
+          grabCursor
+          centeredSlides
+          onActiveIndexChange={onSlideActiveChange}
+        >
+          {MOCK.map((e) => (
+            <SwiperSlide
+              key={e.id}
+              className="text-center w-max department-slide-active"
+            >
+              <img
+                src={e.logo}
+                alt=""
+                className="m-auto mb-[10px] aspect-square h-[125px] w-[125px]"
+              />
+              <p className="font-serif4">Khoa</p>
+              <p className="font-serif4 pb-5">{e.name}</p>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );
+  //#endregion
 };
