@@ -1,0 +1,17 @@
+.section-quality {
+  .swiper {
+    .swiper-slide {
+      opacity: 0.20000000298023224;
+      &.swiper-slide-prev,
+      &.swiper-slide-next {
+        opacity: 0.5;
+      }
+      &.swiper-slide-active {
+        font-size: 18px;
+        font-weight: 700;
+        color: #124874;
+        opacity: 1;
+      }
+    }
+  }
+}
