@@ -36,12 +36,14 @@ module.exports = {
         bg: "#FAFAFA",
         red: "#CF373D",
         "primary-red": "#CF373D",
+        des: "#5B5B5B",
       },
       borderRadius: {
         "10px": "10px",
         "20px": "20px",
         inherit: "inherit",
         "15px": "15px",
+        "30px": "30px",
       },
       aspectRatio: {
         "news-main": "633/700",
@@ -74,6 +76,9 @@ module.exports = {
       },
       boxShadow: {
         custom: "15px 15px 60px 0px rgba(19, 70, 131, 0.10)",
+      },
+      gap: {
+        "30px": "30px",
       },
     },
   },

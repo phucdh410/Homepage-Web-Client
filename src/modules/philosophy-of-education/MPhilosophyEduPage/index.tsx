@@ -1,4 +1,4 @@
-import { CFeaturedEvents } from "@/common/components/layouts";
+import { CFeaturedEvents, CTimeline } from "@/common/components/layouts";
 
 import "./styles.scss";
 
@@ -34,7 +34,7 @@ export const MPhilosophyEduPage = () => {
           </div>
 
           {/* Introduction */}
-          <div className="flex gap-10 mt-14 flex-wrap">
+          <div className="flex gap-10 mt-14 flex-wrap md:flex-nowrap">
             <div className="md:w-1/2 h-auto flex flex-col justify-end">
               <div className="font-serif4 text-[300px] text-primary">
                 <img src="/icons/Text.png" alt="" className="object-contain" />
@@ -76,7 +76,7 @@ export const MPhilosophyEduPage = () => {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-10">
+          <div className="flex flex-wrap md:flex-nowrap gap-10">
             <div className="text-primary font-serif4 font-bold text-40px md:w-1/2 lg:line-clamp-2">
               Tôn trọng sụ khác biệt, khuyến khích phát triển nội lục
             </div>
@@ -90,6 +90,7 @@ export const MPhilosophyEduPage = () => {
           </div>
         </div>
         <CFeaturedEvents background />
+        <CTimeline />
       </div>
     </div>
   );
