@@ -18,11 +18,9 @@ export const CTimelineItem = () => {
         </div>
       </div>
       <div className="col-span-1 dot flex justify-center z-10">
-        <img
-          src="/icons/timeline.svg"
-          alt=""
-          className="object-cover w-9 h-9 "
-        />
+        <div className="bg-primary flex justify-center items-center">
+          <span className="bg-white content-[''] w-4 h-4 rounded-full z-20 block"></span>
+        </div>
       </div>
       <div className="col-span-5 description flex">
         <div className="rounded-30px overflow-hidden bg-white h-max w-max text-16px">
