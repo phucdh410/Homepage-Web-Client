@@ -1,3 +1,14 @@
+import Link from "next/link";
+
+import {
+  CFacebookIcon,
+  CGoogleIcon,
+  CInstagramIcon,
+  CLinkedinIcon,
+  CTwitterIcon,
+  CYoutubeIcon,
+} from "@/common/components/icons";
+
 const ADDRESS_MOCK = [
   {
     id: "1",
@@ -76,6 +87,15 @@ const MOCK = [
   },
 ];
 
+const SOCIAL_BUTTONS = [
+  { id: "1", icon: <CFacebookIcon />, href: "https://facebook.com" },
+  { id: "2", icon: <CTwitterIcon />, href: "https://twitter.com" },
+  { id: "3", icon: <CLinkedinIcon />, href: "https://linkedin.com" },
+  { id: "4", icon: <CGoogleIcon />, href: "https://google.com" },
+  { id: "5", icon: <CYoutubeIcon />, href: "https://youtube.com" },
+  { id: "6", icon: <CInstagramIcon />, href: "https://instagram.com" },
+];
+
 export const CFooter = () => {
   return (
     <footer className="mt-24">
@@ -91,7 +111,39 @@ export const CFooter = () => {
             <p className="text-sub text-sm">Địa chỉ:</p>
             <ul className="list-disc py-2 px-5">
               {ADDRESS_MOCK.map((e, i) => (
-                <li key={e.id}>{`Cơ sở ${i + 1}: ${e.name}`}</li>
+                <li key={e.id}>
+                  {`Cơ sở ${i + 1}: `}
+                  <span>
+                    <Link
+                      href={`https://google.com/maps/place/${e.name}`}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      className="cursor-[url('/icons/location.png')_10_17,_auto] hover:underline"
+                    >
+                      {e.name}
+                    </Link>
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <p className="text-sub text-sm mb-[10px]">
+              Điện thoại: (+84) - (28) - 38352020
+            </p>
+            <p className="text-sub text-sm mb-3">
+              Fax: (+84) - (28) - 38398946
+            </p>
+            <div className="h-[1px] bg-primary opacity-10 min-w-full"></div>
+            <h6 className="text-primary font-bold font-serif4 mb-5 pt-3">
+              Kết nối với chúng tôi:
+            </h6>
+            <ul className="flex items-center gap-[30px] mb-3">
+              {SOCIAL_BUTTONS.map((e) => (
+                <li key={e.id} className="hover:scale-150">
+                  <Link href={e.href} target="_blank" rel="noopener noreferrer">
+                    {e.icon}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -113,11 +165,11 @@ export const CFooter = () => {
           </div>
         </div>
       </div>
-      <img
+      {/* <img
         src="/images/footer-banner.png"
         alt=""
         className="w-full h-auto object-cover"
-      />
+      /> */}
     </footer>
   );
 };

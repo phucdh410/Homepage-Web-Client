@@ -1,12 +1,26 @@
 "use client";
+import { useState } from "react";
 
 import { motion } from "framer-motion";
 
+import { CVideoPlayer } from "@/common/components/controls";
 import { CPlayIcon } from "@/common/components/icons";
+import { CModal } from "@/common/components/others";
 
 import "./styles.scss";
 
 export const MNewsAndEvents = () => {
+  //#region Data
+  const [open, setOpen] = useState<boolean>(false);
+  //#endregion
+
+  //#region Event
+  const onOpen = () => setOpen(true);
+
+  const onClose = () => setOpen(false);
+  //#endregion
+
+  //#region Render
   return (
     <section className="mt-16">
       <div className="container">
@@ -64,9 +78,12 @@ export const MNewsAndEvents = () => {
               className="w-full h-full aspect-news-video rounded-inherit"
             />
             <div className="absolute top-0 flex items-center justify-center z-[1] w-full h-full rounded-inherit bg-[linear-gradient(0deg,_rgba(0,0,0,0.3),_rgba(0,0,0,0.3))]">
-              <button className="play-btn">
+              <button className="play-btn" onClick={onOpen}>
                 <CPlayIcon />
               </button>
+              <CModal open={open} onClose={onClose}>
+                <CVideoPlayer src="/videos/mobile.mp4" />
+              </CModal>
             </div>
           </motion.div>
           <motion.div
@@ -118,4 +135,5 @@ export const MNewsAndEvents = () => {
       </div>
     </section>
   );
+  //#endregion
 };
