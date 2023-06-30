@@ -22,6 +22,7 @@ module.exports = {
       fontFamily: {
         serif4: ["var(--font-source-serif-4)"],
         montserrat: ["var(--font-montserrat)"],
+        raleway: ["var(--font-raleway)"],
       },
       height: {
         header: "104px",
