@@ -1,0 +1,25 @@
+.training-disciplines {
+  color: white;
+  ul {
+    li:not(:last-child) {
+      padding-bottom: 20px;
+    }
+  }
+  .swiper {
+    .swiper-button-prev,
+    .swiper-button-next {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      &::after {
+        content: "";
+      }
+    }
+    .swiper-button-prev {
+      background-image: url("/icons/arrow_left.svg");
+    }
+    .swiper-button-next {
+      background-image: url("/icons/arrow_right.svg");
+    }
+  }
+}
