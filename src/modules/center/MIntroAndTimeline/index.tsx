@@ -1,10 +1,9 @@
-import { CNodeTimeline } from "@/common/components/others";
-
 const MOCK_TIMELINE = [
-  { id: "1", name: "khoa toán tin", time: "27/08/2010" },
-  { id: "2", name: "khoa tin học", time: "27/08/2015" },
-  { id: "3", name: "khoa công nghệ thông tin", time: "04/10/2022" },
+  { id: "1", name: "phòng giáo vụ", time: "27/08/2010" },
+  { id: "2", name: "phòng đào tạo", time: "27/08/2015" },
 ];
+
+import { CNodeTimeline } from "@/common/components/others";
 
 export const MIntroAndTimeline = () => {
   return (
@@ -15,10 +14,10 @@ export const MIntroAndTimeline = () => {
         className="m-auto aspect-square w-[194px] mb-10"
       />
       <h3 className="uppercase text-primary text-center font-serif4 text-[40px] font-bold mb-[10px]">
-        khoa công nghệ thông tin
+        Trung tiếng pháp châu á - thái bình dương
       </h3>
       <p className="text-center text-primary-red font-serif4 font-bold text-[25px] mb-24">
-        Năng động - Hiện đại - Sáng tạo
+        Subtitle goes hereeee!
       </p>
 
       <CNodeTimeline timelines={MOCK_TIMELINE} />
