@@ -3,7 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { CLanguageIcon } from "@/common/components/icons";
+import { useRef, useState } from "react";
+
+import { CCloseIcon, CLanguageIcon } from "@/common/components/icons";
+
+import { ICListMenuRef } from "./CListMenu/types";
+import { CListMenu } from "./CListMenu";
+import { INavItem } from "./types";
 
 import "./styles.scss";
 
@@ -16,10 +22,102 @@ const MOCK = [
   { id: "5", name: "Phân hiệu Gia Lai", link: "/" },
 ];
 
-const MOCK1 = [
+const MOCK1: INavItem[] = [
   { id: "1", name: "Trang chủ", link: "" },
-  { id: "2", name: "Giới thiệu", link: "/introduction" },
-  { id: "3", name: "Tin tức - Sự kiện", link: "/news" },
+  {
+    id: "2",
+    name: "Giới thiệu",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, risus non lobortis feugiat",
+    children: [
+      { id: "1", name: "Lịch sử hình thành", link: "" },
+      { id: "2", name: "Triết lý giáo dục", link: "" },
+      { id: "3", name: "Tầm nhìn và sứ mạng", link: "" },
+      { id: "4", name: "Sơ đồ tổ chức", link: "" },
+      { id: "5", name: "Hội đồng trường", link: "" },
+      { id: "6", name: "Ban giám hiệu", link: "" },
+      { id: "7", name: "Hội đồng khoa học & đào tạo", link: "" },
+      { id: "8", name: "Khoa & bộ môn", link: "" },
+      { id: "9", name: "Phòng ban chức năng", link: "" },
+      {
+        id: "10",
+        name: "Trung tâm & viện",
+        children: [
+          { id: "1", name: "Lê Khánh Phương just a dummy text", link: "" },
+          { id: "2", name: "Lê Khánh Phương just a dummy text", link: "" },
+          { id: "3", name: "Lê Khánh Phương just a dummy text", link: "" },
+        ],
+      },
+      {
+        id: "11",
+        name: "Đảng & đoàn thể",
+        children: [
+          { id: "1", name: "Trần Nguyên Khánh just a dummy text", link: "" },
+          { id: "2", name: "Trần Nguyên Khánh just a dummy text", link: "" },
+          { id: "3", name: "Trần Nguyên Khánh just a dummy text", link: "" },
+        ],
+      },
+      {
+        id: "12",
+        name: "Ba công khai",
+        children: [
+          { id: "1", name: "Nguyễn Văn Công is just a dummy text", link: "" },
+          { id: "2", name: "Nguyễn Văn Công is just a dummy text", link: "" },
+          { id: "3", name: "Nguyễn Văn Công is just a dummy text", link: "" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "3",
+    name: "Tin tức - Sự kiện",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, risus non lobortis feugiat",
+    children: [
+      { id: "1", name: "Lịch sử hình thành", link: "" },
+      { id: "2", name: "Triết lý giáo dục", link: "" },
+      { id: "3", name: "Tầm nhìn và sứ mạng", link: "" },
+      {
+        id: "4",
+        name: "Trung tâm & viện",
+        children: [
+          { id: "1", name: "Đặng Hoàng Phúc just a dummy text", link: "" },
+          { id: "2", name: "Đặng Hoàng Phúc just a dummy text", link: "" },
+          { id: "3", name: "Đặng Hoàng Phúc just a dummy text", link: "" },
+        ],
+      },
+      {
+        id: "5",
+        name: "Đảng & đoàn thể",
+        children: [
+          {
+            id: "1",
+            name: "Nguyễn Phước Ngọc Ánh just a dummy text",
+            link: "",
+          },
+          {
+            id: "2",
+            name: "Nguyễn Phước Ngọc Ánh just a dummy text",
+            link: "",
+          },
+          {
+            id: "3",
+            name: "Nguyễn Phước Ngọc Ánh just a dummy text",
+            link: "",
+          },
+        ],
+      },
+      {
+        id: "6",
+        name: "Ba công khai",
+        children: [
+          { id: "1", name: "Chị Dịu béo is just a dummy text", link: "" },
+          { id: "2", name: "Chị Dịu béo is just a dummy text", link: "" },
+          { id: "3", name: "Chị Dịu béo is just a dummy text", link: "" },
+        ],
+      },
+    ],
+  },
   { id: "4", name: "Tuyển sinh", link: "/employ" },
   { id: "5", name: "Đào tạo", link: "/training" },
   { id: "6", name: "Nghiên cứu", link: "/research" },
@@ -30,12 +128,26 @@ const MOCK1 = [
 
 export const CHeader = () => {
   //#region Data
+  const subRef = useRef<null | ICListMenuRef>(null);
+
   const pathname = usePathname();
+
+  const [currentId, setCurrentId] = useState<string | null>(null);
   //#endregion
 
   //#region Event
   const isActive = (path: string) => {
     return pathname.replace("/vi", "").replace("/en", "") === path;
+  };
+
+  const onSelectMenu = (id: string) => {
+    setCurrentId(id);
+    subRef.current?.clearSubId();
+  };
+
+  const onClose = () => {
+    setCurrentId(null);
+    subRef.current?.clearSubId();
   };
   //#endregion
 
@@ -67,17 +179,37 @@ export const CHeader = () => {
           <img src="/images/logo.png" alt="" />
           <ul className="flex items-center gap-6 text-white font-serif4">
             {MOCK1.map((e) => (
-              <li key={e.id}>
-                <Link
-                  href={e.link || "/"}
-                  className={isActive(e.link) ? "activated font-bold" : ""}
-                >
-                  {e.name}
-                </Link>
+              <li
+                key={e.id}
+                className="cursor-pointer hover:text-primary-red hover:underline"
+              >
+                {!e?.children ? (
+                  <Link
+                    href={e.link || "/"}
+                    className={
+                      isActive(e.link || "") ? "activated font-bold" : ""
+                    }
+                    onClick={onClose}
+                  >
+                    {e.name}
+                  </Link>
+                ) : (
+                  <div onClick={() => onSelectMenu(e.id)}>{e.name}</div>
+                )}
               </li>
             ))}
           </ul>
         </div>
+
+        {MOCK1.filter((e) => e.children).map((e) => (
+          <CListMenu
+            key={e.id}
+            ref={subRef}
+            currentId={currentId || ""}
+            data={e}
+            onClose={onClose}
+          />
+        ))}
       </div>
     </header>
   );
