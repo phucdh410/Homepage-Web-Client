@@ -1,6 +1,8 @@
 import Link from "next/link";
 
-import { forwardRef, useImperativeHandle, useState } from "react";
+import { forwardRef, useImperativeHandle, useRef, useState } from "react";
+
+import { motion, Variants } from "framer-motion";
 
 import { CCloseIcon } from "@/common/components/icons";
 
@@ -12,6 +14,13 @@ const ADDITIONAL_NAV = [
   { id: "3", name: "Webmail", link: "" },
 ];
 
+const animationVariants: Variants = {
+  initial: { opacity: 0, y: -30 },
+  animate: { opacity: 1, y: 0, transition: { duration: 1, type: "spring" } },
+};
+
+import "./styles.scss";
+
 export const CListMenu = forwardRef<ICListMenuRef, ICListMenuProps>(
   ({ data, onClose, currentId }, ref) => {
     //#region Data
@@ -20,8 +29,6 @@ export const CListMenu = forwardRef<ICListMenuRef, ICListMenuProps>(
 
     //#region Event
     const onOpen = (id: string) => setSubId(id);
-
-    const onCloseSub = () => setSubId(null);
     //#endregion
 
     useImperativeHandle(ref, () => ({
@@ -30,16 +37,15 @@ export const CListMenu = forwardRef<ICListMenuRef, ICListMenuProps>(
 
     //#region Render
     return (
-      <div
-        className={`w-full !bg-center !bg-no-repeat !bg-cover ${
+      <motion.div
+        variants={animationVariants}
+        initial="initial"
+        animate={currentId === data?.id ? "animate" : "initial"}
+        className={`w-full navigation-list-menu !bg-center !bg-no-repeat !bg-cover ${
           currentId === data?.id ? "block" : "hidden"
         }`}
-        style={{
-          background:
-            "linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.50) 59.64%, #FFF 100%), url('/images/bg-menu1.png'), lightgray 50%",
-        }}
       >
-        <div className=" flex text-primary p-[30px] mb-2">
+        <div className="flex text-primary p-[30px] mb-2">
           <div className="max-w-[253px] mr-10 select-none">
             <h2 className="font-bold font-serif4 text-[40px]">{data.name}</h2>
             <p className="font-serif4">{data.description}</p>
@@ -96,7 +102,7 @@ export const CListMenu = forwardRef<ICListMenuRef, ICListMenuProps>(
             <CCloseIcon />
           </button>
         </div>
-      </div>
+      </motion.div>
     );
     //#endregion
   }
