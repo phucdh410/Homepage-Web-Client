@@ -1,0 +1,13 @@
+.mission {
+  background-image: url("../../../../public/images/bg-mission.png");
+  background-size: cover;
+  padding: 115px 30px;
+
+  .line {
+    background-color: white;
+    content: "";
+    width: 6px;
+    // height: max-content;
+    display: flex;
+  }
+}
