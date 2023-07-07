@@ -6,6 +6,7 @@ import {
   MQuality,
   MQualityTeacher,
   MSubjects,
+  MTimelineTag,
   MTrainingDisciplines,
   MTrainingGoal,
 } from "@/modules/department-detail";
@@ -30,6 +31,8 @@ const DepartmentDetailPage = () => {
       <MSubjects />
 
       <MActivities />
+
+      <MTimelineTag />
     </div>
   );
 };

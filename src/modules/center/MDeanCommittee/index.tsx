@@ -1,7 +1,7 @@
 export const MDeanCommittee = () => {
   return (
     <section className="mt-16">
-      <h3 className="text-primary font-bold text-[40px] font-serif4 text-center mb-5 uppercase">
+      <h3 className="text-primary font-bold text-clamp-section-title font-serif4 text-center mb-5 uppercase">
         lãnh đạo phòng
       </h3>
       <p className="text-center max-w-[610px] m-auto mb-12 text-sub">

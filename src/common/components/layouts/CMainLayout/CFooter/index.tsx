@@ -137,7 +137,7 @@ export const CFooter = () => {
             <h6 className="text-primary font-bold font-serif4 mb-5 pt-3">
               Kết nối với chúng tôi:
             </h6>
-            <ul className="flex items-center gap-[30px] mb-3">
+            <ul className="flex items-center gap-30px mb-3">
               {SOCIAL_BUTTONS.map((e) => (
                 <li key={e.id} className="hover:scale-150">
                   <Link href={e.href} target="_blank" rel="noopener noreferrer">

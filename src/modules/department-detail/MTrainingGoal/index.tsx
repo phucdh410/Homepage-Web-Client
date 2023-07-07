@@ -1,7 +1,7 @@
 export const MTrainingGoal = () => {
   return (
     <section className="mt-16">
-      <h3 className="text-center text-primary font-bold font-serif4 text-[40px] uppercase mb-5">
+      <h3 className="text-center text-primary font-bold font-serif4 text-clamp-section-title uppercase mb-5">
         mục tiêu đào tạo
       </h3>
       <p className="text-sub max-w-[610px] text-center m-auto mb-12">
@@ -10,7 +10,7 @@ export const MTrainingGoal = () => {
         enim a diam. Vestibulum fermentum, sapien vel pulvinar tempor
       </p>
       <div className="flex gap-11 ">
-        <div className="flex-1 p-5 flex gap-[30px]">
+        <div className="flex-1 p-5 flex gap-30px">
           <div className="flex flex-col">
             <h4 className="font-serif4 font-bold uppercase text-primary-red text-[56px] mb-[30px]">
               01
@@ -26,7 +26,7 @@ export const MTrainingGoal = () => {
             học, tiểu học và một số cơ sở giáo dục tương đương.
           </p>
         </div>
-        <div className="flex-1 p-5 flex gap-[30px]">
+        <div className="flex-1 p-5 flex gap-30px">
           <div className="flex flex-col">
             <h4 className="font-serif4 font-bold uppercase text-primary-red text-[56px] mb-[30px]">
               02

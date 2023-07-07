@@ -46,7 +46,7 @@ const MOCK = [
 export const MSubjects = () => {
   return (
     <section className="mt-16">
-      <h3 className="text-primary text-center uppercase font-serif4 text-[40px] font-bold mb-5">
+      <h3 className="text-primary text-center uppercase font-serif4 text-clamp-section-title font-bold mb-5">
         bộ môn
       </h3>
       <p className="m-auto max-w-[610px] text-center text-sub mb-12">
@@ -54,7 +54,7 @@ export const MSubjects = () => {
         risus non lobortis feugigat, eros nisi gravida libero, a laoreet velit
         enim a diam. Vestibulum fermentum, sapien vel pulvinar tempor
       </p>
-      <div className="px-8 flex gap-[30px]">
+      <div className="px-8 flex gap-30px">
         {MOCK.map((e) => (
           <div key={e.id} className="flex-1 rounded-20px bg-[#f9f9f9] p-[30px]">
             <h6 className="text-primary text-2xl font-semibold font-raleway leading-[35px] tracking-[0.72px] mb-[15px]">

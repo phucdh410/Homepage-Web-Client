@@ -60,7 +60,9 @@ module.exports = {
         "50px": "50px",
         "60px": "60px",
       },
-
+      zIndex: {
+        1: 1,
+      },
       margin: {
         "30px": "30px",
         admissions: "1366/512",
@@ -74,9 +76,11 @@ module.exports = {
         "40px": ["40px", "55px"],
         "16px": ["16px", "19.5px"],
         clamp1: "clamp(1.25rem, 0.9375rem + 1.5625vw, 2.1875rem)",
+        "clamp-section-title": "clamp(1.25rem, 0.8676rem + 1.912vw, 2.5rem);",
       },
       boxShadow: {
         custom: "15px 15px 60px 0px rgba(19, 70, 131, 0.10)",
+        "timeline-node": "0px 0px 20px 0px rgba(18, 72, 116, 0.50)",
       },
       gap: {
         "30px": "30px",

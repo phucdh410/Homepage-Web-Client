@@ -12,7 +12,7 @@ export const MTrainingDisciplines = () => {
   return (
     <section className="mt-16 training-disciplines">
       <div className="bg-[url('/images/cacnganhdaotao.png')] pt-[50px] pb-[40px] px-8">
-        <h3 className="uppercase font-serif4 font-bold text-[40px] text-center mb-5">
+        <h3 className="uppercase font-serif4 font-bold text-clamp-section-title text-center mb-5">
           các ngành đào tạo
         </h3>
         <p className="max-w-[610px] m-auto text-center mb-12">

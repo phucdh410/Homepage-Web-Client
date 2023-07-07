@@ -47,7 +47,7 @@ const MOCK2 = [
 export const MActivities = () => {
   return (
     <section className="mt-16">
-      <h3 className="uppercase text-primary text-center font-bold text-[40px] font-serif4 mb-5">
+      <h3 className="uppercase text-primary text-center font-bold text-clamp-section-title font-serif4 mb-5">
         hoạt động
       </h3>
       <p className="m-auto text-center max-w-[610px] text-sub mb-12">

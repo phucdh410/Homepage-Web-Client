@@ -13,7 +13,7 @@ export const MIntroAndTimeline = () => {
         alt=""
         className="m-auto aspect-square w-[194px] mb-10"
       />
-      <h3 className="uppercase text-primary text-center font-serif4 text-[40px] font-bold mb-[10px]">
+      <h3 className="uppercase text-primary text-center font-serif4 text-clamp-section-title font-bold mb-[10px]">
         Trung tiếng pháp châu á - thái bình dương
       </h3>
       <p className="text-center text-primary-red font-serif4 font-bold text-[25px] mb-24">

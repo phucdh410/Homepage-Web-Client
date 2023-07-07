@@ -5,5 +5,6 @@ export * from "./MIntroAndTimeline";
 export * from "./MQuality";
 export * from "./MQualityTeacher";
 export * from "./MSubjects";
+export * from "./MTimelineTag";
 export * from "./MTrainingDisciplines";
 export * from "./MTrainingGoal";

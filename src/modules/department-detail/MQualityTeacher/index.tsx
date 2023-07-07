@@ -1,7 +1,7 @@
 export const MQualityTeacher = () => {
   return (
     <section className="mt-16">
-      <h3 className="text-center text-primary font-bold font-serif4 text-[40px] uppercase mb-5">
+      <h3 className="text-center text-primary font-bold font-serif4 text-clamp-section-title uppercase mb-5">
         chất lượng giảng viên
       </h3>
       <p className="text-sub max-w-[610px] text-center m-auto mb-12">

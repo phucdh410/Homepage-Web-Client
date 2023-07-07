@@ -1,7 +1,7 @@
 export const MFunctionsAndMissions = () => {
   return (
     <section className="mt-16 bg-white">
-      <h3 className="text-primary text-center text-[40px] font-serif4 font-bold mb-5">
+      <h3 className="text-primary text-center text-clamp-section-title font-serif4 font-bold mb-5">
         Chức năng - Nhiệm vụ
       </h3>
       <div className="bg-[url('/images/group.png')] bg-no-repeat bg-center bg-cover">
