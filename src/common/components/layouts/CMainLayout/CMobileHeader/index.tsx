@@ -18,7 +18,7 @@ export const CMobileHeader = () => {
 
   //#region Render
   return (
-    <header className="fixed z-10 top-0 w-full flex xl:hidden items-center justify-between p-5 bg-white mb-20 shadow-[0_5px_12px_2px_rgb(194_194_194_/_51%)] ">
+    <header className="fixed z-10 h-[74px] top-0 w-full flex xl:hidden items-center justify-between px-5 py-3 bg-white mb-20 shadow-[0_5px_12px_2px_rgb(194_194_194_/_51%)] ">
       <img src="/images/logo.png" alt="" />
       <button onClick={openDrawer}>
         <svg
