@@ -1,5 +1,6 @@
 import { CFooter } from "./CFooter";
 import { CHeader } from "./CHeader";
+import { CMobileHeader } from "./CMobileHeader";
 
 export const CMainLayout: React.FC<React.PropsWithChildren> = ({
   children,
@@ -7,6 +8,7 @@ export const CMainLayout: React.FC<React.PropsWithChildren> = ({
   return (
     <>
       <CHeader />
+      <CMobileHeader />
       <main>{children}</main>
       <CFooter />
     </>

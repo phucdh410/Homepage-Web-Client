@@ -1,26 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
-import { useRef, useState } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useState } from "react";
 
-import { CLanguageIcon } from "@/common/components/icons";
+import { CCloseIcon } from "@/common/components/icons";
 
-import { ICListMenuRef } from "./CListMenu/types";
-import { CListMenu } from "./CListMenu";
-import { INavItem } from "./types";
+import { INavItem } from "../../CHeader/types";
 
-import "./styles.scss";
-
-//#region MOCK
-const MOCK = [
-  { id: "1", name: "Tân sinh viên", link: "/" },
-  { id: "2", name: "Alumni HCMUE", link: "/" },
-  { id: "3", name: "ETEP", link: "/" },
-  { id: "4", name: "Phân hiệu Long An", link: "/" },
-  { id: "5", name: "Phân hiệu Gia Lai", link: "/" },
-];
+import { CMenuItem } from "./CMenuItem";
+import { ICDrawerProps, ICDrawerRef } from "./types";
 
 const MOCK1: INavItem[] = [
   { id: "1", name: "Trang chủ", link: "" },
@@ -124,94 +113,71 @@ const MOCK1: INavItem[] = [
   { id: "7", name: "Bảo đảm chất lượng giáo dục", link: "/ensure" },
   { id: "8", name: "Hợp tác và phục vụ cộng đồng", link: "/coop" },
 ];
-//#endregion
 
-export const CHeader = () => {
-  //#region Data
-  const subRef = useRef<null | ICListMenuRef>(null);
+export const CDrawer = forwardRef<ICDrawerRef, ICDrawerProps>(
+  ({ ...props }, ref) => {
+    //#region Data
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    //#endregion
 
-  const pathname = usePathname();
+    //#region Event
+    const onClose = () => setIsOpen(false);
+    //#endregion
 
-  const [currentId, setCurrentId] = useState<string | null>(null);
-  //#endregion
+    useImperativeHandle(ref, () => ({
+      open: () => setIsOpen(true),
+    }));
 
-  //#region Event
-  const isActive = (path: string) => {
-    return pathname.replace("/vi", "").replace("/en", "") === path;
-  };
+    useEffect(() => {
+      if (isOpen) document.documentElement.style.overflow = "hidden";
+      else document.documentElement.style.overflow = "auto";
+    }, [isOpen]);
 
-  const onSelectMenu = (id: string) => {
-    setCurrentId(id);
-    subRef.current?.clearSubId();
-  };
-
-  const onClose = () => {
-    setCurrentId(null);
-    subRef.current?.clearSubId();
-  };
-  //#endregion
-
-  //#region Render
-  return (
-    <header className="fixed z-10 top-0 w-full h-header hidden xl:block">
-      <div className="container">
-        <div className="flex px-[10rem] py-[7px] bg-[#124874] items-center justify-between">
-          <ul className="flex items-center gap-10 text-white">
-            {MOCK.map((e) => (
-              <li key={e.id}>
-                <Link href={e.link}>{e.name}</Link>
-              </li>
-            ))}
-          </ul>
-          <button>
-            <CLanguageIcon />
-          </button>
+    //#region Render
+    return (
+      <div
+        className={
+          "fixed overflow-hidden z-[11] bg-opacity-25 inset-0 transform ease-in-out " +
+          (isOpen
+            ? " transition-opacity opacity-100 duration-500 translate-x-0"
+            : " transition-all opacity-0 translate-x-full")
+        }
+      >
+        <div
+          className={
+            " w-full max-w-lg right-0 absolute bg-white h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform  " +
+            (isOpen ? " translate-x-0" : "translate-x-full")
+          }
+        >
+          <div className="relative w-full max-w-lg p-4 h-full flex flex-col">
+            <div className="shrink-0">
+              <div className="flex items-center justify-between">
+                <h4 className="font-semibold text-lg">Menu</h4>
+                <button onClick={onClose}>
+                  <CCloseIcon />
+                </button>
+              </div>
+              <div className="divider h-[3px] shrink-0 rounded-10px my-2 text-center w-full bg-[linear-gradient(90deg,_#cccccc,_white)]"></div>
+            </div>
+            <div className="flex-1 overflow-y-scroll">
+              <ul>
+                {MOCK1.map((e) => (
+                  <li key={e.id} className="mb-3 last:mb-0 font-medium">
+                    <CMenuItem data={e} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
         <div
-          className="flex px-[2rem] py-[8px] items-center gap-5"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.2) 53.37%, rgba(255, 255, 255, 0.06) 100%)",
-            boxShadow: "5px 5px 30px rgba(0, 0, 0, 0.2)",
-            backdropFilter: "blur(10px)",
-          }}
-        >
-          <img src="/images/logo.png" alt="" />
-          <ul className="flex items-center gap-6 text-white font-serif4">
-            {MOCK1.map((e) => (
-              <li
-                key={e.id}
-                className="cursor-pointer hover:text-primary-red hover:underline"
-              >
-                {!e?.children ? (
-                  <Link
-                    href={e.link || "/"}
-                    className={
-                      isActive(e.link || "") ? "activated font-bold" : ""
-                    }
-                    onClick={onClose}
-                  >
-                    {e.name}
-                  </Link>
-                ) : (
-                  <div onClick={() => onSelectMenu(e.id)}>{e.name}</div>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {MOCK1.filter((e) => e.children).map((e) => (
-          <CListMenu
-            key={e.id}
-            ref={subRef}
-            currentId={currentId || ""}
-            data={e}
-            onClose={onClose}
-          />
-        ))}
+          className=" w-screen h-full cursor-pointer "
+          onClick={onClose}
+        ></div>
       </div>
-    </header>
-  );
-  //#endregion
-};
+    );
+    //#endregion
+  }
+);
+
+CDrawer.displayName = "CDrawer";
