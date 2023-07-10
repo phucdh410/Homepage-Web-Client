@@ -21,4 +21,23 @@ body {
   padding: 0;
   font-family: var(--font-montserrat);
   background-color: #f5f5f5;
+  overflow: overlay;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c4c4c4;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: rgb(255 255 255 / 40%);
 }

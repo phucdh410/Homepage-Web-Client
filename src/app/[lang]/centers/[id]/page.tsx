@@ -6,7 +6,7 @@ import {
   MIntroAndTimeline,
 } from "@/modules/center";
 
-const TrungTamPage = () => {
+const CenterPage = () => {
   return (
     <div className="container">
       <MIntroAndTimeline />
@@ -22,4 +22,4 @@ const TrungTamPage = () => {
   );
 };
 
-export default TrungTamPage;
+export default CenterPage;
