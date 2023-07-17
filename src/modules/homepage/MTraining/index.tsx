@@ -75,8 +75,8 @@ export const MTraining = () => {
   return (
     <section className="mt-16">
       <div className="container">
-        <div className="max-w-2xl m-auto mb-10">
-          <h2 className="text-center mb-[10px] uppercase text-primary text-[35px] leading-[48px] font-extrabold font-serif4 ">
+        <div className="max-w-2xl m-auto mb-10 px-5">
+          <h2 className="text-center mb-[10px] uppercase text-primary text-clamp-home-section-title leading-[48px] font-extrabold font-serif4 ">
             đào tạo
           </h2>
           <p className="text-center text-sub">

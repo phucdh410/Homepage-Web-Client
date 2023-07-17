@@ -77,6 +77,8 @@ module.exports = {
         "16px": ["16px", "19.5px"],
         clamp1: "clamp(1.25rem, 0.9375rem + 1.5625vw, 2.1875rem)",
         "clamp-section-title": "clamp(1.25rem, 0.8676rem + 1.912vw, 2.5rem);",
+        "clamp-home-section-title":
+          "clamp(1.625rem, 1.4121rem + 0.9082vw, 2.1875rem)",
       },
       boxShadow: {
         custom: "15px 15px 60px 0px rgba(19, 70, 131, 0.10)",
