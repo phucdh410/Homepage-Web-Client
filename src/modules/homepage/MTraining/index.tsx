@@ -44,7 +44,7 @@ const MOCK1 = [
 
 const container: Variants = {
   initial: {
-    y: 200,
+    y: 100,
     opacity: 0,
   },
   animate: {
@@ -56,7 +56,7 @@ const container: Variants = {
 
 const sub: Variants = {
   initial: {
-    y: 200,
+    y: 100,
     opacity: 0,
   },
   animate: {

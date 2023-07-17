@@ -100,8 +100,8 @@ export const CFooter = () => {
   return (
     <footer className="mt-24">
       <div className="container">
-        <div className="bg-white rounded-t-[20px] p-[30px] pb-3 flex shadow-custom">
-          <div className="mr-[50px] basis-1/3">
+        <div className="bg-white rounded-t-[20px] p-[30px] pb-3 flex flex-col md:flex-row shadow-custom">
+          <div className="md:mr-[50px] basis-1/3">
             <div className="flex items-center gap-[15px] mb-3">
               <img src="/images/logo.png" alt="" />
               <h6 className="uppercase text-primary font-serif4 font-bold">
@@ -147,7 +147,7 @@ export const CFooter = () => {
               ))}
             </ul>
           </div>
-          <div className="basis-2/3 grid grid-cols-5 gap-5">
+          <div className="md:basis-2/3 grid grid-cols-1 md:grid-cols-5 gap-5">
             {MOCK.map((e) => (
               <div key={e.id}>
                 <h6 className="text-primary font-serif4 font-bold h-[44px] mb-[10px]">

@@ -9,7 +9,7 @@ export const CMainLayout: React.FC<React.PropsWithChildren> = ({
     <>
       <CHeader />
       <CMobileHeader />
-      <main>{children}</main>
+      <main className="overflow-hidden">{children}</main>
       <CFooter />
     </>
   );

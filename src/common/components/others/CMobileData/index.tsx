@@ -43,6 +43,7 @@ export const CMobileData = ({ data }: ICMobileDataProps) => {
               variants={VARIANTS}
               initial={i % 2 === 0 ? "initial-odd" : "initial-even"}
               whileInView="animate"
+              viewport={{ once: true }}
               className="flex-1 mx-3 mb-4 py-2 bg-white rounded-20px shadow-[15px_15px_60px_0px_rgba(19,_70,_131,_0.10)]"
             >
               <div className="px-1 text-center">
