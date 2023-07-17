@@ -4,6 +4,8 @@ import { useRef, useState } from "react";
 
 import { AnimatePresence, motion, Variants } from "framer-motion";
 
+import { useMediaQuery } from "@/utils/hooks";
+
 import { CVideoProgress, IVideoProgressRef } from "./CVideoProgress";
 import { ICVideoPlayerProps } from "./types";
 
@@ -29,6 +31,8 @@ export const CVideoPlayer: React.FC<ICVideoPlayerProps> = ({ src }) => {
 
   //#region Data
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+
+  const { currentWidth } = useMediaQuery();
   //#endregion
 
   //#region Event
@@ -69,14 +73,19 @@ export const CVideoPlayer: React.FC<ICVideoPlayerProps> = ({ src }) => {
   //#region Render
   return (
     <div className="aspect-video max-w-4xl m-auto relative">
-      <video ref={videoRef} preload="metadata" onTimeUpdate={onTimeUpdate}>
+      <video
+        ref={videoRef}
+        preload="metadata"
+        controls={currentWidth < 1024 ? true : false}
+        onTimeUpdate={onTimeUpdate}
+      >
         <source src={`${src}#t=1`} />
       </video>
       <motion.div
         variants={variants}
         initial="initial"
         whileHover="animate"
-        className="control-wrapper absolute inset-0 mx-[16px] my-[12px] overflow-hidden"
+        className="control-wrapper hidden lg:block absolute inset-0 mx-[16px] my-[12px] overflow-hidden"
       >
         <motion.div
           variants={childrenVariants}
