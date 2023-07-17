@@ -8,7 +8,7 @@ export const MCooperation = () => {
   return (
     <section className="mt-16">
       <div className="container">
-        <div className="max-w-2xl m-auto mb-10">
+        <div className="max-w-2xl m-auto mb-5 md:mb-10">
           <h2 className="text-center mb-[10px] uppercase text-primary text-[35px] leading-[48px] font-extrabold font-serif4 ">
             hợp tác và phục vụ cộng đồng
           </h2>
@@ -18,39 +18,39 @@ export const MCooperation = () => {
           </p>
         </div>
 
-        <div className="flex items-center justify-center gap-10 mb-28">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-10 mx-3 md:mx-0 mb-10 md:mb-28">
           <motion.div
-            initial={{ x: -200, y: 100, opacity: 0 }}
+            initial={{ x: -100, y: 100, opacity: 0 }}
             whileInView={{ x: 0, y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, type: "spring" }}
-            className="basis-1/2 rounded-20px relative shadow-custom"
+            className="basis-1/2 rounded-10px md:rounded-20px relative shadow-custom"
           >
             <img
               src="/images/coop.png"
               alt=""
               className="aspect-coop w-full object-cover rounded-inherit"
             />
-            <div className="absolute w-full bottom-0 bg-white text-center p-[15px] rounded-b-inherit">
-              <h5 className="text-primary font-serif4 text-xl uppercase font-bold rounded-b-inherit">
+            <div className="absolute w-full bottom-0 bg-white text-center py-3 md:p-[15px] rounded-b-inherit">
+              <h5 className="text-primary font-serif4 text-[clamp(0.875rem,_0.7331rem_+_0.6054vw,_1.25rem)] uppercase font-bold rounded-b-inherit">
                 hợp tác trong nước
               </h5>
             </div>
           </motion.div>
           <motion.div
-            initial={{ x: 200, y: 100, opacity: 0 }}
+            initial={{ x: 100, y: 100, opacity: 0 }}
             whileInView={{ x: 0, y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, type: "spring" }}
-            className="basis-1/2 rounded-20px relative shadow-custom"
+            className="basis-1/2 rounded-10px md:rounded-20px relative shadow-custom"
           >
             <img
               src="/images/coop.png"
               alt=""
               className="aspect-coop w-full object-cover rounded-inherit"
             />
-            <div className="absolute w-full bottom-0 bg-white text-center p-[15px] rounded-b-inherit">
-              <h5 className="text-primary font-serif4 text-xl uppercase font-bold rounded-b-inherit">
+            <div className="absolute w-full bottom-0 bg-white text-center py-3 md:p-[15px] rounded-b-inherit">
+              <h5 className="text-primary font-serif4 text-[clamp(0.875rem,_0.7331rem_+_0.6054vw,_1.25rem)] uppercase font-bold rounded-b-inherit">
                 hợp tác quốc tế
               </h5>
             </div>
@@ -58,7 +58,7 @@ export const MCooperation = () => {
         </div>
       </div>
 
-      <div className="bg-[url('/images/ensure.png')] bg-no-repeat bg-center bg-cover p-12 mb-24">
+      <div className="bg-[url('/images/ensure.png')] bg-no-repeat bg-center bg-cover p-5 md:p-12 mb-10 md:mb-24">
         <div className="max-w-2xl m-auto mb-10">
           <h2 className="text-center mb-[10px] uppercase text-white text-[35px] leading-[48px] font-extrabold font-serif4 ">
             bảo đảm chất lượng giáo dục
@@ -69,7 +69,7 @@ export const MCooperation = () => {
           </p>
         </div>
 
-        <div className="flex items-center justify-center gap-10 max-w-[892px] m-auto">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-10 max-w-[892px] m-auto">
           <motion.div
             initial={{ x: -200, y: 100, opacity: 0 }}
             whileInView={{ x: 0, y: 0, opacity: 1 }}
@@ -113,7 +113,7 @@ export const MCooperation = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center gap-10 max-w-[892px] m-auto min-h-[321px]">
+      <div className="flex flex-col md:flex-row mx-5 md:mx-0 items-center justify-center gap-5 md:gap-10 max-w-[892px] m-auto min-h-[260px] md:min-h-[321px]">
         <motion.div
           initial={{ x: -200, y: 100, opacity: 0 }}
           whileInView={{ x: 0, y: 0, opacity: 1 }}

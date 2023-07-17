@@ -108,25 +108,25 @@ export const MTraining = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="grid grid-cols-3 gap-10"
+          className="grid grid-cols-1 md:grid-cols-3 px-3 md:px-0 gap-3 md:gap-10"
         >
           {MOCK.map((e, i) =>
             i === 0 ? (
               <motion.div
                 variants={sub}
                 key={e.id}
-                className="col-span-3 rounded-10px grid grid-cols-2"
+                className="col-span-1 md:col-span-3 rounded-10px grid grid-cols-1 md:grid-cols-2"
               >
-                <div className="p-5 bg-white rounded-l-inherit relative">
+                <div className="p-3 md:p-5 bg-white rounded-t-inherit md:rounded-l-inherit relative">
                   <p className="uppercase text-sm text-sub2 mb-[10px]">
                     Đại học chính quy
                   </p>
-                  <h4 className="text-primary font-serif4 text-xl mb-5 line-clamp-3 font-bold">
+                  <h4 className="text-primary font-serif4 text-xl mb-2 md:mb-5 line-clamp-3 font-bold">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.
                   </h4>
-                  <p className="line-clamp-4">
+                  <p className="line-clamp-2 md:line-clamp-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -135,13 +135,13 @@ export const MTraining = () => {
                   </p>
                   <Link
                     href="/"
-                    className="text-primary absolute bottom-[calc(0px_+_20px)] right-[calc(0px_+_20px)]"
+                    className="hidden md:block text-primary absolute bottom-[calc(0px_+_20px)] right-[calc(0px_+_20px)]"
                   >
                     Xem thêm
                   </Link>
                 </div>
                 <img
-                  className="rounded-r-inherit"
+                  className="rounded-b-inherit md:rounded-r-inherit"
                   src="/images/training1.png"
                   alt=""
                 />
@@ -152,11 +152,11 @@ export const MTraining = () => {
                 key={e.id}
                 className="bg-white rounded-10px"
               >
-                <div className="p-5">
+                <div className="p-3 md:p-5">
                   <p className="uppercase text-sm text-sub2 mb-[10px]">
                     Đại học chính quy
                   </p>
-                  <h4 className="text-primary font-serif4 text-xl line-clamp-3 font-bold">
+                  <h4 className="text-primary font-serif4 text-xl line-clamp-2 lg:line-clamp-3 font-bold">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.
@@ -166,7 +166,7 @@ export const MTraining = () => {
                 <img
                   src="/images/training2.png"
                   alt=""
-                  className="w-full aspect-training-sub object-cover rounded-b-inherit"
+                  className="w-full hidden md:block aspect-training-sub object-cover rounded-b-inherit"
                 />
               </motion.div>
             )
