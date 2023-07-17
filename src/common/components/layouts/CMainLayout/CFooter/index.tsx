@@ -98,7 +98,7 @@ const SOCIAL_BUTTONS = [
 
 export const CFooter = () => {
   return (
-    <footer className="mt-16">
+    <footer className="mt-5">
       <div className="container">
         <div className="bg-white rounded-t-[20px] p-[30px] pb-3 flex flex-col md:flex-row shadow-custom">
           <div className="md:mr-[50px] basis-1/3">

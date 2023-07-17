@@ -113,7 +113,7 @@ export const MCooperation = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row mx-5 md:mx-auto md:pb-16 items-center justify-center gap-5 md:gap-10 max-w-[892px] min-h-[260px] md:min-h-[321px]">
+      <div className="flex flex-col md:flex-row mx-5 md:mx-auto pb-16 items-center justify-center gap-5 md:gap-10 max-w-[892px] min-h-[260px] md:min-h-[321px]">
         <motion.div
           initial={{ x: -200, y: 100, opacity: 0 }}
           whileInView={{ x: 0, y: 0, opacity: 1 }}
