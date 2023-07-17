@@ -34,7 +34,7 @@ export const MNewsAndEvents = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-10 max-w-[94%] m-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[94%] m-auto">
           <motion.div
             initial={{ y: 200, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}

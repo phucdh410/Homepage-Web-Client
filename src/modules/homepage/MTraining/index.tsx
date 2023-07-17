@@ -4,7 +4,8 @@ import Link from "next/link";
 
 import { motion, Variants } from "framer-motion";
 
-import { CAnimatedNumber } from "@/common/components/others";
+import { CAnimatedNumber, CMobileData } from "@/common/components/others";
+import { useMediaQuery } from "@/utils/hooks";
 
 const MOCK = [
   {
@@ -33,6 +34,14 @@ const MOCK = [
   },
 ];
 
+const MOCK1 = [
+  { id: "1", name: "Giáo sư", value: 25 },
+  { id: "2", name: "Phó giáo sư", value: 25 },
+  { id: "3", name: "Tiến sĩ", value: 175 },
+  { id: "4", name: "Thạc sĩ", value: 335 },
+  { id: "5", name: "Chuyên gia quốc tế", value: 150 },
+];
+
 const container: Variants = {
   initial: {
     y: 200,
@@ -58,6 +67,11 @@ const sub: Variants = {
 };
 
 export const MTraining = () => {
+  //#region Data
+  const { currentWidth } = useMediaQuery();
+
+  //#endregion
+
   return (
     <section className="mt-16">
       <div className="container">
@@ -71,49 +85,23 @@ export const MTraining = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap mb-10 bg-white relative m-auto items-baseline justify-between p-5 rounded-20px max-w-[850px]">
-          <div className="shadow-[15px_15px_60px_rgba(19,70,131,0.1)] absolute rounded-inherit inset-0"></div>
-          <div className="w-[130px] text-center">
-            <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
-              <CAnimatedNumber to={25} />
-            </h3>
-            <p className="text-[16px] leading-[20px] text-sub font-montserrat">
-              Giáo sư
-            </p>
+        {currentWidth < 768 ? (
+          <CMobileData data={MOCK1} />
+        ) : (
+          <div className="flex flex-wrap mx-4 md:mx-0 mb-10 bg-white relative m-auto items-baseline justify-between p-5 rounded-20px max-w-[850px]">
+            <div className="shadow-[15px_15px_60px_rgba(19,70,131,0.1)] absolute rounded-inherit inset-0"></div>
+            {MOCK1.map((e) => (
+              <div key={e.id} className="w-[130px] text-center">
+                <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
+                  <CAnimatedNumber to={e.value} />
+                </h3>
+                <p className="text-[16px] leading-[20px] text-sub font-montserrat">
+                  {e.name}
+                </p>
+              </div>
+            ))}
           </div>
-          <div className="w-[130px] text-center">
-            <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
-              <CAnimatedNumber to={25} />
-            </h3>
-            <p className="text-[16px] leading-[20px] text-sub font-montserrat">
-              Phó giáo sư
-            </p>
-          </div>
-          <div className="w-[130px] text-center">
-            <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
-              <CAnimatedNumber to={175} />
-            </h3>
-            <p className="text-[16px] leading-[20px] text-sub font-montserrat">
-              Tiến sĩ
-            </p>
-          </div>
-          <div className="w-[130px] text-center">
-            <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
-              <CAnimatedNumber to={335} />
-            </h3>
-            <p className="text-[16px] leading-[20px] text-sub font-montserrat">
-              Thạc sĩ
-            </p>
-          </div>
-          <div className="w-[130px] text-center">
-            <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
-              <CAnimatedNumber to={150} />
-            </h3>
-            <p className="text-[16px] leading-[20px] text-sub font-montserrat">
-              Chuyên gia quốc tế
-            </p>
-          </div>
-        </div>
+        )}
 
         <motion.div
           variants={container}
