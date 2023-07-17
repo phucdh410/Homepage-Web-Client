@@ -16,7 +16,7 @@ export const MDeanCommittee = () => {
             alt=""
             className="object-cover"
           />
-          <div className="absolute inset-0 m-[30px]">
+          <div className="absolute inset-0 m-30px">
             <div className="absolute bottom-0 text-white">
               <h3 className="mb-[11px] font-bold font-serif4 text-[40px] tracking-[1.2px]">
                 TS. Nguyễn Viết Hưng
@@ -35,7 +35,7 @@ export const MDeanCommittee = () => {
             alt=""
             className="object-cover"
           />
-          <div className="m-[30px] absolute inset-0">
+          <div className="m-30px absolute inset-0">
             <div className="absolute bottom-0 text-white">
               <h6 className="font-serif4 font-semibold text-xl mb-[15px]">
                 TS. Trần Sơn Hải
@@ -53,7 +53,7 @@ export const MDeanCommittee = () => {
             alt=""
             className="object-cover"
           />
-          <div className="absolute inset-0 m-[30px]">
+          <div className="absolute inset-0 m-30px">
             <div className="absolute bottom-0 text-white">
               <h6 className="font-serif4 font-semibold text-xl mb-[15px]">
                 TS. Trịnh Huy Hoàng

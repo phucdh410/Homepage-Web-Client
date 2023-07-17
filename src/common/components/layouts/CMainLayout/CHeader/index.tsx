@@ -168,7 +168,7 @@ export const CHeader = () => {
           </button>
         </div>
         <div
-          className="flex px-[2rem] py-[8px] items-center gap-5"
+          className="flex px-[2rem] py-2 items-center gap-5"
           style={{
             background:
               "linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.2) 53.37%, rgba(255, 255, 255, 0.06) 100%)",

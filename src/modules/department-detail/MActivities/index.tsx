@@ -64,7 +64,7 @@ export const MActivities = () => {
             {MOCK1.map((e, i) => (
               <li
                 key={e.id}
-                className="flex items-center gap-[10px] p-[10px] mb-[5px]"
+                className="flex items-center gap-[10px] p-10px mb-[5px]"
               >
                 <span className="font-raleway min-w-[30px] font-medium text-[32px] leading-[25px] text-primary-red">
                   {i + 1}.
@@ -82,7 +82,7 @@ export const MActivities = () => {
             {MOCK2.map((e, i) => (
               <li
                 key={e.id}
-                className="flex items-center gap-[10px] p-[10px] mb-[5px]"
+                className="flex items-center gap-[10px] p-10px mb-[5px]"
               >
                 <span className="font-raleway min-w-[30px] font-medium text-[32px] leading-[25px] text-primary-red">
                   {i + 1}.

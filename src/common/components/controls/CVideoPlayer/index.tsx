@@ -85,11 +85,11 @@ export const CVideoPlayer: React.FC<ICVideoPlayerProps> = ({ src }) => {
         variants={variants}
         initial="initial"
         whileHover="animate"
-        className="control-wrapper hidden lg:block absolute inset-0 mx-[16px] my-[12px] overflow-hidden"
+        className="control-wrapper hidden lg:block absolute inset-0 mx-4 my-3 overflow-hidden"
       >
         <motion.div
           variants={childrenVariants}
-          className="control-area absolute bottom-0 w-full p-[10px] rounded-10px hover:bg-neutral-400 hover:bg-opacity-30"
+          className="control-area absolute bottom-0 w-full p-10px rounded-10px hover:bg-neutral-400 hover:bg-opacity-30"
         >
           <CVideoProgress
             ref={progressRef}

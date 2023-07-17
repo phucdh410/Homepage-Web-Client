@@ -10,7 +10,7 @@ export const MCommonData = () => {
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
           <CAnimatedNumber to={1976} />
         </h3>
-        <p className="text-[16px] leading-[20px] text-sub font-montserrat">
+        <p className="text-base leading-[20px] text-sub font-montserrat">
           Thành lập
         </p>
       </div>
@@ -18,7 +18,7 @@ export const MCommonData = () => {
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
           <CAnimatedNumber to={3} />
         </h3>
-        <p className="text-[16px] leading-[20px] text-sub font-montserrat">
+        <p className="text-base leading-[20px] text-sub font-montserrat">
           Trường thành viên
         </p>
       </div>
@@ -26,7 +26,7 @@ export const MCommonData = () => {
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
           <CAnimatedNumber to={15} />
         </h3>
-        <p className="text-[16px] leading-[20px] text-sub font-montserrat">
+        <p className="text-base leading-[20px] text-sub font-montserrat">
           Phòng
         </p>
       </div>
@@ -34,7 +34,7 @@ export const MCommonData = () => {
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
           <CAnimatedNumber to={1} />
         </h3>
-        <p className="text-[16px] leading-[20px] text-sub font-montserrat">
+        <p className="text-base leading-[20px] text-sub font-montserrat">
           Phân hiệu
         </p>
       </div>
@@ -42,7 +42,7 @@ export const MCommonData = () => {
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
           <CAnimatedNumber to={16} />
         </h3>
-        <p className="text-[16px] leading-[20px] text-sub font-montserrat">
+        <p className="text-base leading-[20px] text-sub font-montserrat">
           Khoa
         </p>
       </div>
@@ -50,7 +50,7 @@ export const MCommonData = () => {
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
           <CAnimatedNumber to={30747} />
         </h3>
-        <p className="text-[16px] leading-[20px] text-sub font-montserrat">
+        <p className="text-base leading-[20px] text-sub font-montserrat">
           Sinh viên
         </p>
       </div>

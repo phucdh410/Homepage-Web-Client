@@ -100,7 +100,7 @@ export const CFooter = () => {
   return (
     <footer className="mt-5">
       <div className="container">
-        <div className="bg-white rounded-t-[20px] p-[30px] pb-3 flex flex-col md:flex-row shadow-custom">
+        <div className="bg-white rounded-t-[20px] p-30px pb-3 flex flex-col md:flex-row shadow-custom">
           <div className="mb-5 md:mb-0 md:mr-[50px] basis-1/3">
             <div className="flex items-center gap-[15px] mb-3">
               <img src="/images/logo.png" alt="" />
@@ -127,7 +127,7 @@ export const CFooter = () => {
               ))}
             </ul>
 
-            <p className="text-sub text-sm mb-[10px]">
+            <p className="text-sub text-sm mb-10px">
               Điện thoại: (+84) - (28) - 38352020
             </p>
             <p className="text-sub text-sm mb-3">
@@ -150,12 +150,12 @@ export const CFooter = () => {
           <div className="md:basis-2/3 grid grid-cols-1 md:grid-cols-5 gap-5">
             {MOCK.map((e) => (
               <div key={e.id}>
-                <h6 className="text-primary font-serif4 font-bold h-6 md:h-[44px] mb-[10px]">
+                <h6 className="text-primary font-serif4 font-bold h-6 md:h-[44px] mb-10px">
                   {e.name}
                 </h6>
                 <ul>
                   {e.list.map((el, i) => (
-                    <li key={i} className="text-sm text-sub mb-[10px]">
+                    <li key={i} className="text-sm text-sub mb-10px">
                       {el.name}
                     </li>
                   ))}

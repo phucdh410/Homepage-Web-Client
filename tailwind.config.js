@@ -56,6 +56,7 @@ module.exports = {
         container: "1366px",
       },
       padding: {
+        "10px": "10px",
         "30px": "30px",
         "50px": "50px",
         "60px": "60px",
@@ -64,6 +65,7 @@ module.exports = {
         1: 1,
       },
       margin: {
+        "10px": "10px",
         "30px": "30px",
         admissions: "1366/512",
         "training-sub": "408/285",

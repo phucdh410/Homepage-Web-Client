@@ -25,7 +25,7 @@ export const MNewsAndEvents = () => {
     <section className="mt-16">
       <div className="container">
         <div className="max-w-md m-auto mb-10 px-5">
-          <h2 className="text-center mb-[10px] uppercase text-primary text-clamp-home-section-title leading-[48px] font-extrabold font-serif4 ">
+          <h2 className="text-center mb-10px uppercase text-primary text-clamp-home-section-title leading-[48px] font-extrabold font-serif4 ">
             tin tức - sự kiện
           </h2>
           <p className="text-center text-sub">
@@ -126,7 +126,7 @@ export const MNewsAndEvents = () => {
             alt=""
             className="mt-20 aspect-admissions w-full h-full"
           />
-          <div className="absolute bottom-0 w-full text-center mb-[30px]">
+          <div className="absolute bottom-0 w-full text-center mb-30px">
             <button className="text-primary font-bold text-xl leading-6 px-6 py-[13px] rounded-[15px] bg-white shadow-[15px_15px_60px_rgba(19,70,131,0.15)]">
               Cổng thông tin tuyển sinh
             </button>

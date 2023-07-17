@@ -219,9 +219,9 @@ export const MBannerSlider = () => {
               </li>
             ))}
           </ul>
-          <div className="custom-divider mt-[10px] h-[1px] bg-[linear-gradient(90deg,_#FFF_0%,_rgba(255,255,255,0.00)_100%)]"></div>
+          <div className="custom-divider mt-10px h-[1px] bg-[linear-gradient(90deg,_#FFF_0%,_rgba(255,255,255,0.00)_100%)]"></div>
         </div>
-        <h2 className="uppercase mt-[50px] mb-[10px] font-bold text-[40px] font-serif4">
+        <h2 className="uppercase mt-[50px] mb-10px font-bold text-[40px] font-serif4">
           khoa {activeData.name}
         </h2>
         <p className="mb-[50px]">{activeData.description}</p>
@@ -246,7 +246,7 @@ export const MBannerSlider = () => {
               <img
                 src={e.logo}
                 alt=""
-                className="m-auto mb-[10px] aspect-square h-[125px] w-[125px]"
+                className="m-auto mb-10px aspect-square h-[125px] w-[125px]"
               />
               <p className="font-serif4">Khoa</p>
               <p className="font-serif4 pb-5">{e.name}</p>

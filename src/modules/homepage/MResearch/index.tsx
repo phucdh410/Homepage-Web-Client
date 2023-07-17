@@ -70,7 +70,7 @@ export const MResearch = () => {
   return (
     <section className="mt-16">
       <div className="max-w-2xl m-auto mb-10 px-5">
-        <h2 className="text-center mb-[10px] uppercase text-primary text-clamp-home-section-title leading-[48px] font-extrabold font-serif4 ">
+        <h2 className="text-center mb-10px uppercase text-primary text-clamp-home-section-title leading-[48px] font-extrabold font-serif4 ">
           nghiên cứu
         </h2>
         <p className="text-center text-sub">
@@ -103,10 +103,10 @@ export const MResearch = () => {
                 />
               </div>
               <div>
-                <p className="uppercase text-sub2 mb-1 md:mb-[10px] text-sm">
+                <p className="uppercase text-sub2 mb-1 md:mb-10px text-sm">
                   công bố quốc tế
                 </p>
-                <div className="h-[5px] bg-[#124874] w-[50px] mb-1 md:mb-[10px]"></div>
+                <div className="h-[5px] bg-[#124874] w-[50px] mb-1 md:mb-10px"></div>
                 <h3 className="leading-8 md:leading-10 line-clamp-2 md:line-clamp-3 text-[clamp(1.375rem,_1.1858rem_+_0.8073vw,_1.875rem)] font-serif4 mb-2 md:mb-5 font-bold text-primary">
                   Ký kết hợp đồng đào tạo giáo viên theo nghị định 116/202...
                 </h3>
@@ -127,7 +127,7 @@ export const MResearch = () => {
           <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
             1379
           </h3>
-          <p className="text-[16px] leading-[20px] text-sub font-montserrat">
+          <p className="text-base leading-[20px] text-sub font-montserrat">
             Bài báo
           </p>
         </div>
@@ -135,7 +135,7 @@ export const MResearch = () => {
           <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
             10
           </h3>
-          <p className="text-[16px] leading-[20px] text-sub font-montserrat">
+          <p className="text-base leading-[20px] text-sub font-montserrat">
             Công bố quốc tế
           </p>
         </div>
@@ -143,7 +143,7 @@ export const MResearch = () => {
           <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
             175
           </h3>
-          <p className="text-[16px] leading-[20px] text-sub font-montserrat">
+          <p className="text-base leading-[20px] text-sub font-montserrat">
             Nhà khoa học nước ngoài công tác
           </p>
         </div>

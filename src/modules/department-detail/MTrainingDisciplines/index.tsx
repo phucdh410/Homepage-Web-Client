@@ -11,7 +11,7 @@ import "./styles.scss";
 export const MTrainingDisciplines = () => {
   return (
     <section className="mt-16 training-disciplines">
-      <div className="bg-[url('/images/cacnganhdaotao.png')] pt-[50px] pb-[40px] px-8">
+      <div className="bg-[url('/images/cacnganhdaotao.png')] pt-50px pb-10 px-8">
         <h3 className="uppercase font-serif4 font-bold text-clamp-section-title text-center mb-5">
           các ngành đào tạo
         </h3>

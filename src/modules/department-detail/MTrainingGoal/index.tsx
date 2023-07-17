@@ -12,7 +12,7 @@ export const MTrainingGoal = () => {
       <div className="flex gap-11 ">
         <div className="flex-1 p-5 flex gap-30px">
           <div className="flex flex-col">
-            <h4 className="font-serif4 font-bold uppercase text-primary-red text-[56px] mb-[30px]">
+            <h4 className="font-serif4 font-bold uppercase text-primary-red text-[56px] mb-30px">
               01
             </h4>
             <div className="bg-primary w-full flex-1"></div>
@@ -28,7 +28,7 @@ export const MTrainingGoal = () => {
         </div>
         <div className="flex-1 p-5 flex gap-30px">
           <div className="flex flex-col">
-            <h4 className="font-serif4 font-bold uppercase text-primary-red text-[56px] mb-[30px]">
+            <h4 className="font-serif4 font-bold uppercase text-primary-red text-[56px] mb-30px">
               02
             </h4>
             <div className="bg-primary w-full flex-1"></div>

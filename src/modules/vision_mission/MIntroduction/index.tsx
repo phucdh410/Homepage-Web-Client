@@ -2,7 +2,7 @@ export const MIntroduction = () => {
   return (
     <div className="px-30px relative sm:flex h-full">
       <div className="bg-bg py-6 px-30px w-auto max-w-[650px]  lg:mt-[-103px] h-full">
-        <div className="text-sub text-xs mb-[10px]">Giới thiệu</div>
+        <div className="text-sub text-xs mb-10px">Giới thiệu</div>
         <div className="text-primary font-bold text-40px font-serif4">
           Tầm nhìn, Sứ mạng, &{" "}
           <span className="lg:whitespace-nowrap"> Giá trị cốt lõi</span>

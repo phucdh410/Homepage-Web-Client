@@ -45,7 +45,7 @@ export const CListMenu = forwardRef<ICListMenuRef, ICListMenuProps>(
           currentId === data?.id ? "block" : "hidden"
         }`}
       >
-        <div className="flex text-primary p-[30px] mb-2">
+        <div className="flex text-primary p-30px mb-2">
           <div className="max-w-[253px] mr-10 select-none">
             <h2 className="font-bold font-serif4 text-[40px]">{data.name}</h2>
             <p className="font-serif4">{data.description}</p>

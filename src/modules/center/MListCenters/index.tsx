@@ -23,7 +23,7 @@ export const MListCenters = () => {
         }}
       >
         <div className="ml-10 max-w-xl">
-          <h3 className="uppercase font-serif4 text-clamp-section-title font-bold mb-[10px]">
+          <h3 className="uppercase font-serif4 text-clamp-section-title font-bold mb-10px">
             trung tâm tiếng Pháp châu Á - Thái Bình Dương
           </h3>
           <p className="mb-[50px] tracking-[0.64px]">
@@ -31,7 +31,7 @@ export const MListCenters = () => {
             viverra, risus non lobortis feugiat, eros nisi gravida libero, a
             laoreet velit enim a diam. Vestibulum fermentum
           </p>
-          <button className="rounded-[10px] backdrop-blur-[7.5px] bg-[rgba(255,_255,_255,_0.40)] py-4 px-20">
+          <button className="rounded-10px backdrop-blur-[7.5px] bg-[rgba(255,_255,_255,_0.40)] py-4 px-20">
             <Link href="centers/123">Xem chi tiết</Link>
           </button>
         </div>
@@ -40,7 +40,7 @@ export const MListCenters = () => {
             {MOCK.map((e) => (
               <li
                 key={e.id}
-                className="mb-[15px] last:mb-0 max-w-[277px] p-[10px] uppercase text-right font-serif4 font-bold text-xl"
+                className="mb-[15px] last:mb-0 max-w-[277px] p-10px uppercase text-right font-serif4 font-bold text-xl"
               >
                 {e.name}
               </li>

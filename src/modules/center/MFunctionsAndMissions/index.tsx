@@ -11,9 +11,9 @@ export const MFunctionsAndMissions = () => {
           laoreet velit enim a diam. Vestibulum fermentum, sapien vel pulvinar
           tempor
         </p>
-        <div className="px-[30px] flex gap-10 pb-16">
+        <div className="px-30px flex gap-10 pb-16">
           <div className="flex-1">
-            <h5 className="font-serif4 font-bold text-[25px] mb-[10px] text-primary">
+            <h5 className="font-serif4 font-bold text-[25px] mb-10px text-primary">
               Chức năng
             </h5>
             <p className="font-raleway text-sub">
@@ -27,7 +27,7 @@ export const MFunctionsAndMissions = () => {
             </p>
           </div>
           <div className="flex-1">
-            <h5 className="font-serif4 font-bold text-[25px] mb-[10px] text-primary">
+            <h5 className="font-serif4 font-bold text-[25px] mb-10px text-primary">
               Nhiệm vụ
             </h5>
             <p className="font-raleway text-sub">

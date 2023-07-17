@@ -76,7 +76,7 @@ export const MTraining = () => {
     <section className="mt-16">
       <div className="container">
         <div className="max-w-2xl m-auto mb-10 px-5">
-          <h2 className="text-center mb-[10px] uppercase text-primary text-clamp-home-section-title leading-[48px] font-extrabold font-serif4 ">
+          <h2 className="text-center mb-10px uppercase text-primary text-clamp-home-section-title leading-[48px] font-extrabold font-serif4 ">
             đào tạo
           </h2>
           <p className="text-center text-sub">
@@ -95,7 +95,7 @@ export const MTraining = () => {
                 <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
                   <CAnimatedNumber to={e.value} />
                 </h3>
-                <p className="text-[16px] leading-[20px] text-sub font-montserrat">
+                <p className="text-base leading-[20px] text-sub font-montserrat">
                   {e.name}
                 </p>
               </div>
@@ -118,7 +118,7 @@ export const MTraining = () => {
                 className="col-span-1 md:col-span-3 rounded-10px grid grid-cols-1 md:grid-cols-2"
               >
                 <div className="p-3 md:p-5 bg-white rounded-t-inherit md:rounded-l-inherit relative">
-                  <p className="uppercase text-sm text-sub2 mb-[10px]">
+                  <p className="uppercase text-sm text-sub2 mb-10px">
                     Đại học chính quy
                   </p>
                   <h4 className="text-primary font-serif4 text-xl mb-2 md:mb-5 line-clamp-3 font-bold">
@@ -153,7 +153,7 @@ export const MTraining = () => {
                 className="bg-white rounded-10px"
               >
                 <div className="p-3 md:p-5">
-                  <p className="uppercase text-sm text-sub2 mb-[10px]">
+                  <p className="uppercase text-sm text-sub2 mb-10px">
                     Đại học chính quy
                   </p>
                   <h4 className="text-primary font-serif4 text-xl line-clamp-2 lg:line-clamp-3 font-bold">
