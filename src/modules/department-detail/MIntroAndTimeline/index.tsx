@@ -17,7 +17,7 @@ export const MIntroAndTimeline = () => {
       <h3 className="uppercase text-primary text-center font-serif4 text-clamp-section-title font-bold mb-10px">
         khoa công nghệ thông tin
       </h3>
-      <p className="text-center text-primary-red font-serif4 font-bold text-[25px] mb-24">
+      <p className="text-center text-primary-red font-serif4 font-bold text-[25px] mb-16 md:mb-24">
         Năng động - Hiện đại - Sáng tạo
       </p>
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import type { Swiper as SwiperType } from "swiper";
+import type { Swiper as SwiperType, SwiperOptions } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const MOCK1 = [
@@ -12,6 +12,12 @@ const MOCK1 = [
   { id: "6", period: "2016 - 2020", count: 735 },
   { id: "7", period: "2017 - 2021", count: 522 },
 ];
+
+const breakpoints: SwiperOptions["breakpoints"] = {
+  0: { slidesPerView: 3 },
+  768: { slidesPerView: 3 },
+  1280: { slidesPerView: 5 },
+};
 
 export const TuyenSinhDaiHoc = () => {
   //#region Data
@@ -38,6 +44,7 @@ export const TuyenSinhDaiHoc = () => {
         centeredSlides
         grabCursor
         slidesPerView={5}
+        breakpoints={breakpoints}
       >
         {MOCK1.map((e) => (
           <SwiperSlide key={e.id} className="text-center text-sub2">

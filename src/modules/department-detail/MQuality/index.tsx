@@ -20,9 +20,9 @@ export const MQuality = () => {
           tempor, ligula justo vestibulum lectus, in iaculis elit leo sit amet
           eros.
         </p>
-        <div className="flex gap-30px pb-16">
+        <div className="flex flex-col md:flex-row gap-30px pb-16">
           <TuyenSinhDaiHoc />
-          <div className="flex-shrink-0 w-[1px] bg-[#D9D9D9] min-h-full"></div>
+          <div className="flex-shrink-0 bg-[#D9D9D9] w-full min-h-[1px] md:w-[1px] md:min-h-full"></div>
           <TuyenSinhSauDaiHoc />
         </div>
       </div>
