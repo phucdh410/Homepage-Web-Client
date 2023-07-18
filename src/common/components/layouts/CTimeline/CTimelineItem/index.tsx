@@ -19,7 +19,7 @@ export const CTimelineItem = () => {
       </div>
       <div className="col-span-1 dot flex justify-center z-10">
         <div className="bg-primary flex justify-center items-center">
-          <span className="bg-white content-[''] w-4 h-4 rounded-full z-20 block"></span>
+          <span className="bg-white content-'' w-4 h-4 rounded-full z-20 block"></span>
         </div>
       </div>
       <div className="col-span-5 description flex">

@@ -89,6 +89,9 @@ module.exports = {
       gap: {
         "30px": "30px",
       },
+      content: {
+        "''": "''",
+      },
     },
   },
   plugins: [],

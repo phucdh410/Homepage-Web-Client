@@ -33,7 +33,7 @@ export const CMobileData = ({ data }: ICMobileDataProps) => {
         {data.map((e, i) => (
           <li
             key={e.id}
-            className="flex relative odd:flex-row-reverse before:contents-[''] before:flex-1 before:mx-3 before:py-2 "
+            className="flex relative odd:flex-row-reverse before:content-'' before:flex-1 before:mx-3 before:py-2 "
           >
             <div className="flex flex-col grow-0 shrink items-center">
               <span className="rounded-full bg-slate-500 p-1 my-2"></span>

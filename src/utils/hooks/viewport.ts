@@ -6,7 +6,6 @@ export const useMediaQuery = () => {
   //#endregion
 
   //#region Event
-
   const updateWidth = useCallback(() => {
     setCurrentWidth(window.screen.width);
   }, []);
@@ -20,7 +19,6 @@ export const useMediaQuery = () => {
       window.removeEventListener("resize", updateWidth);
     };
   }, [updateWidth]);
-
   //#endregion
 
   return { currentWidth };

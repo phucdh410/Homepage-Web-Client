@@ -4,7 +4,7 @@
 
 @layer components {
   .before-timenode {
-    @apply before:absolute before:bg-white before:h-1/2 before:w-1/2 before:rounded-inherit before:top-1/2 before:left-1/2 before:-translate-x-1/2  before:-translate-y-1/2 before:content-[''];
+    @apply before:absolute before:bg-white before:h-1/2 before:w-1/2 before:rounded-inherit before:top-1/2 before:left-1/2 before:-translate-x-1/2  before:-translate-y-1/2 before:content-'';
   }
 }
 

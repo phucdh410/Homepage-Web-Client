@@ -95,7 +95,7 @@ export const MTimelineTag = () => {
               className="flex-1"
             >
               <div className="flex justify-end gap-20 group-even:flex-row-reverse">
-                <div className="rounded-full relative before:content-[''] before:shadow-[-7px_-7px_12px_0px_#FFF,_7px_7px_20px_0px_#E0E0E0] before:p-[100px] before:bg-white before:absolute before:rounded-full before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2">
+                <div className="rounded-full relative before:content-'' before:shadow-[-7px_-7px_12px_0px_#FFF,_7px_7px_20px_0px_#E0E0E0] before:p-[100px] before:bg-white before:absolute before:rounded-full before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2">
                   <img
                     src={e.avatar}
                     alt=""
