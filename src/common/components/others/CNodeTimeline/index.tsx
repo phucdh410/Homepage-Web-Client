@@ -1,9 +1,36 @@
+"use client";
+
+import { useMediaQuery } from "@/utils/hooks";
+
 import { ICNodeTimelineProps } from "./types";
 
 import "./styles.scss";
 
 export const CNodeTimeline: React.FC<ICNodeTimelineProps> = ({ timelines }) => {
-  return (
+  //#region Data
+  const { currentWidth } = useMediaQuery();
+  //#endregion
+
+  //#region Render
+  return currentWidth < 768 ? (
+    <div className="mx-10 mb-16">
+      <ul>
+        {timelines.map((e) => (
+          <li
+            key={e.id}
+            className="border-l-[3px] border-[#CF373D] border-solid pl-8 pb-10 last:pb-0 relative before:content-'' before:h-5 before:w-5 before:rounded-full before:bg-white before:border-solid before:border-[#124874] before:border-[5px] before:absolute before:left-[-11.5px]  "
+          >
+            <h6 className="text-primary font-bold text-lg font-raleway">
+              {e.time}
+            </h6>
+            <p className="text-primary font-semibold uppercase font-serif4">
+              {e.name}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ) : (
     <div className="rounded-10px mb-32 horizontal-timeline relative h-[5px] w-full bg-[linear-gradient(90deg,_rgba(207,_55,_61,_0.00)_0%,_#CF373D_49.94%,_rgba(207,_55,_61,_0.00)_100%)]">
       <div
         className="flex w-full items-center justify-evenly absolute"
@@ -33,4 +60,5 @@ export const CNodeTimeline: React.FC<ICNodeTimelineProps> = ({ timelines }) => {
       </div>
     </div>
   );
+  //#endregion
 };

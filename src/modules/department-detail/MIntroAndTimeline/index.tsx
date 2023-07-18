@@ -8,7 +8,7 @@ const MOCK_TIMELINE = [
 
 export const MIntroAndTimeline = () => {
   return (
-    <div className="mt-48 department-detail">
+    <div className="mt-28 md:-mt-36 lg:mt-48 department-detail">
       <img
         src="/images/khoa/cntt.png"
         alt=""
