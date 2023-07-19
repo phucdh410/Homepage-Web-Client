@@ -170,14 +170,18 @@ export const CHeader = () => {
         <div
           className="flex px-[2rem] py-2 items-center gap-5"
           style={{
-            background:
-              "linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.2) 53.37%, rgba(255, 255, 255, 0.06) 100%)",
+            background: "white",
             boxShadow: "5px 5px 30px rgba(0, 0, 0, 0.2)",
-            backdropFilter: "blur(10px)",
           }}
+          // style={{
+          //   background:
+          //     "linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.2) 53.37%, rgba(255, 255, 255, 0.06) 100%)",
+          //   boxShadow: "5px 5px 30px rgba(0, 0, 0, 0.2)",
+          //   backdropFilter: "blur(10px)",
+          // }}
         >
           <img src="/images/logo.png" alt="" />
-          <ul className="flex items-center gap-6 text-white font-serif4">
+          <ul className="flex items-center gap-6 text-primary font-serif4">
             {MOCK1.map((e) => (
               <li
                 key={e.id}

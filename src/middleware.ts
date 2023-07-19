@@ -19,11 +19,16 @@ export function middleware(request: NextRequest) {
   }
 }
 
+// export const config = {
+//   matcher: [
+//     // Skip all internal paths (_next)
+//     "/((?!_next|images|icons|videos|favicon.ico).*)",
+//     // Optional: only run on root (/) URL
+//     // '/'
+//   ],
+// };
 export const config = {
-  matcher: [
-    // Skip all internal paths (_next)
-    "/((?!_next|images|icons|videos|favicon.ico).*)",
-    // Optional: only run on root (/) URL
-    // '/'
-  ],
+  // Skip all paths that should not be internationalized. This example skips the
+  // folders "api", "_next" and all files with an extension (e.g. favicon.ico)
+  matcher: ["/((?!api|_next|.*\\..*).*)"],
 };

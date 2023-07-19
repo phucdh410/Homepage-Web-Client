@@ -3,9 +3,8 @@
 import { EffectCoverflow } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import "swiper/css/effect-coverflow";
-
 import "swiper/css";
+import "swiper/css/effect-coverflow";
 
 const MOCK = [
   {
