@@ -9,7 +9,7 @@ export const MDeanCommittee = () => {
         risus non lobortis feugigat, eros nisi gravida libero, a laoreet velit
         enim a diam. Vestibulum fermentum, sapien vel pulvinar tempor
       </p>
-      <div className="grid grid-cols-2 grid-rows-2 gap-5">
+      <div className="grid md:grid-cols-2 md:grid-rows-2 gap-5">
         <div className="row-span-2 relative">
           <img
             src="/images/chunhiemkhoa1.png"

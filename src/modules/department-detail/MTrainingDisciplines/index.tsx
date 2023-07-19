@@ -22,7 +22,7 @@ export const MTrainingDisciplines = () => {
         </p>
         <Swiper modules={[Navigation]} navigation slidesPerView={1} loop>
           <SwiperSlide>
-            <h4 className=" font-bold text-3xl font-serif4 text-center mb-9">
+            <h4 className="font-bold text-3xl font-serif4 text-center mb-9">
               Đại học
             </h4>
             <div className="flex justify-evenly">

@@ -55,7 +55,7 @@ export const MActivities = () => {
         risus non lobortis feugigat, eros nisi gravida libero, a laoreet velit
         enim a diam. Vestibulum fermentum, sapien vel pulvinar tempor
       </p>
-      <div className="px-5 flex gap-10">
+      <div className="px-5 flex flex-col md:flex-row gap-10">
         <div className="flex-1">
           <h6 className="text-white font-bold font-serif4 px-5 py-3 bg-primary rounded-[15px]">
             Nghiên cứu khoa học
