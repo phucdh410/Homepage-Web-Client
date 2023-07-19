@@ -11,6 +11,7 @@ module.exports = {
     container: {
       center: true,
       screens: {
+        xs: "400px",
         sm: "640px",
         md: "768px",
         lg: "1024px",
@@ -92,6 +93,14 @@ module.exports = {
       content: {
         "''": "''",
       },
+    },
+    screens: {
+      xs: "400px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1366px",
     },
   },
   plugins: [],

@@ -27,7 +27,7 @@ const ANIMATION_VARIANTS: Variants = {
 
 export const TypeMobile = ({ data }: ITimelineDataProps) => {
   return (
-    <div className="relative m-auto py-10 px-5 mb-20">
+    <div className="relative m-auto py-10 px-5 xs:px-10 mb-20">
       <ul>
         {data.map((e, i) => (
           <li
