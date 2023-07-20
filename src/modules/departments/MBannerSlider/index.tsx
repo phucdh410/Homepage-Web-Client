@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import type { Swiper as SwiperType } from "swiper";
+import type { Swiper as SwiperType, SwiperOptions } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -190,6 +190,13 @@ const TAGS = [
   { id: "4", name: "Đặc thù" },
 ];
 
+const BREAKPOINTS: SwiperOptions["breakpoints"] = {
+  375: { slidesPerView: 2, spaceBetween: 0 },
+  768: { slidesPerView: 4, spaceBetween: 10 },
+  1024: { slidesPerView: 6, spaceBetween: 15 },
+  1366: { slidesPerView: 8, spaceBetween: 20 },
+};
+
 export const MBannerSlider = () => {
   //#region Data
   const [activeData, setActiveData] = useState(MOCK[0]);
@@ -212,7 +219,7 @@ export const MBannerSlider = () => {
     >
       <div className="container px-[2rem]">
         <div className="w-max">
-          <ul className="flex gap-10 items-center">
+          <ul className="flex flex-col md:flex-row gap-5 2xl:gap-10 items-center">
             {TAGS.map((e) => (
               <li key={e.id}>
                 <button>{e.name}</button>
@@ -221,7 +228,7 @@ export const MBannerSlider = () => {
           </ul>
           <div className="custom-divider mt-10px h-[1px] bg-[linear-gradient(90deg,_#FFF_0%,_rgba(255,255,255,0.00)_100%)]"></div>
         </div>
-        <h2 className="uppercase mt-[50px] mb-10px font-bold text-[40px] font-serif4">
+        <h2 className="uppercase mt-[50px] mb-10px font-bold text-2xl 2xl:text-[40px] font-serif4">
           khoa {activeData.name}
         </h2>
         <p className="mb-[50px]">{activeData.description}</p>
@@ -231,12 +238,13 @@ export const MBannerSlider = () => {
       </div>
       <div className=" bg-[linear-gradient(90deg,_#000_0%,_rgba(0,_0,_0,_0.00)_20.05%,_rgba(0,_0,_0,_0.00)_80.99%,_#000_100%)]">
         <Swiper
+          spaceBetween={20}
           slidesPerView={8}
           loop={MOCK.length >= 8 * 2 ? true : false}
-          spaceBetween={20}
           grabCursor
           centeredSlides
           onActiveIndexChange={onSlideActiveChange}
+          breakpoints={BREAKPOINTS}
         >
           {MOCK.map((e) => (
             <SwiperSlide
