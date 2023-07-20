@@ -101,9 +101,9 @@ export const CFooter = () => {
     <footer className="mt-5">
       <div className="container">
         <div className="bg-white rounded-t-[20px] p-30px pb-3 flex flex-col md:flex-row shadow-custom">
-          <div className="mb-5 md:mb-0 md:mr-[50px] basis-1/3">
-            <div className="flex items-center gap-[15px] mb-3">
-              <img src="/images/logo.png" alt="" />
+          <div className="mb-5 md:mb-0 md:mr-5 xl:mr-[50px] basis-1/3 md:basis-1/2 lg:basis-1/3">
+            <div className="flex items-center gap-[15px] md:gap-2 lg:gap-[15px] mb-3">
+              <img src="/images/logo.png" alt="" className="" />
               <h6 className="uppercase text-primary font-serif4 font-bold">
                 trường đại học sư phạm <br /> thành phố hồ chí minh
               </h6>
@@ -147,7 +147,7 @@ export const CFooter = () => {
               ))}
             </ul>
           </div>
-          <div className="md:basis-2/3 grid grid-cols-1 md:grid-cols-5 gap-5">
+          <div className="md:basis-1/2 lg:basis-2/3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 md:gap-3 lg:gap-2 xl:gap-5">
             {MOCK.map((e) => (
               <div key={e.id}>
                 <h6 className="text-primary font-serif4 font-bold h-6 md:h-[44px] mb-10px">
@@ -155,7 +155,7 @@ export const CFooter = () => {
                 </h6>
                 <ul>
                   {e.list.map((el, i) => (
-                    <li key={i} className="text-sm text-sub mb-10px">
+                    <li key={i} className="text-sm text-sub mb-10px last:mb-0">
                       {el.name}
                     </li>
                   ))}
