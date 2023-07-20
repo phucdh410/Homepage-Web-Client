@@ -31,7 +31,7 @@ export const TypeTablet = ({ data }: ITimelineDataProps) => {
       {data.map((e, i) => (
         <div
           key={e.id}
-          className="w-full mb-32 flex gap-30px group even:flex-row-reverse"
+          className="w-full mb-32 flex gap-5 group even:flex-row-reverse"
         >
           <motion.div
             variants={ANIMATION_VARIANTS}
@@ -40,15 +40,15 @@ export const TypeTablet = ({ data }: ITimelineDataProps) => {
             viewport={{ once: true }}
             className="flex-1"
           >
-            <div className="flex justify-end gap-20 group-even:flex-row-reverse">
-              <div className="rounded-full relative before:content-'' before:shadow-[-7px_-7px_12px_0px_#FFF,_7px_7px_20px_0px_#E0E0E0] before:p-[100px] before:bg-white before:absolute before:rounded-full before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2">
+            <div className="flex justify-end gap-5 group-even:flex-row-reverse">
+              <div className="rounded-full relative before:content-'' before:shadow-[-7px_-7px_12px_0px_#FFF,_7px_7px_20px_0px_#E0E0E0] before:p-[60px] before:bg-white before:absolute before:rounded-full before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2">
                 <img
                   src={e.avatar}
                   alt=""
-                  className="rounded-full relative p-5 z-1"
+                  className="rounded-full p-6 relative z-1"
                 />
               </div>
-              <h6 className="bg-red h-fit inline-block rounded-30px text-white px-30px py-4 font-semibold font-raleway tracking-[0.48px] ">
+              <h6 className="bg-red h-fit inline-block rounded-30px text-white whitespace-nowrap px-4 py-4 font-semibold font-raleway tracking-[0.48px] ">
                 {e.time}
               </h6>
             </div>
