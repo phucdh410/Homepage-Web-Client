@@ -47,7 +47,7 @@ export default async function Home({ params }: IHomePageProps) {
         className="w-full h-auto object-cover mt-[74px] xl:mt-0"
       />
 
-      <MCommonData />
+      <MCommonData params={params} />
 
       <MNewsAndEvents />
 

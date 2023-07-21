@@ -1,3 +1,5 @@
 {
-    "test": "Kiểm tra thử"
+  "navigation": {
+    "home": "Trang chủ"
+  }
 }

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 import { useRef, useState } from "react";
 
-import { CLanguageIcon } from "@/common/components/icons";
+import { CSwitchLanguageButton } from "@/common/components/controls";
 
 import { ICListMenuRef } from "./CListMenu/types";
 import { CListMenu } from "./CListMenu";
@@ -163,9 +163,7 @@ export const CHeader = () => {
               </li>
             ))}
           </ul>
-          <button>
-            <CLanguageIcon />
-          </button>
+          <CSwitchLanguageButton />
         </div>
         <div
           className="flex px-[2rem] py-2 items-center gap-5"
