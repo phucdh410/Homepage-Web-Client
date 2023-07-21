@@ -1,32 +1,16 @@
-import { NextRequest, NextResponse } from "next/server";
+import createMiddleware from "next-intl/middleware";
 
 import { defaultLocale, locales } from "./app/i18n";
 
-export function middleware(request: NextRequest) {
-  // Check if there is any supported locale in the pathname
-  const pathname = request.nextUrl.pathname;
-  const pathnameIsMissingLocale = locales.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
-  );
+export default createMiddleware({
+  // A list of all locales that are supported
+  locales: locales,
 
-  // Redirect if there is no locale
-  if (pathnameIsMissingLocale) {
-    const locale = defaultLocale;
+  // If this locale is matched, pathnames work without a prefix (e.g. `/about`)
+  defaultLocale: defaultLocale,
+  localeDetection: false,
+});
 
-    return NextResponse.redirect(
-      new URL(`/${locale}/${pathname}`, request.url)
-    );
-  }
-}
-
-// export const config = {
-//   matcher: [
-//     // Skip all internal paths (_next)
-//     "/((?!_next|images|icons|videos|favicon.ico).*)",
-//     // Optional: only run on root (/) URL
-//     // '/'
-//   ],
-// };
 export const config = {
   // Skip all paths that should not be internationalized. This example skips the
   // folders "api", "_next" and all files with an extension (e.g. favicon.ico)

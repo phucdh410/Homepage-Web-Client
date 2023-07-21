@@ -1,5 +1,14 @@
 {
-  "navigation": {
-    "home": "Trang chủ"
+  "pages": {
+    "home": {
+      "common-data": {
+        "thanhlap": "Thành lập",
+        "truongthanhvien": "Trường thành viên",
+        "phong": "Phòng",
+        "phanhieu": "Phân hiệu",
+        "khoa": "Khoa",
+        "sinhvien": "Sinh viên"
+      }
+    }
   }
 }

@@ -1,6 +1,7 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
+import { usePathname, useRouter } from "next-intl/client";
 
 import { useCallback, useState } from "react";
 
@@ -17,6 +18,7 @@ export const CSwitchLanguageButton = () => {
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
   //#endregion
@@ -32,11 +34,11 @@ export const CSwitchLanguageButton = () => {
     event.preventDefault();
     event.stopPropagation();
 
-    const locale =
+    const newLocale =
       LANGUAGES.find((e) => e.value === Number(event.currentTarget.value))
         ?.locale || defaultLocale;
 
-    router.push(pathname.replace(/^.{3}/g, locale));
+    router.push(pathname, { locale: newLocale });
 
     close();
   };
@@ -57,7 +59,7 @@ export const CSwitchLanguageButton = () => {
                 <button
                   onClick={onSelectLang}
                   className={`px-3 py-1 w-full hover:bg-[rgb(0_0_0_/_6%)] text-sm ${
-                    pathname.includes("/" + e.locale)
+                    locale === e.locale
                       ? "text-red font-bold"
                       : "text-sub font-medium"
                   }`}

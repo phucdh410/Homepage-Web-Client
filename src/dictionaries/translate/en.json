@@ -1,5 +1,14 @@
 {
-  "navigation": {
-    "home": "Homepage"
+  "pages": {
+    "home": {
+      "common-data": {
+        "thanhlap": "Establish",
+        "truongthanhvien": "Member schools",
+        "phong": "Rooms",
+        "phanhieu": "Branches",
+        "khoa": "Departments",
+        "sinhvien": "Students"
+      }
+    }
   }
 }

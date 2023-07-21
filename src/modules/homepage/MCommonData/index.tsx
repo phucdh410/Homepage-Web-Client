@@ -1,5 +1,6 @@
+import { getTranslator } from "next-intl/server";
+
 import { CAnimatedNumber } from "@/common/components/others";
-import { getDictionary } from "@/dictionaries";
 import { IPageProps } from "@/types/page";
 
 import "./styles.scss";
@@ -8,7 +9,7 @@ interface IMCommonDataProps extends IPageProps {}
 
 export const MCommonData = async ({ params }: IMCommonDataProps) => {
   //#region Data
-  const d = await getDictionary(params.lang);
+  const d = await getTranslator(params.lang, "pages.home.common-data");
   //#endregion
 
   //#region Render
@@ -20,7 +21,7 @@ export const MCommonData = async ({ params }: IMCommonDataProps) => {
           <CAnimatedNumber to={1976} />
         </h3>
         <p className="text-base leading-[20px] text-sub font-montserrat">
-          {d.navigation.home}
+          {d("thanhlap")}
           {/* Thành lập */}
         </p>
       </div>
@@ -29,7 +30,7 @@ export const MCommonData = async ({ params }: IMCommonDataProps) => {
           <CAnimatedNumber to={3} />
         </h3>
         <p className="text-base leading-[20px] text-sub font-montserrat">
-          Trường thành viên
+          {d("truongthanhvien")}
         </p>
       </div>
       <div className="w-[118px] text-center">
@@ -37,7 +38,7 @@ export const MCommonData = async ({ params }: IMCommonDataProps) => {
           <CAnimatedNumber to={15} />
         </h3>
         <p className="text-base leading-[20px] text-sub font-montserrat">
-          Phòng
+          {d("phong")}
         </p>
       </div>
       <div className="w-[118px] text-center">
@@ -45,7 +46,7 @@ export const MCommonData = async ({ params }: IMCommonDataProps) => {
           <CAnimatedNumber to={1} />
         </h3>
         <p className="text-base leading-[20px] text-sub font-montserrat">
-          Phân hiệu
+          {d("phanhieu")}
         </p>
       </div>
       <div className="w-[118px] text-center">
@@ -53,7 +54,7 @@ export const MCommonData = async ({ params }: IMCommonDataProps) => {
           <CAnimatedNumber to={16} />
         </h3>
         <p className="text-base leading-[20px] text-sub font-montserrat">
-          Khoa
+          {d("khoa")}
         </p>
       </div>
       <div className="w-[118px] text-center">
@@ -61,7 +62,7 @@ export const MCommonData = async ({ params }: IMCommonDataProps) => {
           <CAnimatedNumber to={30747} />
         </h3>
         <p className="text-base leading-[20px] text-sub font-montserrat">
-          Sinh viên
+          {d("sinhvien")}
         </p>
       </div>
     </div>

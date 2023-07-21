@@ -1,3 +1,6 @@
+import { notFound } from "next/navigation";
+import { NextIntlClientProvider, useLocale, useMessages } from "next-intl";
+
 import { CScrollTopButton } from "@/common/components/controls";
 import { CMainLayout } from "@/common/components/layouts";
 import { IPageProps } from "@/types/page";
@@ -18,14 +21,23 @@ interface IRootLayoutProps extends IPageProps {
 }
 
 export default function RootLayout({ children, params }: IRootLayoutProps) {
+  const locale = useLocale();
+  const messages = useMessages();
+
+  if (params.lang !== locale) {
+    notFound();
+  }
+
   return (
     <html
-      lang={params.lang}
+      lang={locale}
       className={`${sourceSerif4.variable} ${montserrat.variable}`}
     >
       <body>
-        <CMainLayout>{children}</CMainLayout>
-        <CScrollTopButton />
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <CMainLayout>{children}</CMainLayout>
+          <CScrollTopButton />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

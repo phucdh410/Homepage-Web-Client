@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "next-intl/link";
 
 import { motion, Variants } from "framer-motion";
 
