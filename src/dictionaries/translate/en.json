@@ -1,4 +1,7 @@
 {
+  "global": {
+    "read-more": "Read more"
+  },
   "pages": {
     "home": {
       "common-data": {
@@ -10,5 +13,11 @@
         "sinhvien": "Students"
       }
     }
+  },
+  "footer": {
+    "address": "Address",
+    "base": "Base",
+    "phone": "Phone",
+    "connect-with-us": "Connect with us"
   }
 }

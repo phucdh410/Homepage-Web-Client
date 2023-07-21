@@ -1,10 +1,16 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import { motion } from "framer-motion";
 
 import { CELearningIcon, CSmartLibraryIcon } from "@/common/components/icons";
 
 export const MCooperation = () => {
+  //#region Data
+  const d = useTranslations("global");
+  //#endregion
+
   return (
     <section className="mt-16">
       <div className="container">
@@ -87,7 +93,7 @@ export const MCooperation = () => {
               eiusmod tempor
             </p>
             <button className="text-white bg-primary rounded-[15px] px-5 py-3">
-              Xem thêm
+              {d("read-more")}
             </button>
           </motion.div>
           <motion.div
@@ -107,7 +113,7 @@ export const MCooperation = () => {
               eiusmod tempor
             </p>
             <button className="text-white bg-primary rounded-[15px] px-5 py-3">
-              Xem thêm
+              {d("read-more")}
             </button>
           </motion.div>
         </div>

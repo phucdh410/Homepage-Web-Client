@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Link from "next-intl/link";
 
 import {
@@ -97,6 +98,9 @@ const SOCIAL_BUTTONS = [
 ];
 
 export const CFooter = () => {
+  //#region Data
+  const d = useTranslations("footer");
+  //#endregion
   return (
     <footer className="mt-5">
       <div className="container">
@@ -108,11 +112,11 @@ export const CFooter = () => {
                 trường đại học sư phạm <br /> thành phố hồ chí minh
               </h6>
             </div>
-            <p className="text-sub text-sm">Địa chỉ:</p>
+            <p className="text-sub text-sm">{d("address")}:</p>
             <ul className="list-disc py-2 px-5">
               {ADDRESS_MOCK.map((e, i) => (
                 <li key={e.id}>
-                  {`Cơ sở ${i + 1}: `}
+                  {`${d("base")} ${i + 1}: `}
                   <span>
                     <Link
                       href={`https://google.com/maps/place/${e.name}`}
@@ -128,14 +132,14 @@ export const CFooter = () => {
             </ul>
 
             <p className="text-sub text-sm mb-10px">
-              Điện thoại: (+84) - (28) - 38352020
+              {d("phone")}: (+84) - (28) - 38352020
             </p>
             <p className="text-sub text-sm mb-3">
               Fax: (+84) - (28) - 38398946
             </p>
             <div className="h-[1px] bg-primary opacity-10 min-w-full"></div>
             <h6 className="text-primary font-bold font-serif4 mb-5 pt-3">
-              Kết nối với chúng tôi:
+              {d("connect-with-us")}:
             </h6>
             <ul className="flex items-center gap-30px mb-3">
               {SOCIAL_BUTTONS.map((e) => (

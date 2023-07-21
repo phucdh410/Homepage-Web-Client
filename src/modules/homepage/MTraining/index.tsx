@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Link from "next-intl/link";
 
 import { motion, Variants } from "framer-motion";
@@ -70,6 +71,7 @@ export const MTraining = () => {
   //#region Data
   const { currentWidth } = useMediaQuery();
 
+  const d = useTranslations("global");
   //#endregion
 
   return (
@@ -137,7 +139,7 @@ export const MTraining = () => {
                     href="/"
                     className="hidden md:block text-primary absolute bottom-[calc(0px_+_20px)] right-[calc(0px_+_20px)]"
                   >
-                    Xem thêm
+                    {d("read-more")}
                   </Link>
                 </div>
                 <img

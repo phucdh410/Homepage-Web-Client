@@ -1,4 +1,7 @@
 {
+  "global": {
+    "read-more": "Xem thêm"
+  },
   "pages": {
     "home": {
       "common-data": {
@@ -10,5 +13,11 @@
         "sinhvien": "Sinh viên"
       }
     }
+  },
+  "footer": {
+    "address": "Địa chỉ",
+    "base": "Cơ sở",
+    "phone": "Điện thoại",
+    "connect-with-us": "Kết nối với chúng tôi"
   }
 }
