@@ -9,9 +9,9 @@ export const MIntroduction = () => {
         </div>
         <div className="mt-[26px] text-16px text-sub flex flex-col gap-[10px]">
           <div className="text-red font-bold">Đi đến:</div>
-          <div>Tầm nhìn</div>
-          <div>Sứ mạng</div>
-          <div>Giá trị cốt lõi</div>
+          <a href="#vision">Tầm nhìn</a>
+          <a href="#mission">Sứ mạng</a>
+          <a href="#core-value">Giá trị cốt lõi</a>
         </div>
       </div>
       <div className="bg-white py-6 px-30px lg:absolute right-[30px] w-auto sm:max-w-[60%] bottom-0 top-0">

@@ -26,6 +26,7 @@ const VisonAndMission = () => {
           title={vision.title}
           content={vision.content}
           img={vision.img}
+          id="vision"
         />
         <MMission />
         <MSession
@@ -33,6 +34,7 @@ const VisonAndMission = () => {
           title={mission.title}
           content={mission.content}
           img={mission.img}
+          id="core-value"
         />
         <CFeaturedEvents background={false} />
       </div>

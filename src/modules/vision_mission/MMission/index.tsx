@@ -2,7 +2,10 @@ import "./styles.scss";
 
 export const MMission = () => {
   return (
-    <div className="mission flex md:gap-12 gap-6 h-auto text-white">
+    <div
+      id="mission"
+      className="mission flex md:gap-12 gap-6 h-auto text-white scroll-mt-[104px]"
+    >
       <div className="md:w-2/3 w-1/3 text-right font-serif4 my-auto text-40px font-bold">
         Sứ mạng
       </div>

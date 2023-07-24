@@ -1,5 +1,3 @@
-import React from "react";
-
 import { IMSessionProps } from "./types";
 
 export const MSession: React.FC<IMSessionProps> = ({
@@ -7,9 +5,13 @@ export const MSession: React.FC<IMSessionProps> = ({
   content,
   vision,
   img,
+  id,
 }) => {
   return (
-    <div className="grid grid-cols-11 px-30px pt-50px pb-60px">
+    <div
+      id={id}
+      className="grid grid-cols-11 px-30px pt-50px pb-60px scroll-mt-[104px]"
+    >
       <div className="md:col-span-3 col-span-11 text-left my-auto text-40px text-primary font-bold font-serif4">
         {title}
       </div>

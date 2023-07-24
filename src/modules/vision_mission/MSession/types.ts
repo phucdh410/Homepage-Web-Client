@@ -3,4 +3,5 @@ export interface IMSessionProps {
   content: string;
   img: string;
   vision: boolean;
+  id: string;
 }
