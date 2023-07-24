@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import { motion } from "framer-motion";
 
-import { CVideoPlayer } from "@/common/components/controls";
+import { CButton, CVideoPlayer } from "@/common/components/controls";
 import { CPlayIcon } from "@/common/components/icons";
 import { CModal } from "@/common/components/others";
 
@@ -127,9 +127,12 @@ export const MNewsAndEvents = () => {
             className="mt-20 aspect-admissions w-full h-full"
           />
           <div className="absolute bottom-0 w-full text-center mb-30px">
-            <button className="text-primary font-bold text-xl leading-6 px-6 py-[13px] rounded-[15px] bg-white shadow-[15px_15px_60px_rgba(19,70,131,0.15)]">
+            {/* <button className="text-primary font-bold text-xl leading-6 px-6 py-[13px] rounded-[15px] bg-white shadow-[15px_15px_60px_rgba(19,70,131,0.15)]">
               Cổng thông tin tuyển sinh
-            </button>
+            </button> */}
+            <CButton className="text-primary font-bold text-xl leading-6 px-6 py-[13px] rounded-[15px] bg-white shadow-[15px_15px_60px_rgba(19,70,131,0.15)]">
+              Cổng thông tin tuyển sinh
+            </CButton>
           </div>
         </motion.div>
       </div>

@@ -143,7 +143,7 @@ export const CFooter = () => {
             </h6>
             <ul className="flex items-center gap-30px mb-3">
               {SOCIAL_BUTTONS.map((e) => (
-                <li key={e.id} className="hover:scale-150">
+                <li key={e.id} className="hover:scale-150 transition-all">
                   <Link href={e.href} target="_blank" rel="noopener noreferrer">
                     {e.icon}
                   </Link>
