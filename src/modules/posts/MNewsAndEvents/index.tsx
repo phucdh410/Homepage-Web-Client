@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 
-import type { Swiper as SwiperType } from "swiper";
+import { Autoplay, Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperProps, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
+import "swiper/css/autoplay";
 
 const MOCK = [
   {
@@ -166,6 +167,8 @@ export const MNewsAndEvents = () => {
           <div className="mt-10">
             <Swiper
               loop
+              modules={[Autoplay]}
+              autoplay={{ delay: 3000 }}
               slidesPerView={1.25}
               spaceBetween={40}
               className="!ml-10"
