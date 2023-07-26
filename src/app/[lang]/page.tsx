@@ -1,7 +1,9 @@
-// import { getDictionary } from "@/dictionaries";
 import { Metadata } from "next";
 
+import { Suspense } from "react";
+
 import {
+  LoadingMCommonData,
   MCommonData,
   MCooperation,
   MNewsAndEvents,
@@ -47,7 +49,9 @@ export default async function Home({ params }: IHomePageProps) {
         className="w-full h-auto object-cover mt-[74px] xl:mt-0"
       />
 
-      <MCommonData params={params} />
+      <Suspense fallback={<LoadingMCommonData params={params} />}>
+        <MCommonData params={params} />
+      </Suspense>
 
       <MNewsAndEvents />
 

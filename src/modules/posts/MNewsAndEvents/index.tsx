@@ -199,7 +199,7 @@ export const MNewsAndEvents = () => {
         </div>
       </div>
       {/* Mobile */}
-      <div className="mx-4 block 2xl:hidden">
+      <div className="mx-4 mb-10 block 2xl:hidden">
         <h3 className="text-primary font-bold text-2xl lg:text-3xl xl:text-4xl 2xl:text-[60px] font-serif4 pb-3 border-b-[2px] border-solid border-[#124874] inline">
           Tin tức - Sự kiện
         </h3>

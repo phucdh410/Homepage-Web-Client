@@ -1,15 +1,17 @@
 import { getTranslator } from "next-intl/server";
 
+import { homepageApis } from "@/api";
 import { CAnimatedNumber } from "@/common/components/others";
-import { IPageProps } from "@/types/page";
+
+import { IMCommonDataProps } from "./types";
 
 import "./styles.scss";
-
-interface IMCommonDataProps extends IPageProps {}
 
 export const MCommonData = async ({ params }: IMCommonDataProps) => {
   //#region Data
   const d = await getTranslator(params.lang, "pages.home.common-data");
+
+  const data = await homepageApis.getCommonData();
   //#endregion
 
   //#region Render
@@ -18,16 +20,15 @@ export const MCommonData = async ({ params }: IMCommonDataProps) => {
       <div className="hidden lg:block shadow-[15px_15px_60px_rgba(19,70,131,0.1),15px_15px_60px_rgba(19,70,131,0.1)] absolute rounded-inherit inset-0"></div>
       <div className="w-[118px] text-center">
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
-          <CAnimatedNumber to={1976} />
+          <CAnimatedNumber to={data.establish} />
         </h3>
         <p className="text-base leading-[20px] text-sub font-montserrat">
           {d("thanhlap")}
-          {/* Thành lập */}
         </p>
       </div>
       <div className="w-[118px] text-center">
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
-          <CAnimatedNumber to={3} />
+          <CAnimatedNumber to={data.school_members} />
         </h3>
         <p className="text-base leading-[20px] text-sub font-montserrat">
           {d("truongthanhvien")}
@@ -35,7 +36,7 @@ export const MCommonData = async ({ params }: IMCommonDataProps) => {
       </div>
       <div className="w-[118px] text-center">
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
-          <CAnimatedNumber to={15} />
+          <CAnimatedNumber to={data.rooms} />
         </h3>
         <p className="text-base leading-[20px] text-sub font-montserrat">
           {d("phong")}
@@ -43,7 +44,7 @@ export const MCommonData = async ({ params }: IMCommonDataProps) => {
       </div>
       <div className="w-[118px] text-center">
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
-          <CAnimatedNumber to={1} />
+          <CAnimatedNumber to={data.phanhieu} />
         </h3>
         <p className="text-base leading-[20px] text-sub font-montserrat">
           {d("phanhieu")}
@@ -51,7 +52,7 @@ export const MCommonData = async ({ params }: IMCommonDataProps) => {
       </div>
       <div className="w-[118px] text-center">
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
-          <CAnimatedNumber to={16} />
+          <CAnimatedNumber to={data.departments} />
         </h3>
         <p className="text-base leading-[20px] text-sub font-montserrat">
           {d("khoa")}
@@ -59,7 +60,7 @@ export const MCommonData = async ({ params }: IMCommonDataProps) => {
       </div>
       <div className="w-[118px] text-center">
         <h3 className="mb-[5px] leading-[48px] font-bold text-primary font-serif4">
-          <CAnimatedNumber to={30747} />
+          <CAnimatedNumber to={data.students} />
         </h3>
         <p className="text-base leading-[20px] text-sub font-montserrat">
           {d("sinhvien")}
