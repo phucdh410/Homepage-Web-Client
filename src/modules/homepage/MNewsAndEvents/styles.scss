@@ -1,9 +1,9 @@
 .play-btn {
   border-radius: 100%;
-  animation: pulse 1s linear alternate infinite;
+  animation: my-pulse 1s linear alternate infinite;
 }
 
-@keyframes pulse {
+@keyframes my-pulse {
   0% {
     box-shadow: none;
   }

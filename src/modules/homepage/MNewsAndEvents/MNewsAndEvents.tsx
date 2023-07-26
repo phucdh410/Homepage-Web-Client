@@ -1,17 +1,21 @@
 "use client";
+
 import { useState } from "react";
 
 import { motion } from "framer-motion";
 
+import { homepageApis } from "@/api";
 import { CButton, CVideoPlayer } from "@/common/components/controls";
 import { CPlayIcon } from "@/common/components/icons";
 import { CModal } from "@/common/components/others";
 
 import "./styles.scss";
 
-export const MNewsAndEvents = () => {
+export const MNewsAndEvents = async () => {
   //#region Data
   const [open, setOpen] = useState<boolean>(false);
+
+  const data = await homepageApis.getNewsAndEvents();
   //#endregion
 
   //#region Event
@@ -43,25 +47,19 @@ export const MNewsAndEvents = () => {
             className="row-span-2 rounded-10px relative"
           >
             <img
-              src="/images/news1.png"
+              src={data[0].image}
               alt=""
               className="w-full h-full aspect-news-main rounded-inherit"
             />
             <div className="absolute bottom-0 px-3 py-5 m-5 bg-white rounded-inherit">
               <p className="uppercase font-light text-sm text-sub2 mb-3">
-                đào tạo
+                {data[0].tag}
               </p>
               <h4 className="line-clamp-2 mb-3 text-primary font-bold text-xl leading-7">
-                Kỷ niệm 75 nằm ngày thương binh - liệt sĩ 27/7/1947 - 27/7/2022
-                lorem ipsum is a dummy text for Kỷ niệm 75 nằm ngày thương binh
-                - liệt sĩ 27/7/1947 - 27/7/2022 lorem ipsum is a dummy text for
-                Kỷ niệm 75 nằm ngày thương binh - liệt sĩ 27/7/1947 - 27/7/2022
-                lorem ipsum is a dummy text for Kỷ niệm 75 nằm ngày thương binh
-                - liệt sĩ 27/7/1947 - 27/7/2022 lorem ipsum is a dummy text for
+                {data[0].title}
               </h4>
               <p className="font-light text-sub line-clamp-2">
-                Thực hiện Hướng dẫn số 63-HD/BTGTW ngày 21/6/2022 về việc tuyên
-                truyền kỷ niệm 75 năm
+                {data[0].description}
               </p>
             </div>
           </motion.div>
@@ -73,7 +71,7 @@ export const MNewsAndEvents = () => {
             className="rounded-10px relative"
           >
             <img
-              src="/images/news2.png"
+              src={data[1].image}
               alt=""
               className="w-full h-full aspect-news-video rounded-inherit"
             />
@@ -82,7 +80,7 @@ export const MNewsAndEvents = () => {
                 <CPlayIcon />
               </button>
               <CModal open={open} onClose={onClose}>
-                <CVideoPlayer src="/videos/mobile.mp4" />
+                <CVideoPlayer src={data[1].video || ""} />
               </CModal>
             </div>
           </motion.div>
@@ -94,21 +92,16 @@ export const MNewsAndEvents = () => {
             className="rounded-10px relative"
           >
             <img
-              src="/images/news3.png"
+              src={data[2].image}
               alt=""
               className="w-full h-full aspect-news-sub rounded-inherit"
             />
             <div className="absolute bottom-0 p-3 m-5 bg-white rounded-inherit">
               <p className="uppercase font-light text-sm text-sub2 mb-[5px]">
-                đào tạo
+                {data[2].tag}
               </p>
               <h4 className="line-clamp-2 text-primary font-bold text-xl leading-7">
-                Kỷ niệm 75 nằm ngày thương binh - liệt sĩ 27/7/1947 - 27/7/2022
-                lorem ipsum is a dummy text for Kỷ niệm 75 nằm ngày thương binh
-                - liệt sĩ 27/7/1947 - 27/7/2022 lorem ipsum is a dummy text for
-                Kỷ niệm 75 nằm ngày thương binh - liệt sĩ 27/7/1947 - 27/7/2022
-                lorem ipsum is a dummy text for Kỷ niệm 75 nằm ngày thương binh
-                - liệt sĩ 27/7/1947 - 27/7/2022 lorem ipsum is a dummy text for
+                {data[2].title}
               </h4>
             </div>
           </motion.div>
@@ -127,9 +120,6 @@ export const MNewsAndEvents = () => {
             className="mt-20 aspect-admissions w-full h-full"
           />
           <div className="absolute bottom-0 w-full text-center mb-30px">
-            {/* <button className="text-primary font-bold text-xl leading-6 px-6 py-[13px] rounded-[15px] bg-white shadow-[15px_15px_60px_rgba(19,70,131,0.15)]">
-              Cổng thông tin tuyển sinh
-            </button> */}
             <CButton className="text-primary font-bold text-xl leading-6 px-6 py-[13px] rounded-[15px] bg-white shadow-[15px_15px_60px_rgba(19,70,131,0.15)]">
               Cổng thông tin tuyển sinh
             </CButton>

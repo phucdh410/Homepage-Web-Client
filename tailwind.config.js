@@ -27,6 +27,7 @@ module.exports = {
       },
       height: {
         header: "104px",
+        inherit: "inherit",
       },
       backgroundColor: {
         primary: "#124874",
