@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import {
   LoadingMCommonData,
   LoadingMNewsAndEvents,
+  LoadingMTrainings,
   MCommonData,
   MCooperation,
   MNewsAndEvents,
@@ -58,7 +59,9 @@ export default async function Home({ params }: IHomePageProps) {
         <MNewsAndEvents />
       </Suspense>
 
-      <MTraining />
+      <Suspense fallback={<LoadingMTrainings />}>
+        <MTraining />
+      </Suspense>
 
       <MResearch />
 

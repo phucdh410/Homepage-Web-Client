@@ -5,6 +5,7 @@ import Link from "next-intl/link";
 
 import { motion, Variants } from "framer-motion";
 
+import { homepageApis } from "@/api";
 import { CAnimatedNumber, CMobileData } from "@/common/components/others";
 import { useMediaQuery } from "@/utils/hooks";
 
@@ -67,11 +68,13 @@ const sub: Variants = {
   },
 };
 
-export const MTraining = () => {
+export const MTraining = async () => {
   //#region Data
   const { currentWidth } = useMediaQuery();
 
   const d = useTranslations("global");
+
+  const data = await homepageApis.getTrainings();
   //#endregion
 
   return (
@@ -112,7 +115,7 @@ export const MTraining = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-3 px-3 md:px-0 gap-3 md:gap-10"
         >
-          {MOCK.map((e, i) =>
+          {data.map((e, i) =>
             i === 0 ? (
               <motion.div
                 variants={sub}
@@ -120,20 +123,12 @@ export const MTraining = () => {
                 className="col-span-1 md:col-span-3 rounded-10px grid grid-cols-1 md:grid-cols-2"
               >
                 <div className="p-3 md:p-5 bg-white rounded-t-inherit md:rounded-l-inherit relative">
-                  <p className="uppercase text-sm text-sub2 mb-10px">
-                    Đại học chính quy
-                  </p>
+                  <p className="uppercase text-sm text-sub2 mb-10px">{e.tag}</p>
                   <h4 className="text-primary font-serif4 text-xl mb-2 md:mb-5 line-clamp-3 font-bold">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    {e.title}
                   </h4>
                   <p className="line-clamp-2 md:line-clamp-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.
+                    {e.description}
                   </p>
                   <Link
                     href="/"
@@ -144,7 +139,7 @@ export const MTraining = () => {
                 </div>
                 <img
                   className="rounded-b-inherit md:rounded-r-inherit"
-                  src="/images/training1.png"
+                  src={e.image}
                   alt=""
                 />
               </motion.div>
@@ -155,18 +150,14 @@ export const MTraining = () => {
                 className="bg-white rounded-10px"
               >
                 <div className="p-3 md:p-5">
-                  <p className="uppercase text-sm text-sub2 mb-10px">
-                    Đại học chính quy
-                  </p>
+                  <p className="uppercase text-sm text-sub2 mb-10px">{e.tag}</p>
                   <h4 className="text-primary font-serif4 text-xl line-clamp-2 lg:line-clamp-3 font-bold">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    {e.title}
                   </h4>
                 </div>
 
                 <img
-                  src="/images/training2.png"
+                  src={e.image}
                   alt=""
                   className="w-full hidden md:block aspect-training-sub object-cover rounded-b-inherit"
                 />

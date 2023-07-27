@@ -88,4 +88,50 @@ export const homepageApis = {
 
     // return res.data.json();
   },
+  getTrainings: async () => {
+    function aA() {
+      return [
+        {
+          id: "1",
+          tag: "đại học chính quy",
+          title:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magnaaliqua.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magnaaliqua. Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
+          image: "/images/training1.png",
+        },
+        {
+          id: "2",
+          tag: "đại học chính quy",
+          title:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magnaaliqua.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magnaaliqua. Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
+          image: "/images/training2.png",
+        },
+        {
+          id: "3",
+          tag: "đại học chính quy",
+          title:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magnaaliqua.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magnaaliqua. Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
+          image: "/images/training2.png",
+        },
+        {
+          id: "4",
+          tag: "đại học chính quy",
+          title:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magnaaliqua.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magnaaliqua. Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
+          image: "/images/training2.png",
+        },
+      ];
+    }
+
+    const res = await delay(aA, 2000);
+
+    return res;
+  },
 };
