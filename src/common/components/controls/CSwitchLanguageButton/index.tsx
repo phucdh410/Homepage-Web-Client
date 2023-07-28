@@ -38,7 +38,7 @@ export const CSwitchLanguageButton = () => {
       LANGUAGES.find((e) => e.value === Number(event.currentTarget.value))
         ?.locale || defaultLocale;
 
-    router.push(pathname, { locale: newLocale });
+    router.replace(pathname, { locale: newLocale });
 
     close();
   };
