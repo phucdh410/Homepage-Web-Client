@@ -1,3 +1,10 @@
-import { IPageProps } from "@/types/page";
-
-export interface IMCommonDataProps extends IPageProps {}
+export interface IMCommonDataProps {
+  data: {
+    establish: number;
+    school_members: number;
+    rooms: number;
+    phanhieu: number;
+    departments: number;
+    students: number;
+  };
+}

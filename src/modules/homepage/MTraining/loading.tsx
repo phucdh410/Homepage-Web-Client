@@ -36,7 +36,7 @@ const sub: Variants = {
   },
 };
 
-export const LoadingMTrainings = () => {
+export const LTrainings = () => {
   const { currentWidth } = useMediaQuery();
   const d = useTranslations("global");
 

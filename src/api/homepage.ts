@@ -22,7 +22,7 @@ export const homepageApis = {
             departments: 16,
             students: 30748,
           });
-        }, 1500);
+        }, 2000);
       });
     }
     const res = await aaA();
@@ -126,6 +126,72 @@ export const homepageApis = {
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magnaaliqua. Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
           image: "/images/training2.png",
+        },
+      ];
+    }
+
+    const res = await delay(aA, 2000);
+
+    return res;
+  },
+  getResearch: async () => {
+    function aA() {
+      return [
+        {
+          id: "1",
+          image: "/images/research.png",
+          tag: "công bố quốc tế",
+          title: "Ký kết hợp đồng đào tạo giáo viên theo nghị định 116/202...",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed...",
+        },
+        {
+          id: "2",
+          image: "/images/research.png",
+          tag: "công bố quốc tế",
+          title: "Ký kết hợp đồng đào tạo giáo viên theo nghị định 116/202...",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed...",
+        },
+        {
+          id: "3",
+          image: "/images/research.png",
+          tag: "công bố quốc tế",
+          title: "Ký kết hợp đồng đào tạo giáo viên theo nghị định 116/202...",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed...",
+        },
+        {
+          id: "4",
+          image: "/images/research.png",
+          tag: "công bố quốc tế",
+          title: "Ký kết hợp đồng đào tạo giáo viên theo nghị định 116/202...",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed...",
+        },
+        {
+          id: "5",
+          image: "/images/research.png",
+          tag: "công bố quốc tế",
+          title: "Ký kết hợp đồng đào tạo giáo viên theo nghị định 116/202...",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed...",
+        },
+        {
+          id: "6",
+          image: "/images/research.png",
+          tag: "công bố quốc tế",
+          title: "Ký kết hợp đồng đào tạo giáo viên theo nghị định 116/202...",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed...",
+        },
+        {
+          id: "7",
+          image: "/images/research.png",
+          tag: "công bố quốc tế",
+          title: "Ký kết hợp đồng đào tạo giáo viên theo nghị định 116/202...",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed...",
         },
       ];
     }

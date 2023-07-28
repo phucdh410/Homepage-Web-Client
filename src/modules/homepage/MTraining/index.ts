@@ -1,2 +1,2 @@
 export * from "./loading";
-export * from "./MTraining";
+export * from "./module";

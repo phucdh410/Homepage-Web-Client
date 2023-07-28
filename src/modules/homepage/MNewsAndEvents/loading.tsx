@@ -6,7 +6,7 @@ import { CButton } from "@/common/components/controls";
 import { CPlayIcon } from "@/common/components/icons";
 import { CSkeleton } from "@/common/components/others";
 
-export const LoadingMNewsAndEvents = () => {
+export const LNewsAndEvents = () => {
   return (
     <section className="mt-16">
       <div className="container">

@@ -3,9 +3,10 @@ import { Metadata } from "next";
 import { Suspense } from "react";
 
 import {
-  LoadingMCommonData,
-  LoadingMNewsAndEvents,
-  LoadingMTrainings,
+  LCommonData,
+  LNewsAndEvents,
+  LResearch,
+  LTrainings,
   MCommonData,
   MCooperation,
   MNewsAndEvents,
@@ -40,7 +41,6 @@ export const generateMetadata = async (): Promise<Metadata> => {
 };
 
 export default async function Home({ params }: IHomePageProps) {
-  // const d = await getDictionary(params.lang)
   const data = await getData();
 
   return (
@@ -51,19 +51,21 @@ export default async function Home({ params }: IHomePageProps) {
         className="w-full h-auto object-cover mt-[74px] xl:mt-0"
       />
 
-      <Suspense fallback={<LoadingMCommonData params={params} />}>
-        <MCommonData params={params} />
+      <Suspense fallback={<LCommonData params={params} />}>
+        <MCommonData />
       </Suspense>
 
-      <Suspense fallback={<LoadingMNewsAndEvents />}>
+      <Suspense fallback={<LNewsAndEvents />}>
         <MNewsAndEvents />
       </Suspense>
 
-      <Suspense fallback={<LoadingMTrainings />}>
+      <Suspense fallback={<LTrainings />}>
         <MTraining />
       </Suspense>
 
-      <MResearch />
+      <Suspense fallback={<LResearch />}>
+        <MResearch />
+      </Suspense>
 
       <MCooperation />
     </>

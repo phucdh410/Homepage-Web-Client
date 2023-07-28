@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next-intl/link";
-
 import { forwardRef, useEffect, useImperativeHandle, useState } from "react";
 
 import { CCloseIcon } from "@/common/components/icons";

@@ -3,69 +3,12 @@
 import { EffectCoverflow } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { IMResearchProps } from "./types";
+
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 
-const MOCK = [
-  {
-    id: "1",
-    image: "/images/research.png",
-    tag: "công bố quốc tế",
-    title: "Ký kết hợp đồng đào tạo giáo viên theo nghị định 116/202...",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed...",
-  },
-  {
-    id: "2",
-    image: "/images/research.png",
-    tag: "công bố quốc tế",
-    title: "Ký kết hợp đồng đào tạo giáo viên theo nghị định 116/202...",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed...",
-  },
-  {
-    id: "3",
-    image: "/images/research.png",
-    tag: "công bố quốc tế",
-    title: "Ký kết hợp đồng đào tạo giáo viên theo nghị định 116/202...",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed...",
-  },
-  {
-    id: "4",
-    image: "/images/research.png",
-    tag: "công bố quốc tế",
-    title: "Ký kết hợp đồng đào tạo giáo viên theo nghị định 116/202...",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed...",
-  },
-  {
-    id: "5",
-    image: "/images/research.png",
-    tag: "công bố quốc tế",
-    title: "Ký kết hợp đồng đào tạo giáo viên theo nghị định 116/202...",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed...",
-  },
-  {
-    id: "6",
-    image: "/images/research.png",
-    tag: "công bố quốc tế",
-    title: "Ký kết hợp đồng đào tạo giáo viên theo nghị định 116/202...",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed...",
-  },
-  {
-    id: "7",
-    image: "/images/research.png",
-    tag: "công bố quốc tế",
-    title: "Ký kết hợp đồng đào tạo giáo viên theo nghị định 116/202...",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed...",
-  },
-];
-
-export const MResearch = () => {
+export const MUi = ({ data }: IMResearchProps) => {
   return (
     <section className="mt-16">
       <div className="max-w-2xl m-auto mb-10 px-5">
@@ -88,7 +31,7 @@ export const MResearch = () => {
         coverflowEffect={{ rotate: 0, stretch: 0, depth: 100, modifier: 2.5 }}
         className="mb-10 relative"
       >
-        {MOCK.map((e) => (
+        {data.map((e) => (
           <SwiperSlide
             key={e.id}
             className="!w-[clamp(17.5rem,_3.026rem_+_61.7558vw,_55.75rem)] relative"

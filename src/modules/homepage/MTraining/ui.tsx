@@ -5,36 +5,10 @@ import Link from "next-intl/link";
 
 import { motion, Variants } from "framer-motion";
 
-import { homepageApis } from "@/api";
 import { CAnimatedNumber, CMobileData } from "@/common/components/others";
 import { useMediaQuery } from "@/utils/hooks";
 
-const MOCK = [
-  {
-    id: "1",
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    id: "2",
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    id: "3",
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    id: "4",
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua.",
-  },
-];
+import { IMTrainingProps } from "./types";
 
 const MOCK1 = [
   { id: "1", name: "Giáo sư", value: 25 },
@@ -68,13 +42,11 @@ const sub: Variants = {
   },
 };
 
-export const MTraining = async () => {
+export const MUi = ({ data }: IMTrainingProps) => {
   //#region Data
   const { currentWidth } = useMediaQuery();
 
   const d = useTranslations("global");
-
-  const data = await homepageApis.getTrainings();
   //#endregion
 
   return (

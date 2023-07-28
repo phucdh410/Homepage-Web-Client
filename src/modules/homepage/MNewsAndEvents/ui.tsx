@@ -4,18 +4,17 @@ import { useState } from "react";
 
 import { motion } from "framer-motion";
 
-import { homepageApis } from "@/api";
 import { CButton, CVideoPlayer } from "@/common/components/controls";
 import { CPlayIcon } from "@/common/components/icons";
 import { CModal } from "@/common/components/others";
 
+import { INewsAndEventsProps } from "./types";
+
 import "./styles.scss";
 
-export const MNewsAndEvents = async () => {
+export const MUi = ({ data }: INewsAndEventsProps) => {
   //#region Data
   const [open, setOpen] = useState<boolean>(false);
-
-  const data = await homepageApis.getNewsAndEvents();
   //#endregion
 
   //#region Event

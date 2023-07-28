@@ -1,17 +1,16 @@
-import { getTranslator } from "next-intl/server";
+"use client";
 
-import { homepageApis } from "@/api";
+import { useTranslations } from "next-intl";
+
 import { CAnimatedNumber } from "@/common/components/others";
 
 import { IMCommonDataProps } from "./types";
 
 import "./styles.scss";
 
-export const MCommonData = async ({ params }: IMCommonDataProps) => {
+export const MUi = ({ data }: IMCommonDataProps) => {
   //#region Data
-  const d = await getTranslator(params.lang, "pages.home.common-data");
-
-  const data = await homepageApis.getCommonData();
+  const d = useTranslations("pages.home.common-data");
   //#endregion
 
   //#region Render

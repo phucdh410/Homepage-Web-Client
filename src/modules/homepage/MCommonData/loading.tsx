@@ -1,12 +1,11 @@
 import { getTranslator } from "next-intl/server";
 
 import { CAnimatedNumber } from "@/common/components/others";
-
-import { IMCommonDataProps } from "./types";
+import { IPageProps } from "@/types/page";
 
 import "./styles.scss";
 
-export const LoadingMCommonData = async ({ params }: IMCommonDataProps) => {
+export const LCommonData = async ({ params }: IPageProps) => {
   const d = await getTranslator(params.lang, "pages.home.common-data");
 
   return (
