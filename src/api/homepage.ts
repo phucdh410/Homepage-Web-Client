@@ -28,11 +28,15 @@ export const homepageApis = {
     const res = await aaA();
     return res;
 
-    // const res = await fetch(HOMEPAGE_URL.GET_COMMON_DATA);
-
-    // if (!res.ok) throw new Error("Lấy dữ liệu không thành công!");
-
-    // return res.data.json();
+    // try {
+    //   const res = await fetch(HOMEPAGE_URL.GET_COMMON_DATA);
+    //   if (res.ok) {
+    //     const { data }: TypeResponse = await res.json();
+    //     return data;
+    //   }
+    // } catch (error) {
+    //   throw new Error("Lỗi rồi bà già ơi !!!");
+    // }
   },
   getNewsAndEvents: async () => {
     function aaA(): {
