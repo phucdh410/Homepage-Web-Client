@@ -1,6 +1,7 @@
 {
   "global": {
-    "read-more": "Xem thêm"
+    "read-more": "Xem thêm",
+    "download-more": "Tải thêm"
   },
   "pages": {
     "home": {
