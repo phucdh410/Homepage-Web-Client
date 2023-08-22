@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Link from "next-intl/link";
 
 import { motion } from "framer-motion";
 
@@ -38,9 +39,12 @@ export const MCooperation = () => {
               className="aspect-coop w-full object-cover rounded-inherit"
             />
             <div className="absolute w-full bottom-0 bg-white text-center py-3 md:p-[15px] rounded-b-inherit">
-              <h5 className="text-primary font-serif4 text-[clamp(0.875rem,_0.7331rem_+_0.6054vw,_1.25rem)] uppercase font-bold rounded-b-inherit">
+              <Link
+                href="/coop?tab=2"
+                className="text-primary font-serif4 text-[clamp(0.875rem,_0.7331rem_+_0.6054vw,_1.25rem)] uppercase font-bold rounded-b-inherit"
+              >
                 hợp tác trong nước
-              </h5>
+              </Link>
             </div>
           </motion.div>
           <motion.div
@@ -56,9 +60,12 @@ export const MCooperation = () => {
               className="aspect-coop w-full object-cover rounded-inherit"
             />
             <div className="absolute w-full bottom-0 bg-white text-center py-3 md:p-[15px] rounded-b-inherit">
-              <h5 className="text-primary font-serif4 text-[clamp(0.875rem,_0.7331rem_+_0.6054vw,_1.25rem)] uppercase font-bold rounded-b-inherit">
+              <Link
+                href="/coop?tab=3"
+                className="text-primary font-serif4 text-[clamp(0.875rem,_0.7331rem_+_0.6054vw,_1.25rem)] uppercase font-bold rounded-b-inherit"
+              >
                 hợp tác quốc tế
-              </h5>
+              </Link>
             </div>
           </motion.div>
         </div>

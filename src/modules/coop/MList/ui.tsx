@@ -1,8 +1,9 @@
 "use client";
-
+import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { usePathname, useRouter } from "next-intl/client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { CButton } from "@/common/components/controls";
 
@@ -13,14 +14,30 @@ export const MUi = ({ data }: IMListProps) => {
   //#region Data
   const d = useTranslations("global");
 
-  const [currentTab, setCurrentTab] = useState<1 | 2 | 3>(1);
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const tab = searchParams.get("tab");
+
+  const [currentTab, setCurrentTab] = useState<1 | 2 | 3>(
+    tab ? (Number(tab) as 1 | 2 | 3) : 1
+  );
   //#endregion
 
   //#region Event
   const onTabChange = (newTab: 1 | 2 | 3) => {
     setCurrentTab(newTab);
+
+    router.replace(`${pathname}?tab=${newTab}`);
   };
   //#endregion
+
+  useEffect(() => {
+    if (!pathname.includes("?tab=")) {
+      router.replace(`${pathname}?tab=${currentTab}`);
+    }
+  }, [pathname, currentTab, router]);
 
   //#region Render
   return (
