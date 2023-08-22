@@ -3,6 +3,10 @@ button {
   --ripple-opacity: 0.8;
   --ripple-duration: 400ms;
   --ripple-easing: linear;
+
+  &[disabled] {
+    background-color: darkgray;
+  }
 }
 
 [data-anim="ripple"] {
@@ -38,25 +42,3 @@ button {
     transform-origin: center;
   }
 }
-
-// a {
-//   --ripple-background: black;
-//   --ripple-opacity: 0.1;
-//   --ripple-duration: 600ms;
-
-//   display: block;
-//   margin-top: 1em;
-//   padding: 0.75em 3em;
-//   background: whitesmoke;
-//   color: black;
-//   text-decoration: none;
-//   border: 1px solid darken(whitesmoke, 10%);
-//   min-width: 200px;
-//   text-align: center;
-//   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
-//   transition: background-color 300ms;
-//   &:hover {
-//     background-color: darken(whitesmoke, 3%);
-//   }
-// }

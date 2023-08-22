@@ -6,7 +6,9 @@ import { usePathname, useRouter } from "next-intl/client";
 import { useEffect, useState } from "react";
 
 import { CButton } from "@/common/components/controls";
+import { delay } from "@/utils/funcs";
 
+import { MLoadingCoopItem } from "./loading";
 import { MCoopItem } from "./MCoopItem";
 import { IMListProps } from "./types";
 
@@ -20,6 +22,8 @@ export const MUi = ({ data }: IMListProps) => {
 
   const tab = searchParams.get("tab");
 
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const [currentTab, setCurrentTab] = useState<1 | 2 | 3>(
     tab ? (Number(tab) as 1 | 2 | 3) : 1
   );
@@ -30,6 +34,13 @@ export const MUi = ({ data }: IMListProps) => {
     setCurrentTab(newTab);
 
     router.replace(`${pathname}?tab=${newTab}`);
+  };
+
+  const onLoadMore = async () => {
+    setIsLoading(true);
+    delay(() => {
+      setIsLoading(false);
+    }, 3000);
   };
   //#endregion
 
@@ -91,11 +102,21 @@ export const MUi = ({ data }: IMListProps) => {
             {data &&
               data.length > 0 &&
               data.map((item) => <MCoopItem key={item.id} data={item} />)}
+            {isLoading &&
+              Array(3)
+                .fill("")
+                .map((e, i) => (
+                  <MLoadingCoopItem key={i.toString() + new Date().toString} />
+                ))}
           </div>
 
           <div className="text-center mb-20">
-            <CButton className="rounded-10px bg-primary text-white py-4 px-5 min-w-[189px] font-bold font-serif4">
-              {d("download-more")}
+            <CButton
+              disabled={isLoading}
+              className="rounded-10px bg-primary text-white py-4 px-5 min-w-[189px] font-bold font-serif4"
+              onClick={onLoadMore}
+            >
+              {`${d("download-more")}${isLoading ? " ..." : ""}`}
             </CButton>
           </div>
         </div>
