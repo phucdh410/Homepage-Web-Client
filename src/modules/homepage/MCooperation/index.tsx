@@ -25,7 +25,7 @@ export const MCooperation = () => {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-10 mx-3 md:mx-0 mb-10 md:mb-28">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-10 mx-4 md:mx-10 mb-10 md:mb-28">
           <motion.div
             initial={{ x: -100, y: 100, opacity: 0 }}
             whileInView={{ x: 0, y: 0, opacity: 1 }}
