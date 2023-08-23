@@ -8,6 +8,7 @@ import vi from "dayjs/locale/vi";
 import weekday from "dayjs/plugin/weekday";
 
 import { MCalendar } from "../MCalendar";
+import { MDay } from "../MDay";
 import { MWeek } from "../MWeek";
 
 dayjs.extend(weekday);
@@ -22,7 +23,7 @@ export const MTabs = () => {
 
   //#region Render
   return (
-    <div className="mt-16 container">
+    <div className="mt-16 container mb-20">
       <h3 className="uppercase text-primary text-center font-bold text-clamp-section-title font-serif4 mb-5">
         lịch công tác
       </h3>
@@ -33,9 +34,9 @@ export const MTabs = () => {
               <button
                 className={`${
                   selected
-                    ? "bg-primary text-white"
+                    ? "!bg-primary text-white"
                     : "bg-[#f5f5f5] text-primary"
-                } min-w-[50px] 2xl:min-w-[189px] text-sm sm:text-base rounded-10px px-5 py-2 font-bold font-serif4`}
+                } hover:bg-[#51a2f821] outline-none min-w-[50px] 2xl:min-w-[189px] text-sm sm:text-base rounded-10px px-5 py-2 font-bold font-serif4`}
               >
                 Theo tháng
               </button>
@@ -46,9 +47,9 @@ export const MTabs = () => {
               <button
                 className={`${
                   selected
-                    ? "bg-primary text-white"
+                    ? "!bg-primary text-white"
                     : "bg-[#f5f5f5] text-primary"
-                } min-w-[50px] 2xl:min-w-[189px] text-sm sm:text-base rounded-10px px-5 py-2 font-bold font-serif4`}
+                } hover:bg-[#51a2f821] outline-none min-w-[50px] 2xl:min-w-[189px] text-sm sm:text-base rounded-10px px-5 py-2 font-bold font-serif4`}
               >
                 Theo tuần
               </button>
@@ -59,9 +60,9 @@ export const MTabs = () => {
               <button
                 className={`${
                   selected
-                    ? "bg-primary text-white"
+                    ? "!bg-primary text-white"
                     : "bg-[#f5f5f5] text-primary"
-                } min-w-[50px] 2xl:min-w-[189px] text-sm sm:text-base rounded-10px px-5 py-2 font-bold font-serif4`}
+                } hover:bg-[#51a2f821] outline-none min-w-[50px] 2xl:min-w-[189px] text-sm sm:text-base rounded-10px px-5 py-2 font-bold font-serif4`}
               >
                 Theo ngày
               </button>
@@ -75,7 +76,9 @@ export const MTabs = () => {
           <Tab.Panel>
             <MWeek />
           </Tab.Panel>
-          <Tab.Panel>asdasda</Tab.Panel>
+          <Tab.Panel>
+            <MDay />
+          </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
     </div>

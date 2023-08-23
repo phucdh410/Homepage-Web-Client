@@ -117,7 +117,10 @@ export const MCalendar = () => {
           {dayObj.format("MMMM YYYY")}
         </h5>
         <div className="flex gap-2 items-center">
-          <button className="p-2" onClick={handlePrev}>
+          <button
+            className="p-2 rounded-full bg-primary transition-[400ms] hover:bg-[#80d1ff52] hover:scale-110"
+            onClick={handlePrev}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -133,7 +136,10 @@ export const MCalendar = () => {
               />
             </svg>
           </button>
-          <button className="p-2" onClick={handleNext}>
+          <button
+            className="p-2 rounded-full bg-primary transition-[400ms] hover:bg-[#80d1ff52] hover:scale-110"
+            onClick={handleNext}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="14"
