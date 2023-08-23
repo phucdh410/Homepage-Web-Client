@@ -44,7 +44,7 @@ export const LTrainings = () => {
     <section className="mt-16">
       <div className="container">
         <div className="max-w-2xl m-auto mb-10 px-5">
-          <h2 className="text-center mb-10px uppercase text-primary text-clamp-home-section-title leading-[48px] font-extrabold font-serif4 ">
+          <h2 className="text-center mb-10px uppercase text-primary text-clamp-home-section-title leading-48px font-extrabold font-serif4 ">
             đào tạo
           </h2>
           <p className="text-center text-sub">
@@ -67,10 +67,10 @@ export const LTrainings = () => {
               .fill({ id: new Date() + Math.random().toString(), value: 0 })
               .map((e, i) => (
                 <div key={e.id + i} className="w-[130px] text-center">
-                  <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
+                  <h3 className="mb-[5px] text-clamp1 leading-48px font-bold text-primary font-serif4">
                     <CAnimatedNumber to={e.value} />
                   </h3>
-                  <p className="text-base leading-[20px] text-sub font-montserrat">
+                  <p className="text-base leading-20px text-sub font-montserrat">
                     {e.name}
                   </p>
                 </div>

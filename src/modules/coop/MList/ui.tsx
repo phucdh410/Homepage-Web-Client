@@ -55,7 +55,7 @@ export const MUi = ({ data }: IMListProps) => {
     <section className="mt-16">
       <div className="container">
         <div className="max-w-2xl m-auto mb-10 px-5">
-          <h2 className="text-center mb-10px uppercase text-primary text-clamp-home-section-title leading-[48px] font-extrabold font-serif4 ">
+          <h2 className="text-center mb-10px uppercase text-primary text-clamp-home-section-title leading-48px font-extrabold font-serif4 ">
             hợp tác và phục vụ cộng đồng
           </h2>
           <p className="text-center text-sub">

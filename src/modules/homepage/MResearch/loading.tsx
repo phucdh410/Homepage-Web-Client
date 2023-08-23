@@ -9,7 +9,7 @@ export const LResearch = () => {
   return (
     <section className="mt-16">
       <div className="max-w-2xl m-auto mb-10 px-5">
-        <h2 className="text-center mb-10px uppercase text-primary text-clamp-home-section-title leading-[48px] font-extrabold font-serif4 ">
+        <h2 className="text-center mb-10px uppercase text-primary text-clamp-home-section-title leading-48px font-extrabold font-serif4 ">
           nghiên cứu
         </h2>
         <p className="text-center text-sub">
@@ -61,26 +61,26 @@ export const LResearch = () => {
 
       <div className="flex mb-10 relative m-auto items-baseline justify-between max-w-[500px]">
         <div className="w-[160px] text-center">
-          <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
+          <h3 className="mb-[5px] text-clamp1 leading-48px font-bold text-primary font-serif4">
             1379
           </h3>
-          <p className="text-base leading-[20px] text-sub font-montserrat">
+          <p className="text-base leading-20px text-sub font-montserrat">
             Bài báo
           </p>
         </div>
         <div className="w-[160px] text-center">
-          <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
+          <h3 className="mb-[5px] text-clamp1 leading-48px font-bold text-primary font-serif4">
             10
           </h3>
-          <p className="text-base leading-[20px] text-sub font-montserrat">
+          <p className="text-base leading-20px text-sub font-montserrat">
             Công bố quốc tế
           </p>
         </div>
         <div className="w-[160px] text-center">
-          <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
+          <h3 className="mb-[5px] text-clamp1 leading-48px font-bold text-primary font-serif4">
             175
           </h3>
-          <p className="text-base leading-[20px] text-sub font-montserrat">
+          <p className="text-base leading-20px text-sub font-montserrat">
             Nhà khoa học nước ngoài công tác
           </p>
         </div>

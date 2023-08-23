@@ -27,7 +27,7 @@ export const CScrollTopButton = () => {
 
   //#region Render
   return (
-    <div className="fixed animate-bounce bottom-5 right-5 z-[1] rounded-full flex items-center justify-center">
+    <div className="fixed animate-bounce bottom-5 right-5 z-1 rounded-full flex items-center justify-center">
       {show && (
         <button onClick={scrollToTop}>
           <img src="/icons/up-arrow.png" alt="" />

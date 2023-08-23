@@ -27,7 +27,7 @@ export const CFeaturedEvents: React.FC<ICFeaturedEvents> = ({ background }) => {
             <div className="font-serif4 font-bold text-primary text-40px text-center  max-w-[570px] m-auto line-clamp-2 ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </div>
-            <div className="text-black text-16px text-center tracking-[.32px] line-clamp-5">
+            <div className="text-black text-16px text-center tracking-0.32px line-clamp-5">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
               viverra, risus non lobortis feugiat, eros nisi gravida libero, a
               laoreet velit enim a diam. Vestibulum fermentum, sapien vel

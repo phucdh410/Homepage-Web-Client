@@ -48,7 +48,7 @@ export const TypeDesktop = ({ data }: ITimelineDataProps) => {
                   className="rounded-full relative p-5 z-1"
                 />
               </div>
-              <h6 className="bg-red h-fit inline-block rounded-30px text-white px-30px py-4 font-semibold font-raleway tracking-[0.48px] ">
+              <h6 className="bg-red h-fit inline-block rounded-30px text-white px-30px py-4 font-semibold font-raleway tracking-0.48px ">
                 {e.time}
               </h6>
             </div>

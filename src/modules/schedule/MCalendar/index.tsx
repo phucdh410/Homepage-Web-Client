@@ -81,10 +81,10 @@ export const MCalendar = () => {
             <div className="hidden md:block max-w-full">
               {MOCK[date].map((el, _i) => (
                 <div key={_i + el.name} className="flex gap-1">
-                  <div className="text-red text-[10px] tracking-[0.3px] font-medium font-montserrat">
+                  <div className="text-red text-[10px] tracking-0.3px font-medium font-montserrat">
                     {el.time}
                   </div>
-                  <div className=" text-[10px] tracking-[0.3px] font-medium font-montserrat whitespace-nowrap text-ellipsis overflow-hidden">
+                  <div className=" text-[10px] tracking-0.3px font-medium font-montserrat whitespace-nowrap text-ellipsis overflow-hidden">
                     {el.name}
                   </div>
                 </div>

@@ -41,10 +41,10 @@ export const MNotesModal = forwardRef<IMNotesModalRef, IMNotesModalProps>(
                 key={e.name + i}
                 className="flex gap-2 list-none pb-2 last:pb-0"
               >
-                <div className="text-red text-xl tracking-[0.3px] font-medium font-montserrat">
+                <div className="text-red text-xl tracking-0.3px font-medium font-montserrat">
                   {e.time}
                 </div>
-                <div className=" text-xl tracking-[0.3px] font-montserrat ">
+                <div className=" text-xl tracking-0.3px font-montserrat ">
                   {e.name}
                 </div>
               </li>

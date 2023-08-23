@@ -28,7 +28,7 @@ export const MSession: React.FC<IMSessionProps> = ({
           width={"100%"}
           height={"100%"}
           alt=""
-          className={`object-cover my-auto ${vision && " rounded-[15px]"}`}
+          className={`object-cover my-auto ${vision && " rounded-15px"}`}
         />
       </div>
     </div>

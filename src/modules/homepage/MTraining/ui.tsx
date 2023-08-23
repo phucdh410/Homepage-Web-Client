@@ -53,7 +53,7 @@ export const MUi = ({ data }: IMTrainingProps) => {
     <section className="mt-16">
       <div className="container">
         <div className="max-w-2xl m-auto mb-10 px-5">
-          <h2 className="text-center mb-10px uppercase text-primary text-clamp-home-section-title leading-[48px] font-extrabold font-serif4 ">
+          <h2 className="text-center mb-10px uppercase text-primary text-clamp-home-section-title leading-48px font-extrabold font-serif4 ">
             đào tạo
           </h2>
           <p className="text-center text-sub">
@@ -69,10 +69,10 @@ export const MUi = ({ data }: IMTrainingProps) => {
             <div className="shadow-[15px_15px_60px_rgba(19,70,131,0.1)] absolute rounded-inherit inset-0"></div>
             {MOCK1.map((e) => (
               <div key={e.id} className="w-[130px] text-center">
-                <h3 className="mb-[5px] text-clamp1 leading-[48px] font-bold text-primary font-serif4">
+                <h3 className="mb-[5px] text-clamp1 leading-48px font-bold text-primary font-serif4">
                   <CAnimatedNumber to={e.value} />
                 </h3>
-                <p className="text-base leading-[20px] text-sub font-montserrat">
+                <p className="text-base leading-20px text-sub font-montserrat">
                   {e.name}
                 </p>
               </div>

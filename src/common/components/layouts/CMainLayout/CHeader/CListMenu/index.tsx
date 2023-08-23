@@ -89,7 +89,7 @@ export const CListMenu = forwardRef<ICListMenuRef, ICListMenuProps>(
         <div className="w-full flex items-center justify-between border border-solid border-t-[rgba(25,_25,_25,_0.20)] py-4 px-7">
           <ul className="flex items-center gap-10">
             {ADDITIONAL_NAV.map((e) => (
-              <li key={e.id} className="text-sub text-sm tracking-[0.42px]">
+              <li key={e.id} className="text-sub text-sm tracking-0.42px">
                 <Link href={e.link}>{e.name}</Link>
               </li>
             ))}

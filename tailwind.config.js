@@ -25,6 +25,34 @@ module.exports = {
         montserrat: ["var(--font-montserrat)"],
         raleway: ["var(--font-raleway)"],
       },
+      fontSize: {
+        "25px": ["25px", "34px"],
+        "32px": "32px",
+        "40px": ["40px", "55px"],
+        "16px": ["16px", "19.5px"],
+        clamp1: "clamp(1.25rem, 0.9375rem + 1.5625vw, 2.1875rem)",
+        "clamp-section-title": "clamp(1.25rem, 0.8676rem + 1.912vw, 2.5rem);",
+        "clamp-home-section-title":
+          "clamp(1.625rem, 1.4121rem + 0.9082vw, 2.1875rem)",
+      },
+      lineHeight: {
+        "20px": "20px",
+        "21px": "21px",
+        "25px": "25px",
+        "26px": "26px",
+        "35px": "35px",
+        "48px": "48px",
+      },
+      letterSpacing: {
+        "0.3px": "0.3px",
+        "0.32px": "0.32px",
+        "0.42px": "0.42px",
+        "0.48px": "0.48px",
+        "0.64px": "0.64px",
+        "0.72px": "0.72px",
+        "0.75px": "0.75px",
+        "1.2px": "1.2px",
+      },
       height: {
         header: "104px",
         inherit: "inherit",
@@ -52,10 +80,16 @@ module.exports = {
         "news-main": "633/700",
         "news-video": "633/330",
         "news-sub": "633/330",
-        " admissions": "1366/512",
+        admissions: "1366/512",
+        "training-sub": "408/285",
+        research: "406/285",
+        coop: "633/350",
       },
       maxWidth: {
         container: "1366px",
+      },
+      zIndex: {
+        1: 1,
       },
       padding: {
         "10px": "10px",
@@ -63,26 +97,10 @@ module.exports = {
         "50px": "50px",
         "60px": "60px",
       },
-      zIndex: {
-        1: 1,
-      },
       margin: {
         "10px": "10px",
         "30px": "30px",
-        admissions: "1366/512",
-        "training-sub": "408/285",
-        research: "406/285",
         "60px": "60px",
-        coop: "633/350",
-      },
-      fontSize: {
-        "25px": ["25px", "34px"],
-        "40px": ["40px", "55px"],
-        "16px": ["16px", "19.5px"],
-        clamp1: "clamp(1.25rem, 0.9375rem + 1.5625vw, 2.1875rem)",
-        "clamp-section-title": "clamp(1.25rem, 0.8676rem + 1.912vw, 2.5rem);",
-        "clamp-home-section-title":
-          "clamp(1.625rem, 1.4121rem + 0.9082vw, 2.1875rem)",
       },
       boxShadow: {
         custom: "15px 15px 60px 0px rgba(19, 70, 131, 0.10)",

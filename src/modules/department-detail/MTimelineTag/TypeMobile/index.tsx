@@ -35,7 +35,7 @@ export const TypeMobile = ({ data }: ITimelineDataProps) => {
             className="pl-5 pb-20 last:pb-0 border-l-[2px] border-solid border-gray-400"
           >
             <div className="relative flex items-center gap-5 before:content-'' before:absolute before:rounded-full before:w-7 before:h-7 before:bg-white before:border-solid before:border-[#124874] before:border-[6px] before:-left-[35px]">
-              <h6 className="bg-red whitespace-nowrap h-fit inline-block rounded-20px text-white px-4 py-2 font-semibold font-raleway tracking-[0.48px] ">
+              <h6 className="bg-red whitespace-nowrap h-fit inline-block rounded-20px text-white px-4 py-2 font-semibold font-raleway tracking-0.48px ">
                 {e.time}
               </h6>
               <div className="rounded-full max-w-[100px] relative before:content-'' before:shadow-[-7px_-7px_12px_0px_#FFF,_7px_7px_20px_0px_#E0E0E0] before:p-[50px] before:bg-white before:absolute before:rounded-full before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2">

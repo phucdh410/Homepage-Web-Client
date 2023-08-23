@@ -48,7 +48,7 @@ export const TypeTablet = ({ data }: ITimelineDataProps) => {
                   className="rounded-full p-6 relative z-1"
                 />
               </div>
-              <h6 className="bg-red h-fit inline-block rounded-30px text-white whitespace-nowrap px-4 py-4 font-semibold font-raleway tracking-[0.48px] ">
+              <h6 className="bg-red h-fit inline-block rounded-30px text-white whitespace-nowrap px-4 py-4 font-semibold font-raleway tracking-0.48px ">
                 {e.time}
               </h6>
             </div>

@@ -18,15 +18,15 @@ export const MCoopItem = ({ data }: IMCoopItemProps) => {
       <img
         src={data.image}
         alt=""
-        className="rounded-[15px] aspect-[409/300] w-full object-cover mb-5 select-none"
+        className="rounded-15px aspect-[409/300] w-full object-cover mb-5 select-none"
       />
-      <h5 className="text-sub uppercase leading-[26px] tracking-[0.48px] mb-10px select-none">
+      <h5 className="text-sub uppercase leading-26px tracking-0.48px mb-10px select-none">
         {data.tag}
       </h5>
       <h4 className="text-primary font-bold text-[25px] font-serif4 mb-10px cursor-pointer">
         {data.name}
       </h4>
-      <p className="text-sub leading-[26px] tracking-[0.48px] line-clamp-5 select-none">
+      <p className="text-sub leading-26px tracking-0.48px line-clamp-5 select-none">
         {data.description}
       </p>
     </motion.div>

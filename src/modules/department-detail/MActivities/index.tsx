@@ -57,7 +57,7 @@ export const MActivities = () => {
       </p>
       <div className="px-5 flex flex-col md:flex-row gap-10">
         <div className="flex-1">
-          <h6 className="text-white font-bold font-serif4 px-5 py-3 bg-primary rounded-[15px]">
+          <h6 className="text-white font-bold font-serif4 px-5 py-3 bg-primary rounded-15px">
             Nghiên cứu khoa học
           </h6>
           <ul>
@@ -66,7 +66,7 @@ export const MActivities = () => {
                 key={e.id}
                 className="flex items-center gap-[10px] p-10px mb-[5px]"
               >
-                <span className="font-raleway min-w-[30px] font-medium text-[32px] leading-[25px] text-primary-red">
+                <span className="font-raleway min-w-[30px] font-medium text-32px leading-25px text-primary-red">
                   {i + 1}.
                 </span>
                 <span className="text-sub2">{e.name}</span>
@@ -75,7 +75,7 @@ export const MActivities = () => {
           </ul>
         </div>
         <div className="flex-1">
-          <h6 className="text-white font-bold font-serif4 px-5 py-3 bg-primary rounded-[15px]">
+          <h6 className="text-white font-bold font-serif4 px-5 py-3 bg-primary rounded-15px">
             Các giải thưởng
           </h6>
           <ul>
@@ -84,7 +84,7 @@ export const MActivities = () => {
                 key={e.id}
                 className="flex items-center gap-[10px] p-10px mb-[5px]"
               >
-                <span className="font-raleway min-w-[30px] font-medium text-[32px] leading-[25px] text-primary-red">
+                <span className="font-raleway min-w-[30px] font-medium text-32px leading-25px text-primary-red">
                   {i + 1}.
                 </span>
                 <span className="text-sub2">{e.name}</span>

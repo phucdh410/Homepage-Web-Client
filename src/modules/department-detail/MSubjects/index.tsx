@@ -57,7 +57,7 @@ export const MSubjects = () => {
       <div className="px-8 flex flex-col lg:flex-row gap-30px">
         {MOCK.map((e) => (
           <div key={e.id} className="flex-1 rounded-20px bg-[#f9f9f9] p-[30px]">
-            <h6 className="text-primary text-2xl font-semibold font-raleway leading-[35px] tracking-[0.72px] mb-[15px]">
+            <h6 className="text-primary text-2xl font-semibold font-raleway leading-35px tracking-0.72px mb-[15px]">
               {e.title}
             </h6>
             <p className="text-sub2 font-semibold font-raleway">{e.lead}</p>

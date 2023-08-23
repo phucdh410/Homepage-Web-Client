@@ -26,7 +26,7 @@ export const MListCenters = () => {
           <h3 className="uppercase font-serif4 text-clamp-section-title font-bold mb-10px">
             trung tâm tiếng Pháp châu Á - Thái Bình Dương
           </h3>
-          <p className="mb-[50px] tracking-[0.64px]">
+          <p className="mb-[50px] tracking-0.64px">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
             viverra, risus non lobortis feugiat, eros nisi gravida libero, a
             laoreet velit enim a diam. Vestibulum fermentum

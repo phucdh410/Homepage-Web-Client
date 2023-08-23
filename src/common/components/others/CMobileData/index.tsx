@@ -47,10 +47,10 @@ export const CMobileData = ({ data }: ICMobileDataProps) => {
               className="flex-1 mx-3 mb-4 py-2 bg-white rounded-20px shadow-[15px_15px_60px_0px_rgba(19,_70,_131,_0.10)]"
             >
               <div className="px-1 text-center">
-                <h3 className="mb-[5px] text-clamp1 leading-[26px] font-bold text-primary font-serif4">
+                <h3 className="mb-[5px] text-clamp1 leading-26px font-bold text-primary font-serif4">
                   <CAnimatedNumber to={e.value} />
                 </h3>
-                <p className="text-[14px] leading-[20px] text-sub font-montserrat">
+                <p className="text-[14px] leading-20px text-sub font-montserrat">
                   {e.name}
                 </p>
               </div>

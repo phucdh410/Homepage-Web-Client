@@ -18,11 +18,11 @@ export const MDeanCommittee = () => {
           />
           <div className="absolute inset-0 m-30px">
             <div className="absolute bottom-0 text-white">
-              <h3 className="mb-[11px] font-bold font-serif4 text-[40px] tracking-[1.2px]">
+              <h3 className="mb-[11px] font-bold font-serif4 text-[40px] tracking-1.2px">
                 TS. Nguyễn Viết Hưng
               </h3>
               <div className="h-[1px] bg-[linear-gradient(90deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_100%)] mb-6"></div>
-              <p className="leading-[21px]">
+              <p className="leading-21px">
                 Trưởng khoa - Khoa Công Nghệ Thông Tin <br />
                 Nhiệm kỳ 2020 - 2020
               </p>
@@ -40,7 +40,7 @@ export const MDeanCommittee = () => {
               <h6 className="font-serif4 font-semibold text-xl mb-[15px]">
                 TS. Trần Sơn Hải
               </h6>
-              <p className="leading-[21px] tracking-[0.48px]">
+              <p className="leading-21px tracking-0.48px">
                 Phó Trưởng khoa - Khoa Công Nghệ Thông Tin <br />
                 Nhiệm kỳ 2020 - 2020
               </p>
@@ -58,7 +58,7 @@ export const MDeanCommittee = () => {
               <h6 className="font-serif4 font-semibold text-xl mb-[15px]">
                 TS. Trịnh Huy Hoàng
               </h6>
-              <p className="leading-[21px] tracking-[0.48px]">
+              <p className="leading-21px tracking-0.48px">
                 Phó Trưởng khoa - Khoa Công Nghệ Thông Tin <br />
                 Nhiệm kỳ 2020 - 2020
               </p>
