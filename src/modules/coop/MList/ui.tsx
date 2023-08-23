@@ -70,9 +70,9 @@ export const MUi = ({ data }: IMListProps) => {
               onClick={() => onTabChange(1)}
               className={`${
                 currentTab === 1
-                  ? "bg-primary text-white"
+                  ? "!bg-primary text-white"
                   : "bg-[#f5f5f5] text-primary"
-              } min-w-[189px] rounded-10px px-5 py-2 font-bold font-serif4`}
+              } hover:bg-[#51a2f821] outline-none min-w-[189px] rounded-10px px-5 py-2 font-bold font-serif4`}
             >
               Tất cả
             </button>
@@ -80,9 +80,9 @@ export const MUi = ({ data }: IMListProps) => {
               onClick={() => onTabChange(2)}
               className={`${
                 currentTab === 2
-                  ? "bg-primary text-white"
+                  ? "!bg-primary text-white"
                   : "bg-[#f5f5f5] text-primary"
-              } min-w-[189px] rounded-10px px-5 py-2 font-bold font-serif4`}
+              } hover:bg-[#51a2f821] outline-none min-w-[189px] rounded-10px px-5 py-2 font-bold font-serif4`}
             >
               Hợp tác trong nước
             </button>
@@ -90,9 +90,9 @@ export const MUi = ({ data }: IMListProps) => {
               onClick={() => onTabChange(3)}
               className={`${
                 currentTab === 3
-                  ? "bg-primary text-white"
+                  ? "!bg-primary text-white"
                   : "bg-[#f5f5f5] text-primary"
-              } min-w-[189px] rounded-10px px-5 py-2 font-bold font-serif4`}
+              } hover:bg-[#51a2f821] outline-none min-w-[189px] rounded-10px px-5 py-2 font-bold font-serif4`}
             >
               Hợp tác quốc tế
             </button>

@@ -1,7 +1,7 @@
 import { MUi } from "./ui";
 
 const MOCK_OBJECT = {
-  image: "./images/coop-item.png",
+  image: "/images/coop-item.png",
   tag: "sự kiện",
   name: "Gần 700 chiến sĩ Mùa hè xanh HCMUE lên đường làm nhiệm vụ.",
   description:
