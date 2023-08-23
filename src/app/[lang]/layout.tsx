@@ -5,7 +5,7 @@ import { CScrollTopButton } from "@/common/components/controls";
 import { CMainLayout } from "@/common/components/layouts";
 import { IPageProps } from "@/types/page";
 
-import { montserrat, sourceSerif4 } from "../fonts";
+import { montserrat, raleway, sourceSerif4 } from "../fonts";
 
 import "./globals.css";
 
@@ -31,7 +31,7 @@ export default function RootLayout({ children, params }: IRootLayoutProps) {
   return (
     <html
       lang={locale}
-      className={`${sourceSerif4.variable} ${montserrat.variable}`}
+      className={`${sourceSerif4.variable} ${montserrat.variable} ${raleway.variable}`}
     >
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
