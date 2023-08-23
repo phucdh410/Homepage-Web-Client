@@ -1,9 +1,9 @@
-import { MCalendar } from "@/modules/schedule";
+import { MTabs } from "@/modules/schedule";
 
 const SchedulePage = () => {
   return (
     <div className="mt-40">
-      <MCalendar />
+      <MTabs />
     </div>
   );
 };
