@@ -3,11 +3,12 @@
 import { usePathname } from "next-intl/client";
 import Link from "next-intl/link";
 
-import { useRef, useState } from "react";
+import { Fragment } from "react";
+
+import { Popover } from "@headlessui/react";
 
 import { CSwitchLanguageButton } from "@/common/components/controls";
 
-import { ICListMenuRef } from "./CListMenu/types";
 import { CListMenu } from "./CListMenu";
 import { INavItem } from "./types";
 
@@ -128,11 +129,7 @@ const MOCK1: INavItem[] = [
 
 export const CHeader = () => {
   //#region Data
-  const subRef = useRef<null | ICListMenuRef>(null);
-
   const pathname = usePathname();
-
-  const [currentId, setCurrentId] = useState<string | null>(null);
   //#endregion
 
   //#region Event
@@ -143,22 +140,12 @@ export const CHeader = () => {
       return pathname.includes(path);
     }
   };
-
-  const onSelectMenu = (id: string) => {
-    setCurrentId(id);
-    subRef.current?.clearSubId();
-  };
-
-  const onClose = () => {
-    setCurrentId(null);
-    subRef.current?.clearSubId();
-  };
   //#endregion
 
   //#region Render
   return (
     <header className="fixed z-10 top-0 w-full h-header hidden xl:block">
-      <div className="container">
+      <div className="container relative">
         <div className="flex px-[10rem] py-[7px] bg-[#124874] items-center justify-between">
           <ul className="flex items-center gap-10 text-white">
             {MOCK.map((e) => (
@@ -169,6 +156,7 @@ export const CHeader = () => {
           </ul>
           <CSwitchLanguageButton />
         </div>
+
         <div
           className="flex px-[2rem] py-2 items-center gap-5"
           style={{
@@ -183,7 +171,10 @@ export const CHeader = () => {
           // }}
         >
           <img src="/images/logo.png" alt="" />
-          <ul className="flex items-center gap-6 text-primary font-serif4">
+          <Popover.Group
+            as="ul"
+            className="flex items-center gap-6 text-primary font-serif4"
+          >
             {MOCK1.map((e) => (
               <li
                 key={e.id}
@@ -195,27 +186,21 @@ export const CHeader = () => {
                     className={
                       isActive(e.link || "") ? "activated font-bold" : ""
                     }
-                    onClick={onClose}
                   >
                     {e.name}
                   </Link>
                 ) : (
-                  <button onClick={() => onSelectMenu(e.id)}>{e.name}</button>
+                  <Popover as={Fragment}>
+                    <Popover.Button>{e.name}</Popover.Button>
+                    <Popover.Panel className="absolute inset-x-0 top-full">
+                      <CListMenu data={e} />
+                    </Popover.Panel>
+                  </Popover>
                 )}
               </li>
             ))}
-          </ul>
+          </Popover.Group>
         </div>
-
-        {MOCK1.filter((e) => e.children).map((e) => (
-          <CListMenu
-            key={e.id}
-            ref={subRef}
-            currentId={currentId || ""}
-            data={e}
-            onClose={onClose}
-          />
-        ))}
       </div>
     </header>
   );

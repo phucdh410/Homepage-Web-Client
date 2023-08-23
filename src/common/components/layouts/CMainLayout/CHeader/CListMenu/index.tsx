@@ -19,10 +19,12 @@ const animationVariants: Variants = {
   animate: { opacity: 1, y: 0, transition: { duration: 1, type: "spring" } },
 };
 
+import { Popover } from "@headlessui/react";
+
 import "./styles.scss";
 
 export const CListMenu = forwardRef<ICListMenuRef, ICListMenuProps>(
-  ({ data, onClose, currentId }, ref) => {
+  ({ data }, ref) => {
     //#region Data
     const [subId, setSubId] = useState<string | null>(null);
     //#endregion
@@ -40,10 +42,8 @@ export const CListMenu = forwardRef<ICListMenuRef, ICListMenuProps>(
       <motion.div
         variants={animationVariants}
         initial="initial"
-        animate={currentId === data?.id ? "animate" : "initial"}
-        className={`w-full navigation-list-menu !bg-center !bg-no-repeat !bg-cover ${
-          currentId === data?.id ? "block" : "hidden"
-        }`}
+        animate="animate"
+        className={`w-full navigation-list-menu !bg-center !bg-no-repeat !bg-cover block`}
       >
         <div className="flex text-primary p-30px mb-2">
           <div className="max-w-[253px] mr-10 select-none">
@@ -94,13 +94,10 @@ export const CListMenu = forwardRef<ICListMenuRef, ICListMenuProps>(
               </li>
             ))}
           </ul>
-          <button
-            className="font-serif4 font-bold flex items-center gap-2"
-            onClick={onClose}
-          >
+          <Popover.Button className="font-serif4 font-bold flex items-center gap-2">
             Close
             <CCloseIcon />
-          </button>
+          </Popover.Button>
         </div>
       </motion.div>
     );
