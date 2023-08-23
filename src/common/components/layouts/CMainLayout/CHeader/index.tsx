@@ -200,7 +200,7 @@ export const CHeader = () => {
                     {e.name}
                   </Link>
                 ) : (
-                  <div onClick={() => onSelectMenu(e.id)}>{e.name}</div>
+                  <button onClick={() => onSelectMenu(e.id)}>{e.name}</button>
                 )}
               </li>
             ))}
