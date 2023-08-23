@@ -2,15 +2,12 @@
 
 import { useCallback, useRef, useState } from "react";
 
-import dayjs from "dayjs";
-
 import { miniRange } from "@/utils/funcs";
+import { useDayjs } from "@/utils/hooks";
 
 import { IMNotesModalRef } from "./MNotesModal/types";
 import { MNotesModal } from "./MNotesModal";
 import { IDateNote } from "./types";
-
-const weekDays = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
 
 const MOCK: Record<string, IDateNote> = {
   "2023-08-01": [
@@ -40,6 +37,10 @@ const MOCK: Record<string, IDateNote> = {
 
 export const MCalendar = () => {
   //#region Data
+  const dayjs = useDayjs();
+
+  const weekDays = dayjs.weekdaysMin();
+
   const modalRef = useRef<null | IMNotesModalRef>(null);
 
   const [dayObj, setDayObj] = useState(dayjs());

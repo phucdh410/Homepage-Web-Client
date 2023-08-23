@@ -119,9 +119,14 @@ export const MUi = ({ data }: INewsAndEventsProps) => {
             className="mt-20 aspect-admissions w-full h-full"
           />
           <div className="absolute bottom-0 w-full text-center mb-30px">
-            <CButton className="text-primary font-bold text-xl leading-6 px-6 py-[13px] rounded-15px bg-white shadow-[15px_15px_60px_rgba(19,70,131,0.15)]">
+            <a
+              href="http://tuyensinh.hcmue.edu.vn/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary font-bold text-xl leading-6 px-6 py-[13px] rounded-15px bg-white shadow-[15px_15px_60px_rgba(19,70,131,0.15)]"
+            >
               Cổng thông tin tuyển sinh
-            </CButton>
+            </a>
           </div>
         </motion.div>
       </div>

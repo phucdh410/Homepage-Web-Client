@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
-import dayjs from "dayjs";
+import { useDayjs } from "@/utils/hooks";
 
 import { IDateNote } from "../MCalendar/types";
 
@@ -12,7 +12,10 @@ const MOCK: IDateNote = [
 ];
 export const MDay = () => {
   //#region Data
+  const dayjs = useDayjs();
+
   const [dayObj, setDayObj] = useState(dayjs());
+
   //#endregion
 
   //#region Event

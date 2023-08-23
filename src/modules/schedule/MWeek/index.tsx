@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 
-import dayjs from "dayjs";
+import { useDayjs } from "@/utils/hooks";
 
 import { IDateNote } from "../MCalendar/types";
 
@@ -27,6 +27,8 @@ const MOCK: Record<string, IDateNote> = {
 
 export const MWeek = () => {
   //#region Data
+  const dayjs = useDayjs();
+
   const [dayObj, setDayObj] = useState(dayjs());
 
   const data = useMemo(() => {
@@ -60,7 +62,7 @@ export const MWeek = () => {
       date = "";
     });
     return response;
-  }, [dayObj]);
+  }, [dayObj, dayjs]);
   //#endregion
 
   //#region Event

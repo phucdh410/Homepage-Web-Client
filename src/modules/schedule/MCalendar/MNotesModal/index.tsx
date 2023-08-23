@@ -1,8 +1,7 @@
 import { forwardRef, useImperativeHandle, useState } from "react";
 
-import dayjs from "dayjs";
-
 import { CModal } from "@/common/components/others";
+import { useDayjs } from "@/utils/hooks";
 
 import { IDateNote } from "../types";
 
@@ -14,6 +13,8 @@ export const MNotesModal = forwardRef<IMNotesModalRef, IMNotesModalProps>(
     const [date, setDate] = useState<string>("");
     const [data, setData] = useState<IDateNote>([]);
     const [open, setOpen] = useState<boolean>(false);
+
+    const dayjs = useDayjs();
     //#endregion
 
     //#region Event

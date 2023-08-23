@@ -3,22 +3,17 @@
 import { Fragment } from "react";
 
 import { Tab } from "@headlessui/react";
-import dayjs from "dayjs";
-import vi from "dayjs/locale/vi";
-import weekday from "dayjs/plugin/weekday";
 
 import { MCalendar } from "../MCalendar";
 import { MDay } from "../MDay";
 import { MWeek } from "../MWeek";
-
-dayjs.extend(weekday);
-dayjs.locale(vi);
 
 export const MTabs = () => {
   //#region Data
   //#endregion
 
   //#region Event
+
   //#endregion
 
   //#region Render
