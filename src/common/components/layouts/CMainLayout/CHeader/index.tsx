@@ -23,7 +23,7 @@ const MOCK = [
 ];
 
 const MOCK1: INavItem[] = [
-  { id: "1", name: "Trang chủ", link: "" },
+  { id: "1", name: "Trang chủ", link: "/" },
   {
     id: "2",
     name: "Giới thiệu",
@@ -137,7 +137,11 @@ export const CHeader = () => {
 
   //#region Event
   const isActive = (path: string) => {
-    return pathname.replace("/vi", "").replace("/en", "") === path;
+    if (path === "/") {
+      return pathname === path;
+    } else {
+      return pathname.includes(path);
+    }
   };
 
   const onSelectMenu = (id: string) => {
