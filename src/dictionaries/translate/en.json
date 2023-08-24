@@ -1,7 +1,9 @@
 {
   "global": {
     "read-more": "Read more",
-    "download-more": "Download more"
+    "download-more": "Download more",
+    "back-home": "Back Homepage",
+    "wrong-page": "Wrong page"
   },
   "pages": {
     "home": {

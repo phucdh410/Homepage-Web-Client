@@ -1,7 +1,9 @@
 {
   "global": {
     "read-more": "Xem thêm",
-    "download-more": "Tải thêm"
+    "download-more": "Tải thêm",
+    "back-home": "Về trang chủ",
+    "wrong-page": "Trang không tồn tại"
   },
   "pages": {
     "home": {
