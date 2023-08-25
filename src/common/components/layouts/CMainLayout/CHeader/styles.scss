@@ -1,0 +1,66 @@
+.navigation-parent-item {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2.5px;
+    background-color: #cf373d;
+    transition: 250ms;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2.5px;
+    background-color: #cf373d;
+    transition: 250ms;
+  }
+  &.left-in {
+    &::after {
+      animation: left-in 250ms linear forwards;
+    }
+  }
+  &.right-in {
+    &::after {
+      animation: right-in 250ms linear forwards;
+    }
+  }
+  &.left-out {
+    &::before {
+      animation: left-in 200ms linear reverse forwards;
+    }
+  }
+  &.right-out {
+    &::before {
+      animation: right-in 200ms linear reverse forwards;
+    }
+  }
+}
+
+@keyframes left-in {
+  0% {
+    width: 100%;
+    transform: translateX(-101%);
+  }
+  100% {
+    width: 100%;
+    transform: translateX(0%);
+  }
+}
+@keyframes right-in {
+  0% {
+    width: 100%;
+    transform: translateX(101%);
+  }
+  100% {
+    width: 100%;
+    transform: translateX(0%);
+  }
+}

@@ -6,8 +6,10 @@ import Link from "next-intl/link";
 import { Fragment } from "react";
 
 import { Popover } from "@headlessui/react";
+import classNames from "classnames";
 
 import { CSwitchLanguageButton } from "@/common/components/controls";
+import { useMouseDirection } from "@/utils/hooks";
 
 import { CListMenu } from "./CListMenu";
 import { INavItem } from "./types";
@@ -130,6 +132,8 @@ const MOCK1: INavItem[] = [
 export const CHeader = () => {
   //#region Data
   const pathname = usePathname();
+
+  const { direction } = useMouseDirection();
   //#endregion
 
   //#region Event
@@ -139,6 +143,29 @@ export const CHeader = () => {
     } else {
       return pathname.includes(path);
     }
+  };
+
+  const onMouseOver = (
+    e:
+      | React.MouseEvent<HTMLAnchorElement, MouseEvent>
+      | React.MouseEvent<HTMLButtonElement>
+  ) => {
+    e.currentTarget.classList.remove("left-out", "right-out");
+
+    e.currentTarget.classList.add(
+      direction === "right" ? "left-in" : "right-in"
+    );
+  };
+  const onMouseOut = (
+    e:
+      | React.MouseEvent<HTMLAnchorElement, MouseEvent>
+      | React.MouseEvent<HTMLButtonElement>
+  ) => {
+    e.currentTarget.classList.remove("left-in", "right-in");
+
+    e.currentTarget.classList.add(
+      direction === "right" ? "right-out" : "left-out"
+    );
   };
   //#endregion
 
@@ -176,22 +203,28 @@ export const CHeader = () => {
             className="flex items-center gap-6 text-primary font-serif4"
           >
             {MOCK1.map((e) => (
-              <li
-                key={e.id}
-                className="cursor-pointer hover:text-primary-red hover:underline"
-              >
+              <li key={e.id} className="min-h-[42px]">
                 {!e?.children ? (
                   <Link
                     href={e.link || "/"}
-                    className={
-                      isActive(e.link || "") ? "activated font-bold" : ""
-                    }
+                    className={classNames(
+                      isActive(e.link || "") && "activated font-bold",
+                      "navigation-parent-item h-full outline-none inline-block py-[6px]"
+                    )}
+                    onMouseOver={onMouseOver}
+                    onMouseOut={onMouseOut}
                   >
                     {e.name}
                   </Link>
                 ) : (
                   <Popover as={Fragment}>
-                    <Popover.Button>{e.name}</Popover.Button>
+                    <Popover.Button
+                      className="navigation-parent-item h-full outline-none inline-block py-[6px]"
+                      onMouseOver={onMouseOver}
+                      onMouseOut={onMouseOut}
+                    >
+                      {e.name}
+                    </Popover.Button>
                     <Popover.Panel className="absolute inset-x-0 top-full">
                       <CListMenu data={e} />
                     </Popover.Panel>
