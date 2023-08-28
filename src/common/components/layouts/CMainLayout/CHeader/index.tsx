@@ -131,6 +131,7 @@ const MOCK1: INavItem[] = [
 
 export const CHeader = () => {
   //#region Data
+
   const pathname = usePathname();
 
   const { direction } = useMouseDirection();

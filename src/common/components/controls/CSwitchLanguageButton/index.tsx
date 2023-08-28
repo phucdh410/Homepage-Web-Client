@@ -56,7 +56,7 @@ export const CSwitchLanguageButton = () => {
             initial={{ y: -20, x: "-50%", opacity: 0 }}
             animate={{ y: 5, x: "-50%", opacity: 1 }}
             exit={{ y: -5, opacity: 0 }}
-            className="absolute left-1/2 -translate-x-1/2 translate-y-1 bg-white rounded-md p-1 shadow-[0_0_10px_6px_rgb(0_0_0_/_20%)]"
+            className="absolute left-1/2 -translate-x-1/2 translate-y-1 z-10 bg-white rounded-md p-1 shadow-[0_0_10px_6px_rgb(0_0_0_/_20%)]"
           >
             <ul>
               {LANGUAGES.map((e) => (

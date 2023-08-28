@@ -6,11 +6,11 @@ export const CMainLayout: React.FC<React.PropsWithChildren> = ({
   children,
 }) => {
   return (
-    <>
+    <div>
       <CHeader />
       <CMobileHeader />
       <main className="overflow-hidden">{children}</main>
       <CFooter />
-    </>
+    </div>
   );
 };

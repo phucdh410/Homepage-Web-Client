@@ -108,7 +108,7 @@ export const CFooter = () => {
           <div className="mb-5 md:mb-0 md:mr-5 xl:mr-[50px] basis-1/3 md:basis-1/2 lg:basis-1/3">
             <div className="flex items-center gap-[15px] md:gap-2 lg:gap-[15px] mb-3">
               <img src="/images/logo.png" alt="" className="" />
-              <h6 className="uppercase text-primary font-serif4 font-bold">
+              <h6 className="uppercase text-primary font-serif4 font-bold select-none">
                 trường đại học sư phạm <br /> thành phố hồ chí minh
               </h6>
             </div>
@@ -138,7 +138,7 @@ export const CFooter = () => {
               Fax: (+84) - (28) - 38398946
             </p>
             <div className="h-[1px] bg-primary opacity-10 min-w-full"></div>
-            <h6 className="text-primary font-bold font-serif4 mb-5 pt-3">
+            <h6 className="text-primary font-bold font-serif4 mb-5 pt-3 select-none">
               {d("connect-with-us")}:
             </h6>
             <ul className="flex items-center gap-30px mb-3">
@@ -154,13 +154,13 @@ export const CFooter = () => {
           <div className="md:basis-1/2 lg:basis-2/3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 md:gap-3 lg:gap-2 xl:gap-5">
             {MOCK.map((e) => (
               <div key={e.id}>
-                <h6 className="text-primary font-serif4 font-bold h-6 md:h-[44px] mb-10px">
+                <h6 className="text-primary font-serif4 font-bold h-6 md:h-[44px] mb-10px select-none">
                   {e.name}
                 </h6>
                 <ul>
                   {e.list.map((el, i) => (
                     <li key={i} className="text-sm text-sub mb-10px last:mb-0">
-                      {el.name}
+                      <a href="">{el.name}</a>
                     </li>
                   ))}
                 </ul>
