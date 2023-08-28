@@ -40,7 +40,7 @@ export const MCooperation = () => {
             />
             <div className="absolute w-full bottom-0 bg-white text-center py-3 md:p-[15px] rounded-b-inherit">
               <Link
-                href="/coop?tab=2"
+                href="/coop?tab=1"
                 className="text-primary font-serif4 text-[clamp(0.875rem,_0.7331rem_+_0.6054vw,_1.25rem)] uppercase font-bold rounded-b-inherit"
               >
                 hợp tác trong nước
@@ -61,7 +61,7 @@ export const MCooperation = () => {
             />
             <div className="absolute w-full bottom-0 bg-white text-center py-3 md:p-[15px] rounded-b-inherit">
               <Link
-                href="/coop?tab=3"
+                href="/coop?tab=2"
                 className="text-primary font-serif4 text-[clamp(0.875rem,_0.7331rem_+_0.6054vw,_1.25rem)] uppercase font-bold rounded-b-inherit"
               >
                 hợp tác quốc tế

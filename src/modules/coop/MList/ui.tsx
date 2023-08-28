@@ -1,9 +1,10 @@
 "use client";
+
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next-intl/client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { CButton } from "@/common/components/controls";
 import { delay } from "@/utils/funcs";
@@ -11,6 +12,8 @@ import { delay } from "@/utils/funcs";
 import { MLoadingCoopItem } from "./loading";
 import { MCoopItem } from "./MCoopItem";
 import { IMListProps } from "./types";
+
+const MAX_TOTAL = 20;
 
 export const MUi = ({ data }: IMListProps) => {
   //#region Data
@@ -24,14 +27,22 @@ export const MUi = ({ data }: IMListProps) => {
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const [currentTab, setCurrentTab] = useState<1 | 2 | 3>(
-    tab ? (Number(tab) as 1 | 2 | 3) : 1
+  const [currentTab, setCurrentTab] = useState<-1 | 1 | 2>(
+    tab ? (Number(tab) as -1 | 1 | 2) : -1
   );
+  const [page, setPage] = useState<number>(1);
+
+  const _data = useMemo(() => {
+    if (currentTab === -1) return data;
+    else if (currentTab === 1) return data.filter((e) => e.type === 1);
+    else if (currentTab === 2) return data.filter((e) => e.type === 2);
+  }, [data, currentTab]);
   //#endregion
 
   //#region Event
-  const onTabChange = (newTab: 1 | 2 | 3) => {
+  const onTabChange = (newTab: -1 | 1 | 2) => {
     setCurrentTab(newTab);
+    setPage(1);
 
     router.replace(`${pathname}?tab=${newTab}`);
   };
@@ -39,6 +50,7 @@ export const MUi = ({ data }: IMListProps) => {
   const onLoadMore = async () => {
     setIsLoading(true);
     delay(() => {
+      setPage((prev) => prev + 1);
       setIsLoading(false);
     }, 3000);
   };
@@ -67,6 +79,16 @@ export const MUi = ({ data }: IMListProps) => {
         <div className="mx-2 lg:mx-5 2xl:mx-10">
           <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
             <button
+              onClick={() => onTabChange(-1)}
+              className={`${
+                currentTab === -1
+                  ? "!bg-primary text-white"
+                  : "bg-[#f5f5f5] text-primary"
+              } hover:bg-[#51a2f821] outline-none min-w-[189px] rounded-10px px-5 py-2 font-bold font-serif4`}
+            >
+              Tất cả
+            </button>
+            <button
               onClick={() => onTabChange(1)}
               className={`${
                 currentTab === 1
@@ -74,7 +96,7 @@ export const MUi = ({ data }: IMListProps) => {
                   : "bg-[#f5f5f5] text-primary"
               } hover:bg-[#51a2f821] outline-none min-w-[189px] rounded-10px px-5 py-2 font-bold font-serif4`}
             >
-              Tất cả
+              Hợp tác trong nước
             </button>
             <button
               onClick={() => onTabChange(2)}
@@ -84,24 +106,14 @@ export const MUi = ({ data }: IMListProps) => {
                   : "bg-[#f5f5f5] text-primary"
               } hover:bg-[#51a2f821] outline-none min-w-[189px] rounded-10px px-5 py-2 font-bold font-serif4`}
             >
-              Hợp tác trong nước
-            </button>
-            <button
-              onClick={() => onTabChange(3)}
-              className={`${
-                currentTab === 3
-                  ? "!bg-primary text-white"
-                  : "bg-[#f5f5f5] text-primary"
-              } hover:bg-[#51a2f821] outline-none min-w-[189px] rounded-10px px-5 py-2 font-bold font-serif4`}
-            >
               Hợp tác quốc tế
             </button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-10 mb-20">
-            {data &&
-              data.length > 0 &&
-              data.map((item) => <MCoopItem key={item.id} data={item} />)}
+            {_data &&
+              _data.length > 0 &&
+              _data.map((item) => <MCoopItem key={item.id} data={item} />)}
             {isLoading &&
               Array(3)
                 .fill("")
@@ -111,13 +123,19 @@ export const MUi = ({ data }: IMListProps) => {
           </div>
 
           <div className="text-center mb-20">
-            <CButton
-              disabled={isLoading}
-              className="rounded-10px bg-primary text-white py-4 px-5 min-w-[189px] font-bold font-serif4"
-              onClick={onLoadMore}
-            >
-              {`${d("download-more")}${isLoading ? " ..." : ""}`}
-            </CButton>
+            {_data?.length === MAX_TOTAL ? (
+              <div className="inline-block text-2xl px-10 py-3 select-none font-semibold rounded-xl  text-primary">
+                {d("full-download-more")}
+              </div>
+            ) : (
+              <CButton
+                disabled={isLoading}
+                className="rounded-10px bg-primary text-white py-4 px-5 min-w-[189px] font-bold font-serif4"
+                onClick={onLoadMore}
+              >
+                {`${d("download-more")}${isLoading ? " ..." : ""}`}
+              </CButton>
+            )}
           </div>
         </div>
       </div>

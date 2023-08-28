@@ -2,6 +2,7 @@
   "global": {
     "read-more": "Read more",
     "download-more": "Download more",
+    "full-download-more": "Downloaded the entire list",
     "back-home": "Back Homepage",
     "wrong-page": "Wrong page"
   },

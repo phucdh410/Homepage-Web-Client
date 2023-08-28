@@ -4,6 +4,7 @@ export interface ICoopItem {
   name: string;
   description: string;
   image: string;
+  type: 1 | 2;
 }
 
 export interface IMListProps {
