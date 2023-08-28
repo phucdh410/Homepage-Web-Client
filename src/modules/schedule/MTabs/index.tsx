@@ -3,10 +3,14 @@
 import { Fragment } from "react";
 
 import { Tab } from "@headlessui/react";
+import classNames from "classnames";
+import { motion } from "framer-motion";
 
 import { MCalendar } from "../MCalendar";
 import { MDay } from "../MDay";
 import { MWeek } from "../MWeek";
+
+const TABS = ["tháng", "tuần", "ngày"];
 
 export const MTabs = () => {
   //#region Data
@@ -24,45 +28,37 @@ export const MTabs = () => {
       </h3>
       <Tab.Group>
         <Tab.List className="flex items-center justify-center gap-2">
-          <Tab as={Fragment}>
-            {({ selected }) => (
-              <button
-                className={`${
-                  selected
-                    ? "!bg-primary text-white"
-                    : "bg-[#f5f5f5] text-primary"
-                } hover:bg-[#51a2f821] outline-none min-w-[50px] 2xl:min-w-[189px] text-sm sm:text-base rounded-10px px-5 py-2 font-bold font-serif4`}
-              >
-                Theo tháng
-              </button>
-            )}
-          </Tab>
-          <Tab as={Fragment}>
-            {({ selected }) => (
-              <button
-                className={`${
-                  selected
-                    ? "!bg-primary text-white"
-                    : "bg-[#f5f5f5] text-primary"
-                } hover:bg-[#51a2f821] outline-none min-w-[50px] 2xl:min-w-[189px] text-sm sm:text-base rounded-10px px-5 py-2 font-bold font-serif4`}
-              >
-                Theo tuần
-              </button>
-            )}
-          </Tab>
-          <Tab as={Fragment}>
-            {({ selected }) => (
-              <button
-                className={`${
-                  selected
-                    ? "!bg-primary text-white"
-                    : "bg-[#f5f5f5] text-primary"
-                } hover:bg-[#51a2f821] outline-none min-w-[50px] 2xl:min-w-[189px] text-sm sm:text-base rounded-10px px-5 py-2 font-bold font-serif4`}
-              >
-                Theo ngày
-              </button>
-            )}
-          </Tab>
+          {TABS.map((tab, i) => (
+            <Tab key={i} as={Fragment}>
+              {({ selected }) => (
+                <button
+                  className={
+                    "bg-[#f5f5f5] relative hover:bg-[#51a2f821] outline-none min-w-[50px] 2xl:min-w-[189px] text-sm sm:text-base rounded-10px px-5 py-2 font-bold"
+                  }
+                >
+                  <span
+                    className={classNames(
+                      selected ? " text-white" : " text-primary",
+                      "z-10 relative transition-colors duration-500"
+                    )}
+                  >
+                    Theo {tab}
+                  </span>
+                  {selected && (
+                    <motion.span
+                      layoutId="bubble"
+                      className="absolute rounded-inherit inset-0 z-1 !bg-primary"
+                      transition={{
+                        type: "spring",
+                        bounce: 0.2,
+                        duration: 0.5,
+                      }}
+                    />
+                  )}
+                </button>
+              )}
+            </Tab>
+          ))}
         </Tab.List>
         <Tab.Panels className="mt-10">
           <Tab.Panel>

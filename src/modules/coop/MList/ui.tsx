@@ -4,7 +4,11 @@ import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next-intl/client";
 
-import { useEffect, useMemo, useState } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
+
+import { Tab } from "@headlessui/react";
+import classNames from "classnames";
+import { motion } from "framer-motion";
 
 import { CButton } from "@/common/components/controls";
 import { delay } from "@/utils/funcs";
@@ -14,6 +18,12 @@ import { MCoopItem } from "./MCoopItem";
 import { IMListProps } from "./types";
 
 const MAX_TOTAL = 20;
+
+const TABS = [
+  { id: 0, name: "Tất cả" },
+  { id: 1, name: "Hợp tác trong nước" },
+  { id: 2, name: "Hợp tác quốc tế" },
+];
 
 export const MUi = ({ data }: IMListProps) => {
   //#region Data
@@ -27,21 +37,21 @@ export const MUi = ({ data }: IMListProps) => {
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const [currentTab, setCurrentTab] = useState<-1 | 1 | 2>(
-    tab ? (Number(tab) as -1 | 1 | 2) : -1
+  const [currentTab, setCurrentTab] = useState<-0 | 1 | 2>(
+    tab ? (Number(tab) as 0 | 1 | 2) : 0
   );
   const [page, setPage] = useState<number>(1);
 
   const _data = useMemo(() => {
-    if (currentTab === -1) return data;
+    if (currentTab === 0) return data;
     else if (currentTab === 1) return data.filter((e) => e.type === 1);
     else if (currentTab === 2) return data.filter((e) => e.type === 2);
   }, [data, currentTab]);
   //#endregion
 
   //#region Event
-  const onTabChange = (newTab: -1 | 1 | 2) => {
-    setCurrentTab(newTab);
+  const onTabChange = (newTab: number) => {
+    setCurrentTab(newTab as 0 | 1 | 2);
     setPage(1);
 
     router.replace(`${pathname}?tab=${newTab}`);
@@ -77,38 +87,37 @@ export const MUi = ({ data }: IMListProps) => {
         </div>
 
         <div className="mx-2 lg:mx-5 2xl:mx-10">
-          <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
-            <button
-              onClick={() => onTabChange(-1)}
-              className={`${
-                currentTab === -1
-                  ? "!bg-primary text-white"
-                  : "bg-[#f5f5f5] text-primary"
-              } hover:bg-[#51a2f821] outline-none min-w-[189px] rounded-10px px-5 py-2 font-bold font-serif4`}
-            >
-              Tất cả
-            </button>
-            <button
-              onClick={() => onTabChange(1)}
-              className={`${
-                currentTab === 1
-                  ? "!bg-primary text-white"
-                  : "bg-[#f5f5f5] text-primary"
-              } hover:bg-[#51a2f821] outline-none min-w-[189px] rounded-10px px-5 py-2 font-bold font-serif4`}
-            >
-              Hợp tác trong nước
-            </button>
-            <button
-              onClick={() => onTabChange(2)}
-              className={`${
-                currentTab === 2
-                  ? "!bg-primary text-white"
-                  : "bg-[#f5f5f5] text-primary"
-              } hover:bg-[#51a2f821] outline-none min-w-[189px] rounded-10px px-5 py-2 font-bold font-serif4`}
-            >
-              Hợp tác quốc tế
-            </button>
-          </div>
+          <Tab.Group selectedIndex={currentTab} onChange={onTabChange}>
+            <Tab.List className="flex flex-col md:flex-row items-center gap-8 mb-12">
+              {TABS.map((tab) => (
+                <Tab key={tab.id} as={Fragment}>
+                  {({ selected }) => (
+                    <button className="relative bg-[#f5f5f5] hover:bg-[#51a2f821] outline-none min-w-[189px] rounded-10px px-5 py-2 font-bold font-serif4`">
+                      <span
+                        className={classNames(
+                          selected ? "text-white" : " text-primary",
+                          "z-10 relative transition-colors duration-500"
+                        )}
+                      >
+                        {tab.name}
+                      </span>
+                      {selected && (
+                        <motion.span
+                          layoutId="bubble"
+                          className="absolute rounded-inherit inset-0 z-1 !bg-primary"
+                          transition={{
+                            type: "spring",
+                            bounce: 0.2,
+                            duration: 0.5,
+                          }}
+                        />
+                      )}
+                    </button>
+                  )}
+                </Tab>
+              ))}
+            </Tab.List>
+          </Tab.Group>
 
           <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-10 mb-20">
             {_data &&
