@@ -5,7 +5,7 @@ import Link from "next-intl/link";
 
 import { Fragment } from "react";
 
-import { Popover } from "@headlessui/react";
+import { Popover, Transition } from "@headlessui/react";
 import classNames from "classnames";
 
 import { CSwitchLanguageButton } from "@/common/components/controls";
@@ -226,9 +226,16 @@ export const CHeader = () => {
                     >
                       {e.name}
                     </Popover.Button>
-                    <Popover.Panel className="absolute inset-x-0 top-full">
-                      <CListMenu data={e} />
-                    </Popover.Panel>
+                    <Transition
+                      as={Fragment}
+                      leave="transition ease-in duration-300"
+                      leaveFrom="opacity-100 translate-y-0"
+                      leaveTo="opacity-0 -translate-y-4"
+                    >
+                      <Popover.Panel className="absolute inset-x-0 top-full">
+                        <CListMenu data={e} />
+                      </Popover.Panel>
+                    </Transition>
                   </Popover>
                 )}
               </li>

@@ -16,7 +16,7 @@ const ADDITIONAL_NAV = [
 
 const animationVariants: Variants = {
   initial: { opacity: 0, y: -30 },
-  animate: { opacity: 1, y: 0, transition: { duration: 1, type: "spring" } },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.8, type: "spring" } },
 };
 
 import { Popover } from "@headlessui/react";
@@ -40,65 +40,71 @@ export const CListMenu = forwardRef<ICListMenuRef, ICListMenuProps>(
     //#region Render
     return (
       <motion.div
-        variants={animationVariants}
-        initial="initial"
-        animate="animate"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.2 }}
         className={`w-full navigation-list-menu !bg-center !bg-no-repeat !bg-cover block`}
       >
-        <div className="flex text-primary p-30px mb-2">
-          <div className="max-w-[253px] mr-10 select-none">
-            <h2 className="font-bold font-serif4 text-[40px]">{data.name}</h2>
-            <p className="font-serif4">{data.description}</p>
-          </div>
-          <div className="max-w-[262px] mr-7">
-            <ul>
-              {data.children?.map((e) => (
-                <li
-                  key={e.id}
-                  className="font-serif4 w-fit font-bold text-xl whitespace-nowrap pb-[15px] last:pb-0 hover:text-primary-red hover:underline cursor-pointer"
-                >
-                  {e?.children ? (
-                    <div onClick={() => onOpen(e.id)}>{e.name} &#62;</div>
-                  ) : (
-                    <Link href={e.link || ""}>{e.name}</Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-          {data?.children
-            ?.filter((e) => e?.children)
-            .map((e) => (
-              <ul
-                key={e.id}
-                className={`flex-1 max-w-[600px] ${
-                  e.id === subId ? "block" : "hidden"
-                } `}
-              >
-                {e?.children?.map((el) => (
+        <motion.div
+          variants={animationVariants}
+          initial="initial"
+          animate="animate"
+        >
+          <div className="flex text-primary p-30px mb-2">
+            <div className="max-w-[253px] mr-10 select-none">
+              <h2 className="font-bold font-serif4 text-[40px]">{data.name}</h2>
+              <p className="font-serif4">{data.description}</p>
+            </div>
+            <div className="max-w-[262px] mr-7">
+              <ul>
+                {data.children?.map((e) => (
                   <li
-                    key={el.id}
-                    className="text-xl font-serif4 font-bold border-solid border-b border-[#DADADA] pb-[15px] hover:text-primary-red hover:underline"
+                    key={e.id}
+                    className="font-serif4 w-fit font-bold text-xl whitespace-nowrap pb-[15px] last:pb-0 hover:text-primary-red hover:underline cursor-pointer"
                   >
-                    <Link href={el.link || ""}>{el.name}</Link>
+                    {e?.children ? (
+                      <div onClick={() => onOpen(e.id)}>{e.name} &#62;</div>
+                    ) : (
+                      <Link href={e.link || ""}>{e.name}</Link>
+                    )}
                   </li>
                 ))}
               </ul>
-            ))}
-        </div>
-        <div className="w-full flex items-center justify-between border border-solid border-t-[rgba(25,_25,_25,_0.20)] py-4 px-7">
-          <ul className="flex items-center gap-10">
-            {ADDITIONAL_NAV.map((e) => (
-              <li key={e.id} className="text-sub text-sm tracking-0.42px">
-                <Link href={e.link}>{e.name}</Link>
-              </li>
-            ))}
-          </ul>
-          <Popover.Button className="font-serif4 font-bold flex items-center gap-2">
-            Close
-            <CCloseIcon />
-          </Popover.Button>
-        </div>
+            </div>
+            {data?.children
+              ?.filter((e) => e?.children)
+              .map((e) => (
+                <ul
+                  key={e.id}
+                  className={`flex-1 max-w-[600px] ${
+                    e.id === subId ? "block" : "hidden"
+                  } `}
+                >
+                  {e?.children?.map((el) => (
+                    <li
+                      key={el.id}
+                      className="text-xl font-serif4 font-bold border-solid border-b border-[#DADADA] pb-[15px] hover:text-primary-red hover:underline"
+                    >
+                      <Link href={el.link || ""}>{el.name}</Link>
+                    </li>
+                  ))}
+                </ul>
+              ))}
+          </div>
+          <div className="w-full flex items-center justify-between border border-solid border-t-[rgba(25,_25,_25,_0.20)] py-4 px-7">
+            <ul className="flex items-center gap-10">
+              {ADDITIONAL_NAV.map((e) => (
+                <li key={e.id} className="text-sub text-sm tracking-0.42px">
+                  <Link href={e.link}>{e.name}</Link>
+                </li>
+              ))}
+            </ul>
+            <Popover.Button className="font-serif4 font-bold flex items-center gap-2">
+              Close
+              <CCloseIcon />
+            </Popover.Button>
+          </div>
+        </motion.div>
       </motion.div>
     );
     //#endregion
