@@ -1,10 +1,17 @@
 "use client";
 
+import { useState } from "react";
+
 import icon1 from "./icon1.gif";
+import icon1Static from "./icon1-static.png";
 import icon2 from "./icon2.gif";
+import icon2Static from "./icon2-static.png";
 import icon3 from "./icon3.gif";
+import icon3Static from "./icon3-static.png";
 import icon4 from "./icon4.gif";
+import icon4Static from "./icon4-static.png";
 import icon5 from "./icon5.gif";
+import icon5Static from "./icon5-static.png";
 
 const goPig = () => {
   window.open(
@@ -36,24 +43,65 @@ const goPolice = () => {
 };
 
 const MOCK = [
-  { id: 1, name: "Liên hệ anh Phương", icon: icon1, func: goPig },
-  { id: 2, name: "Liên hệ anh Phúc", icon: icon2, func: notThing },
-  { id: 3, name: "Đi qua Youtube", icon: icon3, func: goYoutube },
-  { id: 4, name: "Báo công an", icon: icon4, func: goPolice },
-  { id: 5, name: "Lỗi web bấm NGAY", icon: icon5, func: reload },
+  {
+    id: 1,
+    name: "Liên hệ anh Phương",
+    icon: icon1,
+    func: goPig,
+    static: icon1Static,
+  },
+  {
+    id: 2,
+    name: "Liên hệ anh Phúc",
+    icon: icon2,
+    func: notThing,
+    static: icon2Static,
+  },
+  {
+    id: 3,
+    name: "Đi qua Youtube",
+    icon: icon3,
+    func: goYoutube,
+    static: icon3Static,
+  },
+  {
+    id: 4,
+    name: "Báo công an",
+    icon: icon4,
+    func: goPolice,
+    static: icon4Static,
+  },
+  {
+    id: 5,
+    name: "Lỗi web bấm NGAY",
+    icon: icon5,
+    func: reload,
+    static: icon5Static,
+  },
 ];
 
 export const CMenu = () => {
+  const [overItem, setOverItem] = useState<number | null>(null);
+
+  const onMouseOver = (itemId: number) => {
+    setOverItem(itemId);
+  };
+  const onMouseOut = () => {
+    setOverItem(null);
+  };
+
   return (
     <ul className="rounded-20px">
       {MOCK.map((item) => (
         <li key={item.id} className="mb-1 last:mb-0 w-full">
           <button
             onClick={item.func}
-            className="relative w-full py-1 px-3 rounded-10px flex items-center gap-2  hover:shadow-[0_0px_8px_5px_rgb(0_0_0_/_8%)]"
+            onMouseOver={() => onMouseOver(item.id)}
+            onMouseOut={onMouseOut}
+            className="relative w-full py-1 px-3 rounded-10px flex items-center gap-2 hover:shadow-[0_0px_8px_5px_rgb(0_0_0_/_8%)]"
           >
             <img
-              src={item.icon.src}
+              src={overItem === item.id ? item.icon.src : item.static?.src}
               alt=""
               className="shrink-0 aspect-square max-h-[32px] mix-blend-multiply"
             />
