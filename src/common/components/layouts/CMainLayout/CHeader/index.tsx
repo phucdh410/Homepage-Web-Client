@@ -172,7 +172,7 @@ export const CHeader = () => {
 
   //#region Render
   return (
-    <header className="fixed z-10 top-0 w-full h-header hidden xl:block">
+    <header className="fixed z-20 top-0 w-full h-header hidden xl:block">
       <div className="container relative">
         <div className="flex px-[10rem] py-[7px] bg-[#124874] items-center justify-between">
           <ul className="flex items-center gap-10 text-white">

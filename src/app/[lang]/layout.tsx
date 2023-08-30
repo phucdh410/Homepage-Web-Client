@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider, useLocale, useMessages } from "next-intl";
 
 import { CScrollTopButton } from "@/common/components/controls";
-import { CMainLayout } from "@/common/components/layouts";
+import { CContextMenu, CMainLayout } from "@/common/components/layouts";
 import { IPageProps } from "@/types/page";
 
 import { montserrat, raleway, sourceSerif4 } from "../fonts";
@@ -37,6 +37,7 @@ export default function RootLayout({ children, params }: IRootLayoutProps) {
         <NextIntlClientProvider locale={locale} messages={messages}>
           <CMainLayout>{children}</CMainLayout>
           <CScrollTopButton />
+          <CContextMenu />
         </NextIntlClientProvider>
       </body>
     </html>
