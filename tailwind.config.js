@@ -28,6 +28,7 @@ module.exports = {
       fontSize: {
         "25px": ["25px", "34px"],
         "32px": "32px",
+        "35px": "35px",
         "40px": ["40px", "55px"],
         "16px": ["16px", "19.5px"],
         clamp1: "clamp(1.25rem, 0.9375rem + 1.5625vw, 2.1875rem)",
@@ -51,6 +52,7 @@ module.exports = {
         "0.64px": "0.64px",
         "0.72px": "0.72px",
         "0.75px": "0.75px",
+        "1.05px": "1.05px",
         "1.2px": "1.2px",
       },
       height: {
@@ -93,12 +95,14 @@ module.exports = {
       },
       padding: {
         "10px": "10px",
+        "15px": "15px",
         "30px": "30px",
         "50px": "50px",
         "60px": "60px",
       },
       margin: {
         "10px": "10px",
+        "20px": "20px",
         "30px": "30px",
         "60px": "60px",
       },

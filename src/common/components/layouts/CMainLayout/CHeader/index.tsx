@@ -33,7 +33,7 @@ const MOCK1: INavItem[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, risus non lobortis feugiat",
     children: [
-      { id: "1", name: "Lịch sử hình thành", link: "" },
+      { id: "1", name: "Lịch sử hình thành", link: "/established-history" },
       { id: "2", name: "Triết lý giáo dục", link: "" },
       { id: "3", name: "Tầm nhìn và sứ mạng", link: "" },
       { id: "4", name: "Sơ đồ tổ chức", link: "" },
@@ -172,7 +172,7 @@ export const CHeader = () => {
 
   //#region Render
   return (
-    <header className="fixed z-10 top-0 w-full h-header hidden xl:block">
+    <header className="fixed z-20 top-0 w-full h-header hidden xl:block">
       <div className="container relative">
         <div className="flex px-[10rem] py-[7px] bg-[#124874] items-center justify-between">
           <ul className="flex items-center gap-10 text-white">

@@ -1,6 +1,6 @@
 import Link from "next-intl/link";
 
-import { forwardRef, useImperativeHandle, useRef, useState } from "react";
+import { forwardRef, useImperativeHandle, useState } from "react";
 
 import { motion, Variants } from "framer-motion";
 
@@ -65,7 +65,9 @@ export const CListMenu = forwardRef<ICListMenuRef, ICListMenuProps>(
                     {e?.children ? (
                       <div onClick={() => onOpen(e.id)}>{e.name} &#62;</div>
                     ) : (
-                      <Link href={e.link || ""}>{e.name}</Link>
+                      <Popover.Button as={Link} href={e.link || ""}>
+                        {e.name}
+                      </Popover.Button>
                     )}
                   </li>
                 ))}
@@ -85,7 +87,9 @@ export const CListMenu = forwardRef<ICListMenuRef, ICListMenuProps>(
                       key={el.id}
                       className="text-xl font-serif4 font-bold border-solid border-b border-[#DADADA] pb-[15px] hover:text-primary-red hover:underline"
                     >
-                      <Link href={el.link || ""}>{el.name}</Link>
+                      <Popover.Button as={Link} href={el.link || ""}>
+                        {el.name}
+                      </Popover.Button>
                     </li>
                   ))}
                 </ul>
@@ -95,7 +99,9 @@ export const CListMenu = forwardRef<ICListMenuRef, ICListMenuProps>(
             <ul className="flex items-center gap-10">
               {ADDITIONAL_NAV.map((e) => (
                 <li key={e.id} className="text-sub text-sm tracking-0.42px">
-                  <Link href={e.link}>{e.name}</Link>
+                  <Popover.Button as={Link} href={e.link}>
+                    {e.name}
+                  </Popover.Button>
                 </li>
               ))}
             </ul>
