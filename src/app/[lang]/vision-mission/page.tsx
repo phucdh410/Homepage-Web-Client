@@ -1,4 +1,5 @@
 import { CFeaturedEvents } from "@/common/components/layouts";
+import { MSubmenu } from "@/modules/introduction-submenu";
 import { MIntroduction, MMission, MSession } from "@/modules/vision_mission";
 
 const vision = {
@@ -18,7 +19,8 @@ const mission = {
 const VisonAndMission = () => {
   return (
     <div className="font-montserrat">
-      <div className="w-full h-[720px] bg-black"></div>
+      <div className="w-full min-h-[430px] bg-black"></div>
+
       <div className="w-full max-w-container m-auto">
         <MIntroduction />
         <MSession

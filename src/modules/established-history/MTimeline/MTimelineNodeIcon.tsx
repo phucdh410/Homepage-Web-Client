@@ -1,4 +1,8 @@
-export const MTimelineNodeIcon = () => {
+export const MTimelineNodeIcon = ({
+  className,
+}: {
+  className?: string | undefined;
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,7 +10,7 @@ export const MTimelineNodeIcon = () => {
       height="71"
       viewBox="0 0 71 71"
       fill="none"
-      className="shrink-0 -mt-20px z-1"
+      className={className}
     >
       <g filter="url(#filter0_d_2543_69375)">
         <circle cx="35.5" cy="35.5" r="15.5" fill="#124874" />

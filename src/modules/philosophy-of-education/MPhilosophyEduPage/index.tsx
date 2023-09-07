@@ -7,32 +7,6 @@ export const MPhilosophyEduPage = () => {
     <div>
       <div className="w-full max-w-container m-auto">
         <div className="px-30px">
-          <div className="flex py-6 text-16px font-montserrat text-sub">
-            <div className="flex">
-              <span className="uppercase font-bold text-primary">
-                Giới thiệu
-              </span>
-              <img
-                alt=""
-                src="/icons/arrow_right.svg"
-                className="mx-5 w-6 h-6"
-              />
-            </div>
-            <div className="flex gap-10 w-auto overflow-auto">
-              <span>Lịch sử hình thành</span>
-              <span className="text-primary font-bold">Triết lý giáo dục</span>
-              <span>Tầm nhìn và sứ mạng</span>
-              <span>Cơ cấu tồ chức</span>
-              <span>Hội đồng trường</span>
-              <span>Ban giám hiệu</span>
-            </div>
-            <img
-              alt=""
-              src="/icons/arrow_drop_down.svg"
-              className="ml-8 w-6 h-6"
-            />
-          </div>
-
           {/* Introduction */}
           <div className="flex gap-10 mt-14 flex-wrap md:flex-nowrap">
             <div className="md:w-1/2 h-auto flex flex-col justify-end">

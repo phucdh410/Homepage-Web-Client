@@ -103,7 +103,7 @@ export const MTimeline = () => {
   return (
     <section className="mt-16">
       <div className="container">
-        <div className="mx-14 ">
+        <div className="mx-3 md:mx-6 lg:mx-8 xl:mx-10 2xl:mx-14">
           {_items.map((headTime, i) => (
             <div key={headTime.id}>
               <div className="head-time-title my-30px select-none text-center m-auto max-w-[450px] text-primary">
@@ -114,7 +114,7 @@ export const MTimeline = () => {
                   {headTime.name}
                 </p>
               </div>
-              <div className="relative py-16">
+              <div className="relative py-16 hidden lg:block">
                 <div className="absolute w-[3px] min-h-full top-0 left-1/2 translate-x-[calc(-50%+0.5px)] bg-red"></div>
                 {headTime.nodes.map((timeNode) => (
                   <div
@@ -129,7 +129,7 @@ export const MTimeline = () => {
                       className="rounded-10px aspect-[369/235]"
                       alt=""
                     />
-                    <MTimelineNodeIcon />
+                    <MTimelineNodeIcon className="shrink-0 -mt-20px z-1" />
                     <div className="max-w-[369px]">
                       <h6
                         className={classNames(
@@ -142,6 +142,27 @@ export const MTimeline = () => {
                       <div className="bg-primary p-15px rounded-15px text-white">
                         {timeNode.content}
                       </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="relative pb-8 block lg:hidden">
+                <div className="absolute w-[3px] min-h-full top-0 bg-red"></div>
+                {headTime.nodes.map((timeNode) => (
+                  <div key={timeNode.id} className="pl-3 mb-10">
+                    <div className="flex items-center">
+                      <MTimelineNodeIcon />
+                      <h6 className="text-primary font-bold text-2xl">
+                        {timeNode.year}
+                      </h6>
+                    </div>
+                    <img
+                      src={timeNode.image}
+                      alt=""
+                      className="rounded-10px mb-10px drop-shadow-[0px_0px_2px_black]"
+                    />
+                    <div className="rounded-10px bg-primary p-10px text-white">
+                      {timeNode.content}
                     </div>
                   </div>
                 ))}

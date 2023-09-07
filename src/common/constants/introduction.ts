@@ -1,17 +1,17 @@
 export const INTRODUCTION_LIST = [
   { id: "1", name: "Lịch sử hình thành", link: "/established-history" },
-  { id: "2", name: "Triết lý giáo dục", link: "" },
-  { id: "3", name: "Tầm nhìn và sứ mạng", link: "" },
+  { id: "2", name: "Triết lý giáo dục", link: "/philosophy-of-education" },
+  { id: "3", name: "Tầm nhìn và sứ mạng", link: "/vision-mission" },
   { id: "4", name: "Sơ đồ tổ chức", link: "" },
-  { id: "5", name: "Hội đồng trường", link: "" },
+  { id: "5", name: "Hội đồng trường", link: "/school-council" },
   { id: "6", name: "Ban giám hiệu", link: "" },
   { id: "7", name: "Hội đồng khoa học & đào tạo", link: "" },
-  { id: "8", name: "Khoa & bộ môn", link: "" },
+  { id: "8", name: "Khoa & bộ môn", link: "/departments" },
   { id: "9", name: "Phòng ban chức năng", link: "" },
   {
     id: "10",
     name: "Trung tâm & viện",
-    link: "",
+    link: "/centers",
     children: [
       { id: "1", name: "Lê Khánh Phương just a dummy text", link: "" },
       { id: "2", name: "Lê Khánh Phương just a dummy text", link: "" },

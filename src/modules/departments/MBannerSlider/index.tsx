@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next-intl/link";
+
 import { useState } from "react";
 
 import type { Swiper as SwiperType, SwiperOptions } from "swiper";
@@ -232,9 +234,12 @@ export const MBannerSlider = () => {
           khoa {activeData.name}
         </h2>
         <p className="mb-[50px]">{activeData.description}</p>
-        <button className="rounded-10px mb-[50px] font-serif4 px-12 py-2 backdrop-filter-[blur(7.5px)] bg-[rgba(255,255,255,0.40)]">
+        <Link
+          href={`/departments/${activeData.id}`}
+          className="inline-block rounded-10px mb-[50px] font-serif4 px-12 py-2 backdrop-filter-[blur(7.5px)] bg-[rgba(255,255,255,0.40)]"
+        >
           Xem chi tiết
-        </button>
+        </Link>
       </div>
       <div className=" bg-[linear-gradient(90deg,_#000_0%,_rgba(0,_0,_0,_0.00)_20.05%,_rgba(0,_0,_0,_0.00)_80.99%,_#000_100%)]">
         <Swiper

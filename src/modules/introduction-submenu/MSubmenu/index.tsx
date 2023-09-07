@@ -30,40 +30,43 @@ export const MSubmenu = () => {
 
   //#region Render
   return (
-    <div className="px-4 md:px-5 lg:px-6 2xl:px-30px py-2 flex items-center gap-2 md:gap-3 lg:gap-4 2xl:gap-5">
-      <span className="uppercase whitespace-nowrap shrink-0 text-primary font-bold tracking-0.64px">
-        giới thiệu
-      </span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        className="shrink-0"
-      >
-        <path
-          d="M11.4137 15.2917L14.0037 12.7017C14.3937 12.3117 14.3937 11.6817 14.0037 11.2917L11.4137 8.70168C10.7837 8.08168 9.70374 8.52168 9.70374 9.41168V14.5817C9.70374 15.4817 10.7837 15.9217 11.4137 15.2917Z"
-          fill="#191919"
-        />
-      </svg>
-      <div className="flex-1 overflow-hidden">
-        <SimpleBar>
-          <div className="flex items-center gap-2 md:gap-3 lg:gap-4 2xl:gap-5 py-3">
-            {modifiedList.map((navItem) => (
-              <Link
-                key={navItem.id}
-                href={navItem.link}
-                className={classNames(
-                  navItem.selected && "text-primary !font-bold tracking-0.64px",
-                  "whitespace-nowrap transition-all hover:font-semibold"
-                )}
-              >
-                {navItem.name}
-              </Link>
-            ))}
-          </div>
-        </SimpleBar>
+    <div className="container">
+      <div className="px-4 md:px-5 lg:px-6 2xl:px-30px py-2 flex items-center gap-2 md:gap-3 lg:gap-4 2xl:gap-5">
+        <span className="uppercase whitespace-nowrap shrink-0 text-primary font-bold tracking-0.64px">
+          giới thiệu
+        </span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          className="shrink-0"
+        >
+          <path
+            d="M11.4137 15.2917L14.0037 12.7017C14.3937 12.3117 14.3937 11.6817 14.0037 11.2917L11.4137 8.70168C10.7837 8.08168 9.70374 8.52168 9.70374 9.41168V14.5817C9.70374 15.4817 10.7837 15.9217 11.4137 15.2917Z"
+            fill="#191919"
+          />
+        </svg>
+        <div className="flex-1 overflow-hidden">
+          <SimpleBar>
+            <div className="flex items-center gap-2 md:gap-3 lg:gap-4 2xl:gap-5 py-3">
+              {modifiedList.map((navItem) => (
+                <Link
+                  key={navItem.id}
+                  href={navItem.link}
+                  className={classNames(
+                    navItem.selected &&
+                      "text-primary !font-bold tracking-0.64px",
+                    "whitespace-nowrap transition-all hover:font-semibold"
+                  )}
+                >
+                  {navItem.name}
+                </Link>
+              ))}
+            </div>
+          </SimpleBar>
+        </div>
       </div>
     </div>
   );
