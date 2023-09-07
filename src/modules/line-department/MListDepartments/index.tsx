@@ -3,78 +3,81 @@ import { CDetailAndBlackSide } from "@/common/components/others";
 const MOCK = [
   {
     id: "1",
-    name: "trung tâm tiếng Pháp châu Á - Thái Bình Dương",
+    name: "thư viện",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullaviverra, risus non lobortis feugiat, eros nisi gravida libero, alaoreet velit enim a diam. Vestibulum fermentum",
-    href: "/centers-and-institutes/123",
+    href: "/line-department/123",
   },
   {
     id: "1.5",
-    name: "trung tâm tin học",
+    name: "tổ chức hành chính",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullaviverra, risus non lobortis feugiat, eros nisi gravida libero, alaoreet velit enim a diam. Vestibulum fermentum",
-    href: "/centers-and-institutes/123",
+    href: "/line-department/123",
   },
   {
     id: "2",
-    name: "trung tâm ngoại ngữ",
+    name: "kế hoạch - tài chính",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullaviverra, risus non lobortis feugiat, eros nisi gravida libero, alaoreet velit enim a diam. Vestibulum fermentum",
-    href: "/centers-and-institutes/123",
+    href: "/line-department/123",
   },
   {
     id: "3",
-    name: "trung tâm phát triển kỹ năng sư phạm",
+    name: "công tác chính trị & học sinh sinh viên",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullaviverra, risus non lobortis feugiat, eros nisi gravida libero, alaoreet velit enim a diam. Vestibulum fermentum",
-    href: "/centers-and-institutes/123",
+    href: "/line-department/123",
   },
   {
     id: "4",
-    name: "trường thpt thực hành",
+    name: "hợp tác quốc tế",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullaviverra, risus non lobortis feugiat, eros nisi gravida libero, alaoreet velit enim a diam. Vestibulum fermentum",
-    href: "/centers-and-institutes/123",
+    href: "/line-department/123",
   },
   {
     id: "5",
-    name: "trung tâm stem",
+    name: "đào tạo",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullaviverra, risus non lobortis feugiat, eros nisi gravida libero, alaoreet velit enim a diam. Vestibulum fermentum",
-    href: "/centers-and-institutes/123",
+    href: "/line-department/123",
   },
   {
     id: "6",
-    name: "trung tâm thuận an",
+    name: "sau đại học",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullaviverra, risus non lobortis feugiat, eros nisi gravida libero, alaoreet velit enim a diam. Vestibulum fermentum",
-    href: "/centers-and-institutes/123",
+    href: "/line-department/123",
   },
   {
     id: "7",
-    name: "trung tâm hỗ trợ sinh viên và phát triển khởi nghiệp",
+    name: "thanh tra đào tạo",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullaviverra, risus non lobortis feugiat, eros nisi gravida libero, alaoreet velit enim a diam. Vestibulum fermentum",
-    href: "/centers-and-institutes/123",
+    href: "/line-department/123",
   },
   {
     id: "8",
-    name: "trung tâm khảo thí",
+    name: "ký túc xá",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullaviverra, risus non lobortis feugiat, eros nisi gravida libero, alaoreet velit enim a diam. Vestibulum fermentum",
-    href: "/centers-and-institutes/123",
+    href: "/line-department/123",
   },
   {
     id: "9",
-    name: "nhà xuất bản đại học sư phạm Tp. hồ chí minh",
+    name: "khảo thí & đảm bảo chất lượng",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullaviverra, risus non lobortis feugiat, eros nisi gravida libero, alaoreet velit enim a diam. Vestibulum fermentum",
-    href: "/centers-and-institutes/123",
+    href: "/line-department/123",
   },
 ];
 
-export const MListCenters = () => {
+export const MListDepartments = () => {
   return (
-    <CDetailAndBlackSide data={MOCK} backgroundImage="/images/centers.png" />
+    <CDetailAndBlackSide
+      data={MOCK}
+      backgroundImage="/images/phongbanchucnang.png"
+    />
   );
 };

@@ -4,7 +4,9 @@ import {
   MDeanCommittee,
   MFunctionsAndMissions,
   MIntroAndTimeline,
+  MStaff,
 } from "@/modules/center";
+import { MTimelineTag } from "@/modules/department-detail";
 
 const CenterPage = () => {
   return (
@@ -17,7 +19,11 @@ const CenterPage = () => {
 
       <MDeanCommittee />
 
+      <MStaff />
+
       <MActivities />
+
+      <MTimelineTag />
     </div>
   );
 };
