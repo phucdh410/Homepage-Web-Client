@@ -1,5 +1,11 @@
+import { MList } from "@/modules/parties-and-unions";
+
 const PartiesAndUnionsPage = () => {
-  return <div>PartiesAndUnionsPage</div>;
+  return (
+    <>
+      <MList />
+    </>
+  );
 };
 
 export default PartiesAndUnionsPage;
