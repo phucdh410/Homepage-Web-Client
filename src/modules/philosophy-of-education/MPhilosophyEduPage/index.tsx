@@ -1,6 +1,20 @@
-import { CFeaturedEvents, CTimeline } from "@/common/components/layouts";
+"use client";
+
+import { motion, Variants } from "framer-motion";
+
+import { CFeaturedEvents } from "@/common/components/layouts";
 
 import "./styles.scss";
+
+const variants: Variants = {
+  initial: { opacity: 0, y: 200, scale: 0.2 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.8, bounce: 0.3, type: "spring" },
+  },
+};
 
 export const MPhilosophyEduPage = () => {
   return (
@@ -33,7 +47,13 @@ export const MPhilosophyEduPage = () => {
           </div>
 
           <div className="flex rounded-15px justify-end mt-60px mb-10 system">
-            <div className="lg:w-1/2 w-full text-white">
+            <motion.div
+              variants={variants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="lg:w-1/2 w-full text-white"
+            >
               <div className="font-serif4 font-bold text-40px mb-5 line-clamp-4">
                 Hệ thống, linh hoạt, đảm bảo gắn đào tạo với thực hành - ứng
                 dụng
@@ -47,7 +67,7 @@ export const MPhilosophyEduPage = () => {
                 dục của Trường cam kết đồng hành, hỗ trợ cho công tác giáo dục
                 một cách hiệu quả.
               </div>
-            </div>
+            </motion.div>
           </div>
 
           <div className="flex flex-wrap md:flex-nowrap gap-10">
@@ -64,7 +84,7 @@ export const MPhilosophyEduPage = () => {
           </div>
         </div>
         <CFeaturedEvents background />
-        <CTimeline />
+        {/* <CTimeline /> */}
       </div>
     </div>
   );

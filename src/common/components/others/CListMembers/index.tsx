@@ -47,7 +47,12 @@ export const CListMembers: React.FC<ICListMembersProps> = ({ data }) => {
         <p className="text-sub">{data.description}</p>
       </div>
       <div className="rounded-20px bg-primary p-30px">
-        <motion.ul variants={variants} initial="initial" whileInView="animate">
+        <motion.ul
+          variants={variants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
           {members[0].map((item) => (
             <motion.li
               key={item.id}

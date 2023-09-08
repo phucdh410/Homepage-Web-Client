@@ -1,6 +1,9 @@
+"use client";
+
 import { useMemo } from "react";
 
 import classNames from "classnames";
+import { motion, Variants } from "framer-motion";
 
 import { MTimelineNodeIcon } from "./MTimelineNodeIcon";
 
@@ -84,7 +87,18 @@ const MOCK = [
   },
 ];
 
+const titleVariants: Variants = {
+  initial: { y: 150, opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: { duration: 0.4 } },
+};
+const variants: Variants = {
+  initialLeft: { x: -150, opacity: 0 },
+  initialRight: { x: 150, opacity: 0 },
+  animate: { x: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
 export const MTimeline = () => {
+  //#region Data
   const _items = useMemo(() => {
     let _index = -1;
     return MOCK.map(({ nodes, ..._item }) => {
@@ -99,13 +113,21 @@ export const MTimeline = () => {
       };
     });
   }, []);
+  //#endregion
 
+  //#region Render
   return (
     <section className="mt-16">
       <div className="container">
         <div className="mx-3 md:mx-6 lg:mx-8 xl:mx-10 2xl:mx-14">
-          {_items.map((headTime, i) => (
-            <div key={headTime.id}>
+          {_items.map((headTime) => (
+            <motion.div
+              variants={titleVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              key={headTime.id}
+            >
               <div className="head-time-title my-30px select-none text-center m-auto max-w-[450px] text-primary">
                 <h5 className="text-35px tracking-1.05px font-extrabold mb-10px">
                   {headTime.year}
@@ -124,13 +146,23 @@ export const MTimeline = () => {
                       "flex justify-center mb-28 last:mb-0"
                     )}
                   >
-                    <img
+                    <motion.img
+                      variants={variants}
+                      initial={timeNode.right ? "initialLeft" : "initialRight"}
+                      whileInView="animate"
+                      viewport={{ once: true }}
                       src={timeNode.image}
                       className="rounded-10px aspect-[369/235]"
                       alt=""
                     />
                     <MTimelineNodeIcon className="shrink-0 -mt-20px z-1" />
-                    <div className="max-w-[369px]">
+                    <motion.div
+                      variants={variants}
+                      initial={!timeNode.right ? "initialLeft" : "initialRight"}
+                      whileInView="animate"
+                      viewport={{ once: true }}
+                      className="max-w-[369px]"
+                    >
                       <h6
                         className={classNames(
                           timeNode.right ? "text-left" : "text-right",
@@ -142,7 +174,7 @@ export const MTimeline = () => {
                       <div className="bg-primary p-15px rounded-15px text-white">
                         {timeNode.content}
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                 ))}
               </div>
@@ -167,7 +199,7 @@ export const MTimeline = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
           <p className="max-w-[700px] mt-10 mb-16 text-center m-auto">
             Hiện nay trường là một trong 22 trường Đại học trọng điểm Quốc gia
@@ -181,4 +213,5 @@ export const MTimeline = () => {
       </div>
     </section>
   );
+  //#endregion
 };
