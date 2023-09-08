@@ -19,7 +19,7 @@ export const CListMembers: React.FC<ICListMembersProps> = ({ data }) => {
 
   //#region Render
   return (
-    <div className="mb-12 grid grid-cols-3 gap-30px">
+    <div className="px-4 2xl:px-0 mb-12 grid grid-cols-1 2xl:grid-cols-3 gap-30px">
       <div>
         <h3 className="mb-5 font-serif4 font-bold tracking-1.2px text-primary text-40px">
           {data.name}
