@@ -21,7 +21,7 @@ export const MDeanCommittee = () => {
               <h3 className="mb-[11px] font-bold font-serif4 text-[40px] tracking-1.2px">
                 TS. Nguyễn Viết Hưng
               </h3>
-              <div className="h-[1px] bg-[linear-gradient(90deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_100%)] mb-6"></div>
+              <div className="h-[1px] bg-[linear-gradient(90deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_100%)] mb-6" />
               <p className="leading-21px">
                 Trưởng khoa - Khoa Công Nghệ Thông Tin <br />
                 Nhiệm kỳ 2020 - 2020

@@ -48,7 +48,7 @@ export const MUi = ({ data }: IMResearchProps) => {
                 <p className="uppercase text-sub2 mb-1 md:mb-10px text-sm">
                   công bố quốc tế
                 </p>
-                <div className="h-[5px] bg-[#124874] w-[50px] mb-1 md:mb-10px"></div>
+                <div className="h-[5px] bg-[#124874] w-[50px] mb-1 md:mb-10px" />
                 <h3 className="leading-8 md:leading-10 line-clamp-2 md:line-clamp-3 text-[clamp(1.375rem,_1.1858rem_+_0.8073vw,_1.875rem)] font-serif4 mb-2 md:mb-5 font-bold text-primary">
                   Ký kết hợp đồng đào tạo giáo viên theo nghị định 116/202...
                 </h3>

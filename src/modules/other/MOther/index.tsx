@@ -107,7 +107,7 @@ export const MOther = () => {
           </div>
 
           <div className="flex items-center justify-between gap-10 w-full">
-            <div className="basis-1/3"></div>
+            <div className="basis-1/3" />
 
             <div className="basis-1/3 flex items-center justify-center gap-3">
               <button onClick={onBackward} className="scale-75">

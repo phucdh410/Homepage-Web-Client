@@ -31,7 +31,7 @@ export const MSubmenu = () => {
   //#region Render
   return (
     <div className="container">
-      <div className="px-4 md:px-5 lg:px-6 2xl:px-30px py-2 flex items-center gap-2 md:gap-3 lg:gap-4 2xl:gap-5">
+      <div className="px-4 md:px-5 lg:px-6 2xl:px-30px flex items-center gap-2 lg:gap-3">
         <span className="uppercase whitespace-nowrap shrink-0 text-primary font-bold tracking-0.64px">
           giới thiệu
         </span>
@@ -50,7 +50,7 @@ export const MSubmenu = () => {
         </svg>
         <div className="flex-1 overflow-hidden">
           <SimpleBar>
-            <div className="flex items-center gap-2 md:gap-3 lg:gap-4 2xl:gap-5 py-3">
+            <div className="flex items-center gap-1 lg:gap-2 my-3">
               {modifiedList.map((navItem) => (
                 <Link
                   key={navItem.id}
@@ -58,7 +58,7 @@ export const MSubmenu = () => {
                   className={classNames(
                     navItem.selected &&
                       "text-primary !font-bold tracking-0.64px",
-                    "whitespace-nowrap transition-all hover:font-semibold"
+                    "whitespace-nowrap transition-all hover:font-semibold p-2"
                   )}
                 >
                   {navItem.name}

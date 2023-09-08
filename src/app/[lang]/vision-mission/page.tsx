@@ -18,7 +18,7 @@ const mission = {
 const VisonAndMission = () => {
   return (
     <div className="font-montserrat">
-      <div className="w-full min-h-[430px] bg-black"></div>
+      <div className="w-full min-h-[430px] bg-black" />
 
       <div className="w-full max-w-container m-auto">
         <MIntroduction />

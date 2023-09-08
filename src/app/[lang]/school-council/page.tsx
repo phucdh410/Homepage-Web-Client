@@ -4,7 +4,7 @@ import { MSubmenu } from "@/modules/introduction-submenu";
 const SchoolCouncil = () => {
   return (
     <div className="font-montserrat">
-      <div className="w-full min-h-[430px] bg-black"></div>
+      <div className="w-full min-h-[430px] bg-black" />
 
       <MSubmenu />
 

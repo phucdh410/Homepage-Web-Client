@@ -15,7 +15,7 @@ export const MTrainingGoal = () => {
             <h4 className="font-serif4 font-bold uppercase text-primary-red text-3xl md:text-[56px] md:mb-30px">
               01
             </h4>
-            <div className="bg-primary w-full flex-1"></div>
+            <div className="bg-primary w-full flex-1" />
           </div>
           <p className="text-sub text-justify lg:text-left md:leading-[37.5px] text-lg lg:text-[25px] tracking-0.75px">
             Đào tạo giáo viên dạy Tin học bậc phổ thông có trình độ cử nhân Sư
@@ -31,7 +31,7 @@ export const MTrainingGoal = () => {
             <h4 className="font-serif4 font-bold uppercase text-primary-red text-3xl md:text-[56px] md:mb-30px">
               02
             </h4>
-            <div className="bg-primary w-full flex-1"></div>
+            <div className="bg-primary w-full flex-1" />
           </div>
           <p className="text-sub text-justify lg:text-left md:leading-[37.5px] text-lg lg:text-[25px] tracking-0.75px">
             Đào tạo cử nhân Công nghệ thông tin, có phẩm chất chính trị, đạo đức

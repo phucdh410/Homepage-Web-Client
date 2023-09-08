@@ -45,7 +45,7 @@ export const LResearch = () => {
                 <div>
                   <CSkeleton className=" mb-1 md:mb-10px text-sm" />
 
-                  <div className="h-[5px] bg-[#124874] w-[50px] mb-1 md:mb-10px"></div>
+                  <div className="h-[5px] bg-[#124874] w-[50px] mb-1 md:mb-10px" />
 
                   <CSkeleton
                     count={2}

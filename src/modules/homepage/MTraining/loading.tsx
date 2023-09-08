@@ -62,7 +62,7 @@ export const LTrainings = () => {
           />
         ) : (
           <div className="flex flex-wrap mx-4 md:m-auto !mb-10 bg-white relative items-baseline justify-between p-5 rounded-20px max-w-[850px]">
-            <div className="shadow-[15px_15px_60px_rgba(19,70,131,0.1)] absolute rounded-inherit inset-0"></div>
+            <div className="shadow-[15px_15px_60px_rgba(19,70,131,0.1)] absolute rounded-inherit inset-0" />
             {Array(5)
               .fill({ id: new Date() + Math.random().toString(), value: 0 })
               .map((e, i) => (

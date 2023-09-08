@@ -158,7 +158,7 @@ export const MList = () => {
         <h3 className="text-primary font-bold text-clamp40px font-serif4 tracking-1.2px mb-4 lg:mb-6 2xl:mb-8">
           Thành viên hội đồng
         </h3>
-        <div className="min-h-[4px] w-full bg-[#D9D9D9] mb-10 lg:mb-12 2xl:mb-16"></div>
+        <div className="min-h-[4px] w-full bg-[#D9D9D9] mb-10 lg:mb-12 2xl:mb-16" />
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-12 2xl:gap-x-24 gap-y-12">
           {MOCK.map((item) => (
             <div key={item.id} className="flex flex-col gap-[10px]">

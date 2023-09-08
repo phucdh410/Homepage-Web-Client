@@ -137,7 +137,7 @@ export const CFooter = () => {
             <p className="text-sub text-sm mb-3">
               Fax: (+84) - (28) - 38398946
             </p>
-            <div className="h-[1px] bg-primary opacity-10 min-w-full"></div>
+            <div className="h-[1px] bg-primary opacity-10 min-w-full" />
             <h6 className="text-primary font-bold font-serif4 mb-5 pt-3 select-none">
               {d("connect-with-us")}:
             </h6>

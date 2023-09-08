@@ -155,7 +155,7 @@ export const CDrawer = forwardRef<ICDrawerRef, ICDrawerProps>(
                   <CCloseIcon />
                 </button>
               </div>
-              <div className="divider h-[3px] shrink-0 rounded-10px my-2 text-center w-full bg-[linear-gradient(90deg,_#cccccc,_white)]"></div>
+              <div className="divider h-[3px] shrink-0 rounded-10px my-2 text-center w-full bg-[linear-gradient(90deg,_#cccccc,_white)]" />
             </div>
             <div className="flex-1 overflow-y-scroll">
               <ul>
@@ -168,10 +168,7 @@ export const CDrawer = forwardRef<ICDrawerRef, ICDrawerProps>(
             </div>
           </div>
         </div>
-        <div
-          className=" w-screen h-full cursor-pointer "
-          onClick={onClose}
-        ></div>
+        <div className=" w-screen h-full cursor-pointer " onClick={onClose} />
       </div>
     );
     //#endregion

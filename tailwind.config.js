@@ -1,7 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-
 const HEADER_HEIGHT = 104;
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/common/**/*.{js,ts,jsx,tsx,mdx}",
@@ -68,6 +67,7 @@ module.exports = {
       backgroundColor: {
         primary: "#124874",
       },
+
       colors: {
         primary: "#124874",
         sub: "#191919",
@@ -122,6 +122,9 @@ module.exports = {
       },
       content: {
         "''": "''",
+      },
+      scrollMargin: {
+        header: `${HEADER_HEIGHT}px`,
       },
     },
     screens: {

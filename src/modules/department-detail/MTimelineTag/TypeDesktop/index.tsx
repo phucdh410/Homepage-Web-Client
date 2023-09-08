@@ -81,7 +81,7 @@ export const TypeDesktop = ({ data }: ITimelineDataProps) => {
           background:
             "linear-gradient(180deg, rgb(231 231 231 / 0%) 0%, rgb(228 227 227 / 79%) 49.94%, rgb(237 237 237) 100%)",
         }}
-      ></div>
+      />
     </div>
   );
 };

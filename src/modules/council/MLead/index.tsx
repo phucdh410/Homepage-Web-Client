@@ -6,7 +6,7 @@ export const MLead = () => {
       <div className="order-2 md:order-1 flex flex-col gap-5 md:gap-9 justify-end">
         <div className="font-serif4 text-2xl sm:text-3xl md:text-40px text-primary font-bold ">
           <div>TS. Nguyễn Thị Minh Hồng</div>
-          <div className="line-council"></div>
+          <div className="line-council" />
         </div>
         <div className="text-16px font-normal text-black max-w-[400px]">
           Chủ tịch Hội đồng Trường Đại học Sư phạm Thành Phố Hồ Chí Minh nhiệm

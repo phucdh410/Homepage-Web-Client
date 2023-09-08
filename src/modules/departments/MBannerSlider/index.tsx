@@ -228,7 +228,7 @@ export const MBannerSlider = () => {
               </li>
             ))}
           </ul>
-          <div className="custom-divider mt-10px h-[1px] bg-[linear-gradient(90deg,_#FFF_0%,_rgba(255,255,255,0.00)_100%)]"></div>
+          <div className="custom-divider mt-10px h-[1px] bg-[linear-gradient(90deg,_#FFF_0%,_rgba(255,255,255,0.00)_100%)]" />
         </div>
         <h2 className="uppercase mt-[50px] mb-10px font-bold text-2xl 2xl:text-[40px] font-serif4">
           khoa {activeData.name}

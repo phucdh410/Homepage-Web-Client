@@ -38,7 +38,7 @@ export const MGallery = () => {
           <h3 className="font-serif4 font-bold tracking-1.2px text-clamp40px">
             {MOCK[0].name}
           </h3>
-          <div className="my-divider mt-10px mb-3 2xl:mb-7 min-h-[1px] w-full bg-[linear-gradient(90deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_100%)]"></div>
+          <div className="my-divider mt-10px mb-3 2xl:mb-7 min-h-[1px] w-full bg-[linear-gradient(90deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_100%)]" />
           <p className="text-clamp16px leading-21px tracking-0.48px">
             {MOCK[0].position}
           </p>

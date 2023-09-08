@@ -13,7 +13,7 @@ export const CTimeline = () => {
           <CTimelineItem />
           <CTimelineItem />
         </div>
-        <div className="vertical-timeline flex"></div>
+        <div className="vertical-timeline flex" />
       </div>
     </div>
   );

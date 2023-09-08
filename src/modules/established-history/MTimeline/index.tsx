@@ -137,7 +137,7 @@ export const MTimeline = () => {
                 </p>
               </div>
               <div className="relative py-16 hidden lg:block">
-                <div className="absolute w-[3px] min-h-full top-0 left-1/2 translate-x-[calc(-50%+0.5px)] bg-red"></div>
+                <div className="absolute w-[3px] min-h-full top-0 left-1/2 translate-x-[calc(-50%+0.5px)] bg-red" />
                 {headTime.nodes.map((timeNode) => (
                   <div
                     key={timeNode.id}
@@ -179,7 +179,7 @@ export const MTimeline = () => {
                 ))}
               </div>
               <div className="relative pb-8 block lg:hidden">
-                <div className="absolute w-[3px] min-h-full top-0 bg-red"></div>
+                <div className="absolute w-[3px] min-h-full top-0 bg-red" />
                 {headTime.nodes.map((timeNode) => (
                   <div key={timeNode.id} className="pl-3 mb-10">
                     <div className="flex items-center">

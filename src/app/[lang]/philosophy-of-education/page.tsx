@@ -4,7 +4,7 @@ import { MPhilosophyEduPage } from "@/modules/philosophy-of-education";
 const PhilosophyOfEducationPage = () => {
   return (
     <div>
-      <div className="w-full min-h-[430px] bg-black"></div>
+      <div className="w-full min-h-[430px] bg-black" />
 
       <MSubmenu />
 
