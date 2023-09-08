@@ -38,7 +38,7 @@ module.exports = {
         "clamp-section-title": "clamp(1.25rem, 0.8676rem + 1.912vw, 2.5rem);",
         "clamp-home-section-title":
           "clamp(1.625rem, 1.4121rem + 0.9082vw, 2.1875rem)",
-        clamp16px: "clamp(0.75rem, 0.6554rem + 0.4036vw, 1rem)",
+        clamp16px: "clamp(0.8125rem, 0.7415rem + 0.3027vw, 1rem)",
         clamp25px: "clamp(1.125rem, 0.9594rem + 0.7064vw, 1.5625rem)",
         clamp40px: "clamp(1.5rem, 1.1216rem + 1.6145vw, 2.5rem)",
       },
