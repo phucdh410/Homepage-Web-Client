@@ -1,5 +1,4 @@
 import { CFeaturedEvents } from "@/common/components/layouts";
-import { MSubmenu } from "@/modules/introduction-submenu";
 import { MIntroduction, MMission, MSession } from "@/modules/vision_mission";
 
 const vision = {

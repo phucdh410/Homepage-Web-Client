@@ -1,6 +1,6 @@
 import { delay } from "@/utils/funcs";
 
-import { HOMEPAGE_URL } from "./url";
+// import { HOMEPAGE_URL } from "./url";
 
 export const homepageApis = {
   getCommonData: async () => {
@@ -12,7 +12,7 @@ export const homepageApis = {
       departments: number;
       students: number;
     }> {
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         setTimeout(() => {
           resolve({
             establish: 1976,

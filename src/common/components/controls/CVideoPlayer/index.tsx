@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 
-import { AnimatePresence, motion, Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 import { useMediaQuery } from "@/utils/hooks";
 
