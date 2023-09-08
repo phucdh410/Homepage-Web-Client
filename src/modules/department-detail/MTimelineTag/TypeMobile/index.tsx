@@ -1,29 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
-
-import { MNode } from "../MNode";
 import { ITimelineDataProps } from "../types";
-
-const ANIMATION_VARIANTS: Variants = {
-  "initial-odd": {
-    x: -200,
-    opacity: 0,
-  },
-  "initial-even": {
-    x: 200,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      easings: ["easeOut"],
-      type: "keyframes",
-    },
-  },
-};
 
 export const TypeMobile = ({ data }: ITimelineDataProps) => {
   return (

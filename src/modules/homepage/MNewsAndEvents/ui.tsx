@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import { motion } from "framer-motion";
 
-import { CButton, CVideoPlayer } from "@/common/components/controls";
+import { CVideoPlayer } from "@/common/components/controls";
 import { CPlayIcon } from "@/common/components/icons";
 import { CModal } from "@/common/components/others";
 
