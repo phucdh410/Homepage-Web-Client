@@ -56,7 +56,7 @@ export const MList = () => {
           background: `linear-gradient(90deg, rgba(0, 0, 0, 0.80) 0.25%, rgba(0, 0, 0, 0.00) 45.13%), url('/images/dangvadoanthe.png'), lightgray 0px -95.333px / 100% 126.481% no-repeat`,
         }}
       >
-        <div className="mt-[104px] ml-10 max-w-xl">
+        <div className="mt-header ml-10 max-w-xl">
           <h3 className="uppercase font-serif4 text-clamp-section-title font-bold mb-10px select-none">
             {currentData.name}
           </h3>
@@ -67,7 +67,7 @@ export const MList = () => {
             <Link href={currentData.href}>Xem chi tiết</Link>
           </button>
         </div>
-        <div className="flex flex-col justify-center p-5 pl-0 min-w-[310px] mt-[104px] self-stretch">
+        <div className="flex flex-col justify-center p-5 pl-0 min-w-[310px] mt-header self-stretch">
           <ul>
             {MOCK.map((e) => (
               <li key={e.id} className="mb-30px last:mb-0 text-right">

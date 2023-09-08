@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const HEADER_HEIGHT = 104;
+
 module.exports = {
   content: [
     "./src/common/**/*.{js,ts,jsx,tsx,mdx}",
@@ -56,7 +59,7 @@ module.exports = {
         "1.2px": "1.2px",
       },
       height: {
-        header: "104px",
+        header: `${HEADER_HEIGHT}px`,
         inherit: "inherit",
       },
       backgroundColor: {
@@ -105,6 +108,7 @@ module.exports = {
         "20px": "20px",
         "30px": "30px",
         "60px": "60px",
+        header: `${HEADER_HEIGHT}px`,
       },
       boxShadow: {
         custom: "15px 15px 60px 0px rgba(19, 70, 131, 0.10)",

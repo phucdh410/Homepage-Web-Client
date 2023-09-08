@@ -51,7 +51,7 @@ export const CDetailAndBlackSide: React.FC<ICDetailAndBlackSideProps> = ({
             <Link href={currentData.href}>Xem chi tiết</Link>
           </button>
         </div>
-        <SimpleBar className="bg-black bg-opacity-50 p-5 min-w-[330px] mt-[104px] self-stretch">
+        <SimpleBar className="bg-black bg-opacity-50 p-5 min-w-[330px] mt-header self-stretch">
           <ul>
             {data.map((e) => (
               <li key={e.id} className="mb-[15px] last:mb-0 text-right">

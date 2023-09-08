@@ -1,13 +1,9 @@
-import { MSubmenu } from "@/modules/introduction-submenu";
+import { MGallery } from "@/modules/school-board-of-directors";
 
 const SchoolBoardOfDirectors = () => {
   return (
     <>
-      <div className="bg-black w-full min-h-[430px]">Banner</div>
-
-      <MSubmenu />
-
-      <div>Content của trang</div>
+      <MGallery />
     </>
   );
 };
