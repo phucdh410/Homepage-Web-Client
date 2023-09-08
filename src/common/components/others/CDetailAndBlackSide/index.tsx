@@ -47,9 +47,12 @@ export const CDetailAndBlackSide: React.FC<ICDetailAndBlackSideProps> = ({
           <p className="mb-5 xl:mb-[50px] text-clamp16px tracking-0.64px select-none">
             {currentData.description}
           </p>
-          <button className="rounded-10px backdrop-blur-[7.5px] bg-[rgba(255,_255,_255,_0.40)] py-3 2xl:py-4 px-6 2xl:px-20">
-            <Link href={currentData.href}>Xem chi tiết</Link>
-          </button>
+          <Link
+            href={currentData.href}
+            className="inline-block rounded-10px backdrop-blur-[7.5px] bg-[rgba(255,_255,_255,_0.40)] py-3 2xl:py-4 px-6 2xl:px-20"
+          >
+            Xem chi tiết
+          </Link>
         </div>
         <SimpleBar className="bg-black bg-opacity-50 p-5 min-w-[330px] xl:mt-header self-stretch">
           <ul>
