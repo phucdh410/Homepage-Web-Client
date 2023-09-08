@@ -38,6 +38,8 @@ module.exports = {
         "clamp-section-title": "clamp(1.25rem, 0.8676rem + 1.912vw, 2.5rem);",
         "clamp-home-section-title":
           "clamp(1.625rem, 1.4121rem + 0.9082vw, 2.1875rem)",
+        clamp25px: "clamp(1.125rem, 0.9594rem + 0.7064vw, 1.5625rem)",
+        clamp40px: "clamp(1.5rem, 1.1216rem + 1.6145vw, 2.5rem)",
       },
       lineHeight: {
         "20px": "20px",
