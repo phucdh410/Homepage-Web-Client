@@ -1,3 +1,4 @@
+export * from "./CChevronRightIcon";
 export * from "./CCloseIcon";
 export * from "./CELearningIcon";
 export * from "./CLanguageIcon";

@@ -4,7 +4,7 @@ import { forwardRef, useImperativeHandle, useState } from "react";
 
 import { motion, Variants } from "framer-motion";
 
-import { CCloseIcon } from "@/common/components/icons";
+import { CChevronRightIcon, CCloseIcon } from "@/common/components/icons";
 
 import { ICListMenuProps, ICListMenuRef } from "./types";
 
@@ -60,10 +60,16 @@ export const CListMenu = forwardRef<ICListMenuRef, ICListMenuProps>(
                 {data.children?.map((e) => (
                   <li
                     key={e.id}
-                    className="font-serif4 w-fit font-bold text-xl whitespace-nowrap pb-[15px] last:pb-0 hover:text-primary-red hover:underline cursor-pointer"
+                    className="font-serif4 w-fit font-bold text-xl whitespace-nowrap pb-[15px] last:pb-0 group hover:text-primary-red hover:underline cursor-pointer"
                   >
                     {e?.children ? (
-                      <div onClick={() => onOpen(e.id)}>{e.name} &#62;</div>
+                      <div
+                        className="flex items-center gap-2"
+                        onClick={() => onOpen(e.id)}
+                      >
+                        {e.name}
+                        <CChevronRightIcon className="fill-[#969696] group-hover:fill-red" />
+                      </div>
                     ) : (
                       <Popover.Button as={Link} href={e.link || ""}>
                         {e.name}
