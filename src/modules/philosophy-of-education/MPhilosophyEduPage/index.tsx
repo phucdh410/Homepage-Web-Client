@@ -24,8 +24,12 @@ export const MPhilosophyEduPage = () => {
           {/* Introduction */}
           <div className="flex gap-10 mt-14 flex-wrap md:flex-nowrap">
             <div className="md:w-1/2 h-auto flex flex-col justify-end">
-              <div className="font-serif4 text-[300px] text-primary">
-                <img src="/icons/Text.png" alt="" className="object-contain" />
+              <div className="-ml-4">
+                <img
+                  src="/icons/Text.png"
+                  alt=""
+                  className="object-cover aspect-[95/75] min-h-[90px]"
+                />
               </div>
               <div className="font-serif4 text-primary font-bold text-40px mb-5 line-clamp-2">
                 Đào tạo người học đạt chuẩn
