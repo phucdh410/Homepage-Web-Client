@@ -4,4 +4,5 @@ export interface INavItem {
   description?: string;
   link?: string;
   children?: INavItem[];
+  hrefId?: string;
 }

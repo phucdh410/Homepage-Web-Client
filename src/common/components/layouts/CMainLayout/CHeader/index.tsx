@@ -3,7 +3,7 @@
 import { usePathname } from "next-intl/client";
 import Link from "next-intl/link";
 
-import { Fragment } from "react";
+import { Fragment, useCallback } from "react";
 
 import { Popover, Transition } from "@headlessui/react";
 import classNames from "classnames";
@@ -38,58 +38,21 @@ const MOCK1: INavItem[] = [
   {
     id: "3",
     name: "Tin tức - Sự kiện",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, risus non lobortis feugiat",
-    children: [
-      { id: "1", name: "Lịch sử hình thành", link: "" },
-      { id: "2", name: "Triết lý giáo dục", link: "" },
-      { id: "3", name: "Tầm nhìn và sứ mạng", link: "" },
-      {
-        id: "4",
-        name: "Trung tâm & viện",
-        children: [
-          { id: "1", name: "Đặng Hoàng Phúc just a dummy text", link: "" },
-          { id: "2", name: "Đặng Hoàng Phúc just a dummy text", link: "" },
-          { id: "3", name: "Đặng Hoàng Phúc just a dummy text", link: "" },
-        ],
-      },
-      {
-        id: "5",
-        name: "Đảng & đoàn thể",
-        children: [
-          {
-            id: "1",
-            name: "Nguyễn Phước Ngọc Ánh just a dummy text",
-            link: "",
-          },
-          {
-            id: "2",
-            name: "Nguyễn Phước Ngọc Ánh just a dummy text",
-            link: "",
-          },
-          {
-            id: "3",
-            name: "Nguyễn Phước Ngọc Ánh just a dummy text",
-            link: "",
-          },
-        ],
-      },
-      {
-        id: "6",
-        name: "Ba công khai",
-        children: [
-          { id: "1", name: "Chị Dịu béo is just a dummy text", link: "" },
-          { id: "2", name: "Chị Dịu béo is just a dummy text", link: "" },
-          { id: "3", name: "Chị Dịu béo is just a dummy text", link: "" },
-        ],
-      },
-    ],
+    hrefId: "news-and-events",
   },
-  { id: "4", name: "Tuyển sinh", link: "/employ" },
-  { id: "5", name: "Đào tạo", link: "/training" },
-  { id: "6", name: "Nghiên cứu", link: "/research" },
-  { id: "7", name: "Bảo đảm chất lượng giáo dục", link: "/ensure" },
-  { id: "8", name: "Hợp tác và phục vụ cộng đồng", link: "/coop" },
+  { id: "4", name: "Tuyển sinh", hrefId: "admissions" },
+  { id: "5", name: "Đào tạo", hrefId: "training" },
+  { id: "6", name: "Nghiên cứu", hrefId: "research" },
+  {
+    id: "7",
+    name: "Bảo đảm chất lượng giáo dục",
+    hrefId: "ensuring-quality-of-education",
+  },
+  {
+    id: "8",
+    name: "Hợp tác và phục vụ cộng đồng",
+    hrefId: "collaborate-and-serve-the-community",
+  },
 ];
 //#endregion
 
@@ -102,36 +65,105 @@ export const CHeader = () => {
   //#endregion
 
   //#region Event
-  const isActive = (path: string) => {
-    if (path === "/") {
-      return pathname === path;
-    } else {
-      return pathname.includes(path);
-    }
-  };
+  const isActive = useCallback(
+    (path: string) => {
+      if (path === "/") {
+        return pathname === path;
+      } else {
+        return pathname.includes(path);
+      }
+    },
+    [pathname]
+  );
 
-  const onMouseOver = (
-    e:
-      | React.MouseEvent<HTMLAnchorElement, MouseEvent>
-      | React.MouseEvent<HTMLButtonElement>
-  ) => {
-    e.currentTarget.classList.remove("left-out", "right-out");
+  const onMouseOver = useCallback(
+    (
+      e:
+        | React.MouseEvent<HTMLAnchorElement, MouseEvent>
+        | React.MouseEvent<HTMLButtonElement>
+    ) => {
+      e.currentTarget.classList.remove("left-out", "right-out");
 
-    e.currentTarget.classList.add(
-      direction === "right" ? "left-in" : "right-in"
-    );
-  };
-  const onMouseOut = (
-    e:
-      | React.MouseEvent<HTMLAnchorElement, MouseEvent>
-      | React.MouseEvent<HTMLButtonElement>
-  ) => {
-    e.currentTarget.classList.remove("left-in", "right-in");
+      e.currentTarget.classList.add(
+        direction === "right" ? "left-in" : "right-in"
+      );
+    },
+    [direction]
+  );
+  const onMouseOut = useCallback(
+    (
+      e:
+        | React.MouseEvent<HTMLAnchorElement, MouseEvent>
+        | React.MouseEvent<HTMLButtonElement>
+    ) => {
+      e.currentTarget.classList.remove("left-in", "right-in");
 
-    e.currentTarget.classList.add(
-      direction === "right" ? "right-out" : "left-out"
-    );
-  };
+      e.currentTarget.classList.add(
+        direction === "right" ? "right-out" : "left-out"
+      );
+    },
+    [direction]
+  );
+
+  const renderNavigation = useCallback(() => {
+    return MOCK1.map((nav) => {
+      if (nav.children && nav.children.length > 0) {
+        return (
+          <li key={nav.id} className="min-h-[42px]">
+            <Popover as={Fragment}>
+              <Popover.Button
+                className="navigation-parent-item h-full outline-none inline-block py-[6px]"
+                onMouseOver={onMouseOver}
+                onMouseOut={onMouseOut}
+              >
+                {nav.name}
+              </Popover.Button>
+              <Transition
+                as={Fragment}
+                leave="transition ease-in duration-300"
+                leaveFrom="opacity-100 translate-y-0"
+                leaveTo="opacity-0 -translate-y-4"
+              >
+                <Popover.Panel className="absolute inset-x-0 top-full">
+                  <CListMenu data={nav} />
+                </Popover.Panel>
+              </Transition>
+            </Popover>
+          </li>
+        );
+      } else if (nav.hrefId) {
+        return (
+          <li key={nav.id} className="min-h-[42px]">
+            <a
+              href={`#${nav.hrefId}`}
+              className={classNames(
+                "navigation-parent-item h-full outline-none inline-block py-[6px]"
+              )}
+              onMouseOver={onMouseOver}
+              onMouseOut={onMouseOut}
+            >
+              {nav.name}
+            </a>
+          </li>
+        );
+      } else
+        return (
+          <li key={nav.id} className="min-h-[42px]">
+            <Link
+              href={nav.link || "/"}
+              className={classNames(
+                isActive(nav.link || "") && "activated font-bold",
+                "navigation-parent-item h-full outline-none inline-block py-[6px]"
+              )}
+              onMouseOver={onMouseOver}
+              onMouseOut={onMouseOut}
+            >
+              {nav.name}
+            </Link>
+          </li>
+        );
+    });
+  }, [isActive, onMouseOut, onMouseOver]);
   //#endregion
 
   //#region Render
@@ -167,43 +199,7 @@ export const CHeader = () => {
             as="ul"
             className="flex items-center gap-6 text-primary font-serif4"
           >
-            {MOCK1.map((e) => (
-              <li key={e.id} className="min-h-[42px]">
-                {!e?.children ? (
-                  <Link
-                    href={e.link || "/"}
-                    className={classNames(
-                      isActive(e.link || "") && "activated font-bold",
-                      "navigation-parent-item h-full outline-none inline-block py-[6px]"
-                    )}
-                    onMouseOver={onMouseOver}
-                    onMouseOut={onMouseOut}
-                  >
-                    {e.name}
-                  </Link>
-                ) : (
-                  <Popover as={Fragment}>
-                    <Popover.Button
-                      className="navigation-parent-item h-full outline-none inline-block py-[6px]"
-                      onMouseOver={onMouseOver}
-                      onMouseOut={onMouseOut}
-                    >
-                      {e.name}
-                    </Popover.Button>
-                    <Transition
-                      as={Fragment}
-                      leave="transition ease-in duration-300"
-                      leaveFrom="opacity-100 translate-y-0"
-                      leaveTo="opacity-0 -translate-y-4"
-                    >
-                      <Popover.Panel className="absolute inset-x-0 top-full">
-                        <CListMenu data={e} />
-                      </Popover.Panel>
-                    </Transition>
-                  </Popover>
-                )}
-              </li>
-            ))}
+            {renderNavigation()}
           </Popover.Group>
         </div>
       </div>

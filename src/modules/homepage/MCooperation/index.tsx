@@ -13,7 +13,10 @@ export const MCooperation = () => {
   //#endregion
 
   return (
-    <section className="mt-16">
+    <section
+      className="mt-16 scroll-m-header-plus"
+      id="collaborate-and-serve-the-community"
+    >
       <div className="container">
         <div className="max-w-2xl m-auto mb-5 md:mb-10 px-5">
           <h2 className="text-center mb-10px uppercase text-primary text-clamp-home-section-title leading-48px font-extrabold font-serif4 ">
@@ -71,7 +74,10 @@ export const MCooperation = () => {
         </div>
       </div>
 
-      <div className="bg-[url('/images/ensure.png')] bg-no-repeat bg-center bg-cover p-5 md:p-12 mb-10 md:mb-24">
+      <div
+        className="bg-[url('/images/ensure.png')] bg-no-repeat bg-center bg-cover p-5 md:p-12 mb-10 md:mb-24 scroll-m-header-plus"
+        id="ensuring-quality-of-education"
+      >
         <div className="max-w-2xl m-auto mb-10">
           <h2 className="text-center mb-10px uppercase text-white text-clamp-home-section-title leading-48px font-extrabold font-serif4 ">
             bảo đảm chất lượng giáo dục

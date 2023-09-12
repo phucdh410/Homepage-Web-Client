@@ -25,7 +25,7 @@ export const MUi = ({ data }: INewsAndEventsProps) => {
 
   //#region Render
   return (
-    <section className="mt-16">
+    <section className="mt-16 scroll-m-header-plus" id="news-and-events">
       <div className="container">
         <div className="max-w-md m-auto mb-10 px-5">
           <h2 className="text-center mb-10px uppercase text-primary text-clamp-home-section-title leading-48px font-extrabold font-serif4 ">
@@ -111,7 +111,8 @@ export const MUi = ({ data }: INewsAndEventsProps) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, type: "spring" }}
-          className="relative"
+          className="relative scroll-m-header-plus"
+          id="admissions"
         >
           <img
             src="/images/tuyensinh.png"

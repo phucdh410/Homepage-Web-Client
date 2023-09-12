@@ -10,7 +10,7 @@ import "swiper/css/effect-coverflow";
 
 export const MUi = ({ data }: IMResearchProps) => {
   return (
-    <section className="mt-16">
+    <section className="mt-16 scroll-m-header-plus" id="research">
       <div className="max-w-2xl m-auto mb-10 px-5">
         <h2 className="text-center mb-10px uppercase text-primary text-clamp-home-section-title leading-48px font-extrabold font-serif4 ">
           nghiên cứu

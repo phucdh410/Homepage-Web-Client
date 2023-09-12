@@ -125,6 +125,7 @@ module.exports = {
       },
       scrollMargin: {
         header: `${HEADER_HEIGHT}px`,
+        "header-plus": `calc(${HEADER_HEIGHT}px + 30px)`,
       },
     },
     screens: {
