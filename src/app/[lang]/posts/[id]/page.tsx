@@ -1,10 +1,12 @@
-import { MNewsAndEvents } from "@/modules/posts";
+import { MNewsAndEvents, MParseContent } from "@/modules/posts";
 
 const MDetailPost = () => {
   return (
-    <div className="mt-40">
+    <>
+      <MParseContent />
+
       <MNewsAndEvents />
-    </div>
+    </>
   );
 };
 
