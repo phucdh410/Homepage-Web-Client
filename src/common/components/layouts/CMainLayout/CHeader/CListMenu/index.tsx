@@ -30,7 +30,7 @@ export const CListMenu = forwardRef<ICListMenuRef, ICListMenuProps>(
     //#endregion
 
     //#region Event
-    const onOpen = (id: string) => setSubId(id);
+    const onOpen = (id: string) => () => setSubId(id);
     //#endregion
 
     useImperativeHandle(ref, () => ({
@@ -63,15 +63,21 @@ export const CListMenu = forwardRef<ICListMenuRef, ICListMenuProps>(
                     className="font-serif4 w-fit font-bold text-xl whitespace-nowrap pb-[15px] last:pb-0 group hover:text-primary-red hover:underline cursor-pointer"
                   >
                     {e?.children ? (
-                      <div
+                      <Popover.Button
+                        as={Link}
+                        href={e.link || ""}
                         className="flex items-center gap-2"
-                        onClick={() => onOpen(e.id)}
+                        onMouseEnter={onOpen(e.id)}
                       >
                         {e.name}
                         <CChevronRightIcon className="fill-[#969696] group-hover:fill-red" />
-                      </div>
+                      </Popover.Button>
                     ) : (
-                      <Popover.Button as={Link} href={e.link || ""}>
+                      <Popover.Button
+                        as={Link}
+                        href={e.link || ""}
+                        onMouseEnter={() => setSubId(null)}
+                      >
                         {e.name}
                       </Popover.Button>
                     )}
