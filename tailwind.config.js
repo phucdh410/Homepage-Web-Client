@@ -116,6 +116,7 @@ module.exports = {
       boxShadow: {
         custom: "15px 15px 60px 0px rgba(19, 70, 131, 0.10)",
         "timeline-node": "0px 0px 20px 0px rgba(18, 72, 116, 0.50)",
+        "hover-item": "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
       },
       gap: {
         "30px": "30px",

@@ -116,24 +116,27 @@ export const MUi = ({ data }: IMTrainingProps) => {
                 />
               </motion.div>
             ) : (
-              <motion.div
-                variants={sub}
-                key={e.id}
-                className="bg-white rounded-10px"
-              >
-                <div className="p-3 md:p-5">
-                  <p className="uppercase text-sm text-sub2 mb-10px">{e.tag}</p>
-                  <h4 className="text-primary font-serif4 text-xl line-clamp-2 lg:line-clamp-3 font-bold">
-                    {e.title}
-                  </h4>
-                </div>
+              <Link href="" key={e.id}>
+                <motion.div
+                  variants={sub}
+                  className="bg-white rounded-10px group overflow-hidden transition-shadow duration-200 hover:shadow-hover-item"
+                >
+                  <div className="p-3 md:p-5">
+                    <p className="uppercase text-sm text-sub2 mb-10px">
+                      {e.tag}
+                    </p>
+                    <h4 className="text-primary font-serif4 text-xl line-clamp-2 lg:line-clamp-3 font-bold">
+                      {e.title}
+                    </h4>
+                  </div>
 
-                <img
-                  src={e.image}
-                  alt=""
-                  className="w-full hidden md:block aspect-training-sub object-cover rounded-b-inherit"
-                />
-              </motion.div>
+                  <img
+                    src={e.image}
+                    alt=""
+                    className="w-full hidden md:block aspect-training-sub object-cover rounded-b-inherit transition-all duration-500 group-hover:scale-105"
+                  />
+                </motion.div>
+              </Link>
             )
           )}
         </motion.div>

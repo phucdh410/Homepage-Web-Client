@@ -43,12 +43,12 @@ export const MUi = ({ data }: INewsAndEventsProps) => {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, type: "spring" }}
             viewport={{ once: true }}
-            className="row-span-2 rounded-10px relative"
+            className="row-span-2 rounded-10px relative group overflow-hidden transition-shadow duration-200 hover:shadow-hover-item"
           >
             <img
               src={data[0].image}
               alt=""
-              className="w-full h-full aspect-news-main rounded-inherit"
+              className="w-full h-full aspect-news-main rounded-inherit transition-all duration-500 group-hover:scale-105"
             />
             <div className="absolute bottom-0 px-3 py-5 m-5 bg-white rounded-inherit">
               <p className="uppercase font-light text-sm text-sub2 mb-3">
@@ -67,12 +67,12 @@ export const MUi = ({ data }: INewsAndEventsProps) => {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, type: "spring" }}
             viewport={{ once: true }}
-            className="rounded-10px relative"
+            className="rounded-10px relative group overflow-hidden transition-shadow duration-200 hover:shadow-hover-item"
           >
             <img
               src={data[1].image}
               alt=""
-              className="w-full h-full aspect-news-video rounded-inherit"
+              className="w-full h-full aspect-news-video rounded-inherit transition-all duration-500 group-hover:scale-105"
             />
             <div className="absolute top-0 flex items-center justify-center z-1 w-full h-full rounded-inherit bg-[linear-gradient(0deg,_rgba(0,0,0,0.3),_rgba(0,0,0,0.3))]">
               <button className="play-btn" onClick={onOpen}>
@@ -88,12 +88,12 @@ export const MUi = ({ data }: INewsAndEventsProps) => {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, type: "spring" }}
             viewport={{ once: true }}
-            className="rounded-10px relative"
+            className="rounded-10px relative group overflow-hidden transition-shadow duration-200 hover:shadow-hover-item"
           >
             <img
               src={data[2].image}
               alt=""
-              className="w-full h-full aspect-news-sub rounded-inherit"
+              className="w-full h-full aspect-news-sub rounded-inherit transition-all duration-500 group-hover:scale-105"
             />
             <div className="absolute bottom-0 p-3 m-5 bg-white rounded-inherit">
               <p className="uppercase font-light text-sm text-sub2 mb-[5px]">
