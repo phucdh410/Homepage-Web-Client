@@ -3,13 +3,13 @@
 import { usePathname } from "next-intl/client";
 import Link from "next-intl/link";
 
-import { Fragment, useCallback } from "react";
+import { Fragment, useCallback, useEffect, useState } from "react";
 
 import { Popover, Transition } from "@headlessui/react";
 import classNames from "classnames";
 
 import { CSwitchLanguageButton } from "@/common/components/controls";
-import { INTRODUCTION_LIST } from "@/common/constants";
+import { INTRODUCTION_LIST, MAIN_BG_ID } from "@/common/constants";
 import { useMouseDirection } from "@/utils/hooks";
 
 import { CListMenu } from "./CListMenu";
@@ -58,6 +58,7 @@ const MOCK1: INavItem[] = [
 
 export const CHeader = () => {
   //#region Data
+  const [isMainBg, setIsMainBg] = useState<boolean>(false);
 
   const pathname = usePathname();
 
@@ -109,7 +110,13 @@ export const CHeader = () => {
     return MOCK1.map((nav) => {
       if (nav.children && nav.children.length > 0) {
         return (
-          <li key={nav.id} className="min-h-[42px]">
+          <li
+            key={nav.id}
+            className={classNames(
+              isMainBg && "!text-white",
+              "text-primary min-h-[42px]"
+            )}
+          >
             <Popover as={Fragment}>
               <Popover.Button
                 className="navigation-parent-item h-full outline-none inline-block py-[6px]"
@@ -133,7 +140,13 @@ export const CHeader = () => {
         );
       } else if (nav.hrefId) {
         return (
-          <li key={nav.id} className="min-h-[42px]">
+          <li
+            key={nav.id}
+            className={classNames(
+              isMainBg && "!text-white",
+              "text-primary min-h-[42px]"
+            )}
+          >
             <a
               href={`#${nav.hrefId}`}
               className={classNames(
@@ -148,7 +161,13 @@ export const CHeader = () => {
         );
       } else
         return (
-          <li key={nav.id} className="min-h-[42px]">
+          <li
+            key={nav.id}
+            className={classNames(
+              isMainBg && "!text-white",
+              "text-primary min-h-[42px]"
+            )}
+          >
             <Link
               href={nav.link || "/"}
               className={classNames(
@@ -163,8 +182,27 @@ export const CHeader = () => {
           </li>
         );
     });
-  }, [isActive, onMouseOut, onMouseOver]);
+  }, [isActive, isMainBg, onMouseOut, onMouseOver]);
   //#endregion
+
+  useEffect(() => {
+    if (pathname === "/") setIsMainBg(true);
+    else setIsMainBg(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const onScroll = (e: Event) => {
+      const mainBg = document.getElementById(MAIN_BG_ID);
+
+      if (mainBg) {
+        const { height } = mainBg.getBoundingClientRect();
+        if (window.scrollY + 104 >= height) setIsMainBg(false);
+        else setIsMainBg(true);
+      }
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   //#region Render
   return (
@@ -182,17 +220,12 @@ export const CHeader = () => {
         </div>
 
         <div
-          className="flex px-[2rem] py-2 items-center gap-5"
-          style={{
-            background: "white",
-            boxShadow: "5px 5px 30px rgba(0, 0, 0, 0.2)",
-          }}
-          // style={{
-          //   background:
-          //     "linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.2) 53.37%, rgba(255, 255, 255, 0.06) 100%)",
-          //   boxShadow: "5px 5px 30px rgba(0, 0, 0, 0.2)",
-          //   backdropFilter: "blur(10px)",
-          // }}
+          className={classNames(
+            isMainBg
+              ? "bg-[linear-gradient(90deg,_rgba(255,_255,_255,_0.06)_0%,_rgba(255,_255,_255,_0.2)_53.37%,_rgba(255,_255,_255,_0.06)_100%)] shadow-[5px_5px_30px_rgba(0,_0,_0,_0.2)] backdrop-blur-[10px]"
+              : "bg-white shadow-[5px_5px_30px_rgba(0,_0,_0,_0.2)]",
+            "flex px-[2rem] py-2 items-center gap-5 transition-[background,color] duration-300"
+          )}
         >
           <img src="/images/logo.png" alt="" />
           <Popover.Group

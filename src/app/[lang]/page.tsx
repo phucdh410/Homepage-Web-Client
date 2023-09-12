@@ -2,6 +2,7 @@ import { Metadata } from "next";
 
 import { Suspense } from "react";
 
+import { MAIN_BG_ID } from "@/common/constants";
 import {
   LCommonData,
   LNewsAndEvents,
@@ -49,6 +50,7 @@ export default async function Home({ params }: IHomePageProps) {
         src="/images/homepage-banner.png"
         alt=""
         className="w-full h-auto object-cover mt-[74px] xl:mt-0"
+        id={MAIN_BG_ID} //! DON'T CHANGE THIS ID
       />
 
       <Suspense fallback={<LCommonData params={params} />}>
