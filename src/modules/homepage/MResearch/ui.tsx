@@ -34,14 +34,14 @@ export const MUi = ({ data }: IMResearchProps) => {
         {data.map((e) => (
           <SwiperSlide
             key={e.id}
-            className="!w-[clamp(17.5rem,_3.026rem_+_61.7558vw,_55.75rem)] relative"
+            className="!w-[clamp(17.5rem,_3.026rem_+_61.7558vw,_55.75rem)] group relative"
           >
             <div className="bg-white p-3 md:p-5 grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-10 rounded-20px">
-              <div className="rounded-inherit">
+              <div className="rounded-l-inherit overflow-hidden">
                 <img
                   src="/images/research.png"
                   alt=""
-                  className="aspect-research w-full rounded-l-inherit rounded-r-inherit md:rounded-r-none"
+                  className="aspect-research w-full rounded-l-inherit rounded-r-inherit md:rounded-r-none transition-all duration-500 group-hover:scale-105 "
                 />
               </div>
               <div>

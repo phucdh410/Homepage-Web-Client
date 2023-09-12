@@ -35,18 +35,15 @@ export const MCooperation = () => {
             viewport={{ once: true }}
             transition={{ duration: 1, type: "spring" }}
             whileHover={{
-              x: 10,
-              y: -10,
               boxShadow: "rgba(0, 0, 0, 0.15) 0px 5px 15px 0px",
-              transition: { duration: 0.2 },
             }}
-            className="basis-1/2 rounded-10px md:rounded-20px relative overflow-hidden shadow-custom"
+            className="basis-1/2 group rounded-10px md:rounded-20px relative overflow-hidden transition-shadow duration-500 shadow-custom"
           >
             <Link href="/coop?tab=1">
               <img
                 src="/images/coop.png"
                 alt=""
-                className="aspect-coop w-full object-cover rounded-inherit"
+                className="aspect-coop w-full object-cover rounded-inherit transition-all duration-500 group-hover:scale-105"
               />
               <div className="absolute w-full bottom-0 bg-white text-center py-3 md:p-[15px] rounded-b-inherit">
                 <p className="text-primary font-serif4 text-[clamp(0.875rem,_0.7331rem_+_0.6054vw,_1.25rem)] uppercase font-bold rounded-b-inherit">
@@ -61,18 +58,15 @@ export const MCooperation = () => {
             viewport={{ once: true }}
             transition={{ duration: 1, type: "spring" }}
             whileHover={{
-              x: 10,
-              y: -10,
               boxShadow: "rgba(0, 0, 0, 0.15) 0px 5px 15px 0px",
-              transition: { duration: 0.2 },
             }}
-            className="basis-1/2 rounded-10px md:rounded-20px relative overflow-hidden shadow-custom"
+            className="basis-1/2 group rounded-10px md:rounded-20px relative overflow-hidden transition-shadow duration-500 shadow-custom"
           >
             <Link href="/coop?tab=2">
               <img
                 src="/images/coop.png"
                 alt=""
-                className="aspect-coop w-full object-cover rounded-inherit"
+                className="aspect-coop w-full object-cover rounded-inherit transition-all duration-500 group-hover:scale-105"
               />
               <div className="absolute w-full bottom-0 bg-white text-center py-3 md:p-[15px] rounded-b-inherit">
                 <p className="text-primary font-serif4 text-[clamp(0.875rem,_0.7331rem_+_0.6054vw,_1.25rem)] uppercase font-bold rounded-b-inherit">
